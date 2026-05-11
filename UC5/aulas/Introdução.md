@@ -54,7 +54,7 @@ Hoje, o inglês moderno é a união dessas raízes.
 ### Exercício 1 – Responda em grupo
 
 1. Como se diz “Bom dia”?  
-2. O que significa “Good nigh”?  
+2. O que significa “Good night”?  
 3. Quando usamos “Good evening”?  
 4. Como responder “How are you?”?
 5. Qual a diferença entre “Good evening” e “Good night”?  
