@@ -272,16 +272,3 @@ Escreva um texto (8–10 linhas) sobre:
 - Quem você será
 
 Use contrações corretamente.
-
----
-
-## Fala
-
-Tema: “My past, my present and my future.”
-
-Fale por pelo menos 1 minuto usando:
-- I’m
-- I was
-- I’ll be
-- I wasn’t
-- I won’t be
