@@ -38,4 +38,4 @@ Fazer duas frases com o verbo to be para cada sujeito
 
 ### They (Eles)
 - **They** were walking down the Abbey Road. I don't know why they've walking with that guns and grenades.
-- By the way, **they** have screamed, and for any reasons, about 100 ambulances have passed here. -> Btw, **they've screamed**, and for any reasons, about 100 ambulances have passed here.
+- By the way, **they** have screamed, and for any reasons, about 100 ambulances have passed here. -> Btw, **they've** screamed, and for any reasons, about 100 ambulances have passed here.
