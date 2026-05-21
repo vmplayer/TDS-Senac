@@ -24,12 +24,12 @@ Repositório oficial: [Acessar](https://github.com/LeoSouzaSenac/UC5-26-1M)
 
 Professor: [Leonardo Souza](https://github.com/LeoSouzaSenac)
 
-> \[Inglês 1\]
+> \[Inglês - 1\]
 
 **UC3** - Banco de Dados <br>
 **UC4** - Programação Orientada a Objetos (TypeScript | POO) <br>
-**UC6** - Projeto Integrador (PI) 1 <br>
-**UC7** - Elaborar Orientações Técnicas (inglês - 2) <br>
+**UC6** - Projeto Integrador 1 (PI 1) <br>
+**UC7** - Elaborar Orientações Técnicas (inglês 2) <br>
 **UC8** - Programação para Desktop (Java) <br>
 **UC9** - Desenvolver Aplicações Desktop (Java) <br>
 **UC10** - GitHub <br>
@@ -39,7 +39,7 @@ Professor: [Leonardo Souza](https://github.com/LeoSouzaSenac)
 **UC14** - Deploy <br>
 **UC15** - Programação Mobile (React Native) <br>
 **UC16** - UX/UI (Interface do Usuário e Experiência do Usuário) <br>
-**UC17** - Projeto Integrador (PI) 2
+**UC17** - Projeto Integrador 2 (PI 2)
 
 > UC -> Unidade Curricular
 >
