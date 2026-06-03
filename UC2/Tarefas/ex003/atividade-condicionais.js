@@ -3,9 +3,9 @@ const rl = require('readline-sync')
 console.log("=== PARTE 1 === \n")
 
 let idadeUm = rl.questionInt("Qual e a sua idade? ")
-if (idadeUm >= 18 && idadeUm < 119) {
+if (idadeUm >= 18 && idadeUm <= 122) {
     console.log("Você e maior de idade.")
-} else if (idadeUm >= 119) {
+} else if (idadeUm > 122) {
     console.log("Tu tá é morto mermãokkkkkkkkk")
 } else {
     console.log("Você e menor de idade.")
