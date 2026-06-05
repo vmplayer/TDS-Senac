@@ -51,17 +51,17 @@ let userR = 'admin'
 let passW = '1234'
 
 let user = rl.question("Usuario: ")
-let password = rl.question("Senha: ")
+let password = rl.question("Senha: ", { hideEchoBack: true })
 
 if (user == userR && password == passW) {
     console.log("Seja bem-vindo, " + user + "!")
 } else {
-    console.log("Acesso de conta inválido, enviando snipers para a sua residência agora mesmo por questões de segurança aos dados da conta.")
+    console.log("Usuário ou senha inválidos, enviando snipers para a sua residência agora mesmo por questões de segurança aos dados da conta.")
 }
 
 console.log("\n === PARTE 6 === \n")
 
-let valor = rl.questionInt("Digite o valor da compra: ")
+let valor = rl.questionFloat("Digite o valor da compra: ")
 
 if (valor >= 100) valor = valor - valor * (10 / 100)
 
