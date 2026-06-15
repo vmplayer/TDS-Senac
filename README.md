@@ -22,6 +22,8 @@ Unidade curricular que demonstra do **básico sobre inglês** até **leitura** e
 
 Repositório oficial: [Acessar](https://github.com/LeoSouzaSenac/UC5-26-1M)
 
+Site de jogos: [Acessar](https://leosouzasenac.github.io/englishGame/)
+
 Professor: [Leonardo Souza](https://github.com/LeoSouzaSenac)
 
 > \[Inglês - 1\]
