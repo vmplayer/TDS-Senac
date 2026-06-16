@@ -14,22 +14,41 @@ let resultado
 // console.log(`AQUI >>>>> ${sim}`)
 
 let valor = 0
-let carrinho = []
 
-const opcoes = ["Maca", "Banana", "Pera", "Maracuja"]
+// Gerenciamento de estoque e carrinho
+
+let estoque = []
+let carrinho = []
+let items = []
+
+console.clear()
+
+const opcoes = ["Maca", "Banana", "Pera", "Maracuja", "Carrinho"]
 let response
 while (!final) {
-    response = rl.keyInSelect(opcoes, 'O que voce deseja comprar?')
+    response = rl.keyInSelect(opcoes, 'O que voce deseja comprar? ', { cancel: 'Finalizar a compra' })
+
+    console.log("=== VENDA DE FRUTAS ===")
+    console.log("Venha, venha! Nossas frutas são de ótima qualidade, compre conosco e depois compre de novo!")
 
     if (response === -1) {
         final = true
-        console.log("Compra finalizada!")
-        console.log(`O valor total da compra ficou em: R\$${valor.toFixed(2)}`)
 
+        console.clear()
+        console.log("Compra finalizada!")
+        console.log(`O valor total da compra ficou em: R\$${valor.toFixed(2)}.`)
+
+    } else if (items === 0) {
+
+    } else if (response === 4) {
+        console.log("Carrinho Acessado!")
+        final = true
     } else {
         resultado = frutas.find(f => f.id === response)
         tempo = frutas.find(f => f.tempo === response)
         let valorFruta = resultado.valor
+
+        console.clear()
         
         // Aplica 30% de desconto se tiver mais de 3 dias de prateleira.
         if (resultado.tempo >= 3) {
