@@ -1,0 +1,54 @@
+[Ainda incompleto]
+
+# Exercícios de Fixação
+
+## Parte 1
+
+### Qual é o MVP do projeto?
+
+1. O que é essencial para o sistema funcionar?
+
+
+
+2. O que pode ser deixado para uma próxima versão?
+
+
+## Parte 2
+
+### 1. O que é uma metodologia de desenvolvimento?
+
+Uma **metodologia de desenvolvimento** é um método de desenvolver determinado sistema, cada um variando e sendo mais útil para determinado tipo de trabalho.
+
+**Por exemplo:** Em um trabalho onde existe a necessidade de ser entregue de forma extremamente rápida, como uma página web simples que precisa ser entregue em 3 dias, o método *Agile* (comumente o *Scrum*) seria o mais adequado.
+
+### 2. Qual é a principal diferença entre o modelo Cascata e o Agile?
+
+O modelo cascata era o mais utilizados pelas empresas, onde era desenvolvido em uma ordem muito rígida, sendo ela: *Planejamento* > *Desenvolvimento* > *Testes* > *Entrega*. O problema era simples, quando falhava em algum lugar avançado, como em *Testes*, era necessário retornar para a fase de *Planejamento*, para então voltar para o *Desenvolvimento*, fazendo um projeto simples demorar muito mais tempo que o necessário.
+
+O modelo Agile é um método muito mais propenso à mudanças, fazendo algo que no método tradicional duraria anos, durar alguns poucos meses (ou até semanas). O método é muito diverso em metodologias, como o *Scrum*, *XP (Extreme Programming), *Kanban*, e entre alguns outros.
+
+### 3. O que significa ser ágil em um projeto?
+
+Significa trabalhar de forma mais inteligente e organizada.
+
+### 4. Cite duas metodologias ágeis.
+
+Duas metodologias ágeis podem ser: *Scrum*, *Kanban*.
+
+### 5. Qual metodologia utiliza quadros visuais para organizar tarefas?
+
+A metodologia que utiliza quadros visuais para organizar tarefas é o *Kanban*.
+
+### 6. Quais são as três colunas básicas de um quadro Kanban?
+
+As três colunas básicas que compõem um quadro Kanban são: "A fazer", "Em Andamento", "Concluído".
+
+### 7. O que significa MVP?
+
+O termo MVP significa Mínimo Produto Viável (Minimum Viable Product).
+
+O MVP é a menor versão funcional de um projeto.
+
+### 8. Explique por que planejar um projeto antes de programar pode ajudar uma equipe.
+
+
