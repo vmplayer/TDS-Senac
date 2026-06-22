@@ -53,7 +53,8 @@ Introdução ao pensamento computacional. Desenvolvimento de lógica através de
 Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender documentações oficiais, tratamento de erros em terminais e fóruns técnicos na língua inglesa.
 * **Professor:** [Leonardo Souza](https://github.com/LeoSouzaSenac)
 * **Repositório de Referência:** [Acessar UC5-26-1M](https://github.com/LeoSouzaSenac/UC5-26-1M)
-* **Projeto Prático da UC:** [English Game](https://leosouzasenac.github.io/englishGame/)
+* **Projeto de jogos desenvolvido pelo [Professor Leonardo](https://github.com/LeoSouzaSenac):** [English Quest](https://leosouzasenac.github.io/englishGame/)
+* **Projeto de atividades desenvolvido pela [Professora Dalvana](https://github.com/DalvanaRibeiro):** [UC5ToBe](https://senacrs.my.canva.site/uc5tobe)
 
 ---
 
