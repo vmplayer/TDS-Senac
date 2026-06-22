@@ -1,6 +1,6 @@
 let rl = require('readline-sync'), MAX = 100, MIN = 0, value = 30, key
 
-console.log('\n\n' + (new Array(20)).join(' ') + '[Z] <--> [X]   SELECIONAR: [ESPAÇO]\n')
+console.log('\n\n' + (new Array(20)).join(' ') + '[A] <--> [D]   SELECIONAR: [ESPAÇO]\n')
 
 while (true) {
     console.log('\x1B[1A\x1B[K|' + 

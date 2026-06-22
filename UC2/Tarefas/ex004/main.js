@@ -1,64 +1,176 @@
 const rl = require('readline-sync')
 
-let final = false
-const frutas = [
-    { id: 0, nome: "maca", tempo: 2, valor: 0.72 },
-    { id: 1, nome: "banana", tempo: 1, valor: 0.86 },
-    { id: 2, nome: "pera", tempo: 4, valor: 0.52 },
-    { id: 3, nome: "maracuja", tempo: 2, valor: 0.63 }
-]
-
-let resultado
-
-// let sim = frutas.includes("nome")
-// console.log(`AQUI >>>>> ${sim}`)
-
-let valor = 0
-
-// Gerenciamento de estoque e carrinho
-
-let estoque = []
-let carrinho = []
-let items = []
+// ATIVIDADE 1
 
 console.clear()
+console.log("=== EXERCÍCIO 1 ===")
 
-const opcoes = ["Maca", "Banana", "Pera", "Maracuja", "Carrinho"]
-let response
-while (!final) {
-    response = rl.keyInSelect(opcoes, 'O que voce deseja comprar? ', { cancel: 'Finalizar a compra' })
+let idade = rl.questionInt("Qual a sua idade? ")
+let tam
 
-    console.log("=== VENDA DE FRUTAS ===")
-    console.log("Venha, venha! Nossas frutas são de ótima qualidade, compre conosco e depois compre de novo!")
+if (idade < 0) {
+    tam = "Volta quando nascer."
+} else if (idade <= 12) {
+    tam = "Criança"        
+} else if (idade <= 17) {
+    tam = "Adolescente"
+} else if (idade <= 60) {
+    tam = "Adulto"
+} else {
+    tam = "Idoso"
+}
 
-    if (response === -1) {
-        final = true
+console.log(tam)
 
-        console.clear()
-        console.log("Compra finalizada!")
-        console.log(`O valor total da compra ficou em: R\$${valor.toFixed(2)}.`)
+console.log("Pressione espaço para continuar.")
+rl.keyInPause('', { limit: ' ' })
 
-    } else if (items === 0) {
+// ATIVIDADE 2
 
-    } else if (response === 4) {
-        console.log("Carrinho Acessado!")
-        final = true
+let jogarNovamente = true
+
+while (jogarNovamente) {
+    console.clear()
+    console.log("=== EXERCÍCIO 2 ===")
+
+    let ladoum = rl.questionInt("Diga o valor da medida de um dos lados do triangulo: ")
+    let ladodois = rl.questionInt("Diga o valor do outro lado do triangulo: ")
+    let ladotres = rl.questionInt("Diga o valor do terceiro lado do triangulo: ")
+
+    if (ladoum === ladodois && ladoum === ladotres) {
+        console.log("O triângulo é equilátero.")
+    } else if (ladoum === ladodois || ladodois === ladotres || ladoum === ladotres) {
+        console.log("O triângulo é isósceles")
     } else {
-        resultado = frutas.find(f => f.id === response)
-        tempo = frutas.find(f => f.tempo === response)
-        let valorFruta = resultado.valor
+        console.log("O triângulo é escaleno.")
+    }
 
-        console.clear()
-        
-        // Aplica 30% de desconto se tiver mais de 3 dias de prateleira.
-        if (resultado.tempo >= 3) {
-            console.log("[PROMOÇÃO] Como a sua fruta está há mais de 3 dias na prateleira, estamos aplicando 30% de desconto!")
-            valorFruta *= 0.7
-        }
+    let denovo = rl.keyInYNStrict("Quer calcular de novo? ")
 
-        valor = valor + valorFruta
+    if (denovo) {
+        jogarNovamente = true
+    } else {
+        jogarNovamente = false
+    }
+}
 
-        console.log(`Você adicionou ${resultado.nome} na cesta.`)
-        console.log(`Seu carrinho está avaliado em R\$${valor.toFixed(2)}.`)
+console.log("Pressione espaço para continuar.")
+rl.keyInPause('', { limit: ' ' })
+
+// ATIVIDADE 3
+
+console.clear()
+console.log("=== EXERCÍCIO 3 ===")
+
+let valor = rl.questionInt("Qual e o valor da compra? ")
+let percent
+
+if (valor >= 500) {
+    percent = 0.15
+} else if (valor >= 300) {
+    percent = 0.10
+} else if (valor >= 100) {
+    percent = 0.05
+} else {
+    percent = 0
+}
+
+console.log("Valor original: " + valor)
+console.log("Percentual aplicado: " + percent * 100 + "%")
+console.log(`Valor final:  ${valor - (valor *= percent)}`)
+
+console.log("Pressione espaço para continuar.")
+rl.keyInPause('', { limit: ' ' })
+
+// ATIVIDADE 4
+
+console.clear()
+console.log("=== EXERCÍCIO 4 ===")
+
+let notaFinal = rl.questionInt("Diga a nota final do aluno: ")
+let frequencia = rl.questionInt("Diga a frequencia do aluno: ")
+
+if (frequencia < 75) {
+    console.log("O aluno foi reprovado por frequência.")
+} else {
+    if (notaFinal >= 7) {
+        console.log("O aluno foi APROVADO.")
+    } else if (notaFinal >= 5) {
+        console.log("O aluno está de RECUPERAÇÃO.")
+    } else {
+        console.log("O aluno foi REPROVADO.")
+    }
+}
+
+console.log("Pressione espaço para continuar.")
+rl.keyInPause('', { limit: ' ' })
+
+// ATIVIDADE 5
+
+console.clear()
+console.log("=== EXERCÍCIO 5 ===")
+
+let peso = rl.questionFloat("Qual o seu peso? ")
+let altura = rl.questionFloat("Qual e a sua altura? ")
+
+let imc = peso / (altura ** 2)
+let classificacao
+
+if (imc > 30) {
+    classificacao = "Acima do peso"
+} else if (imc >= 25) {
+    classificacao = "Sobrepreso"
+} else if (imc >= 18.5) {
+    classificacao = "Peso normal"
+} else {
+    classificacao = "Abaixo do peso"
+}
+
+console.log(`O seu IMC é: ${imc.toFixed(2)}.`)
+console.log(classificacao)
+
+console.log("Pressione espaço para continuar.")
+rl.keyInPause('', { limit: ' ' })
+
+// DESAFIO
+
+const pedra = 0
+const papel = 1
+const tesoura = 2
+const opcoes = ["Pedra", "Papel", "Tesoura"]
+
+jogarNovamente = true
+while (jogarNovamente) {
+    console.clear()
+    console.log("DESAFIO! PEDRA, PAPEL E TESOURA!")
+
+    let computador = Math.floor(Math.random() * 3)
+
+    let playerChoice = rl.keyInSelect(opcoes, "Selecione uma opcao: ", { cancel: false })
+
+    console.log(computador, playerChoice)
+
+    if (computador === tesoura && playerChoice === papel) {
+        console.log("Você perdeu!")
+    } else if (computador === papel && playerChoice === pedra) {
+        console.log("Você perdeu!")
+    } else if (computador === pedra && playerChoice === tesoura) {
+        console.log("Você perdeu!") 
+    } else if (computador === papel && playerChoice === tesoura) {
+        console.log("Você venceu!")
+    } else if (computador === pedra && playerChoice === papel) {
+        console.log("Você venceu!")
+    } else if (computador === tesoura && playerChoice === pedra) {
+        console.log("Você venceu!")
+    } else {
+        console.log("Empate!")
+    }
+
+    let denovo = rl.keyInYNStrict("Quer jogar de novo? ")
+
+    if (denovo) {
+        jogarNovamente = true
+    } else {
+        jogarNovamente = false
     }
 }
