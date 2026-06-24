@@ -91,7 +91,7 @@ if (idade < 16) {
     vota = "Não vota"
 } else if (idade < 18) {
     vota = "Voto facultativo"
-} else if (idade < 69) {
+} else if (idade <= 69) {
     vota = "Voto obrigatório"
 } else {
     vota = "Voto facultativo" 
