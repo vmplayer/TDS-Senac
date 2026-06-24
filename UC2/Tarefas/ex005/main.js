@@ -112,7 +112,6 @@ if (user === userC && passw === passwC) {
 
     const opcoes = ["Usuario Comum", "Moderador", "Admin"]
     let acesso = rl.keyInSelect(opcoes, "Qual nível de acesso você deseja? ", { cancel: false })
-    let opcao = acesso
     let accLVL
 
     if (acesso === 0) {
