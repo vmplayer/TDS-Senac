@@ -157,34 +157,3 @@ switch (opcaoLingua) {
     default:
         console.log("Esta não é uma opção.")
 }
-
-// console.log("\n=== DESAFIO ===\n")
-
-// console.log("[1] Quadrado")
-// console.log("[2] Retângulo")
-// console.log("[3] Triângulo")
-// console.log("[4] Círculo")
-
-// let forma = rl.questionInt("Qual forma voce deseja calcular? ")
-// let ladoUm
-// let ladoDois
-// let ladoTres
-// let pi = 3.14
-// let raio
-// let resultado
-
-
-// switch (forma) {
-//     case 1:
-//         ladoUm = rl.questionInt("Informe a medida: ")
-//         resultado = ladoUm ** 2
-//         break
-
-//     case 2:
-//         ladoUm = rl.questionInt("Informe a largura: ")
-//         ladoDois = rl.questionInt("Informe a altura: ")
-//         resultado = ladoUm * ladoDois
-//         break
-// }
-
-// console.log(resultado)
