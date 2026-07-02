@@ -1,4 +1,6 @@
-   26/05 - "01 - Variáveis"
+Nova estrutura de arquivos, apagar quando aplicar as mudanças.
+
+26/05 - "01 - Variáveis"
 27_28/05 - "02 - Operadores Lógicos e Readline-sync"
    01/06 - "03 - If e Else"
    02/06 +
