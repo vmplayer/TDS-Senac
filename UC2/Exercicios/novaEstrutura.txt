@@ -7,5 +7,5 @@ Nova estrutura de arquivos, apagar quando aplicar as mudanças.
    17/06 +
    23/06 +
    26/06 - "04 - Switch Case"
-   01/07 - "05 - Loops de Repetição"
+   01/07 - "05 - Loops de Repetição e Arrays"
    02/07 +
