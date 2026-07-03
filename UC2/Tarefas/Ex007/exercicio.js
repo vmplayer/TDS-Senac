@@ -34,6 +34,29 @@ for (let i = 0; i < 5; i++) {
     console.log(frutas[i])
 }
 
+console.log("\n=== EXERCICIO 5 ===\n")
+
+let notas = []
+
+for (i = 0; i < 5; i++) {
+    let pergunta = rls.questionFloat("Diga a nota: ")
+    notas.push(pergunta)
+}
+
+let somaM = 0
+for (let i = 0; i < notas.length; i++) {
+    somaM = somaM + notas[i]
+}
+
+media = somaM / notas.length
+maiorNum = Math.max(...notas)
+menorNum = Math.min(...notas)
+
+
+console.log(`A Média é: ${media}.`)
+console.log(`A maior nota é: ${maiorNum}.`)
+console.log(`A menor nota é: ${menorNum}.`)
+
 console.log("\n=== EXERCICIO 6 ===\n")
 
 let numero = rls.questionInt('Diga um numero: ')
