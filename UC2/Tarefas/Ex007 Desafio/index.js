@@ -1,4 +1,3 @@
-const rls = require('readline-sync')
 const { app, BrowserWindow } = require('electron')
 
 const createWindow = () => {
@@ -21,4 +20,3 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
 })
-
