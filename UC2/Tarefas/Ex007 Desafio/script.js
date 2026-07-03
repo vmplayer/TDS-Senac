@@ -13,15 +13,17 @@ startf.addEventListener('click', () => {
     container.innerHTML = ''
     results.innerHTML = ''
     search.innerHTML = ''
+    searchRes.innerHTML = ''
 
     if (numeroAlunos < 1) {
-        window.alert('O valor não pode ser menor que 1.')
+        window.alert('Você deve cadastrar pelo menos um aluno.')
+        location.reload()
     } else {
         for (let i = 0; i < numeroAlunos; i++) {
             container.innerHTML += `
                 <p>
                     <label for="nome">Nome do aluno: </label>
-                    <input type="text" class="nome">
+                    <input type="text" class="nome"> Nº: ${i + 1}
                 </p>
             `
         }
@@ -29,6 +31,7 @@ startf.addEventListener('click', () => {
         container.innerHTML += `<button id="cadastrar">Cadastrar alunos</button>`
 
         cadastrar()
+
     }
 })
 
@@ -38,6 +41,8 @@ function cadastrar() {
     cadastro.addEventListener('click', () => {
         const todosNomes = document.querySelectorAll('.nome')
         
+        results.innerHTML = ''
+
         nomes = []
 
         todosNomes.forEach(input => {
@@ -71,15 +76,27 @@ function cadastrar() {
         pesquisarf.addEventListener('click', () => {
             searchRes.innerHTML = ''
 
-            const item = nomePesquisa.value.trim()
+            const item = nomePesquisa.value.trim().toLowerCase()
 
-            if (nomes.includes(item)) {
-                searchRes.innerHTML += `
-                    <p>O(a) aluno(a) ${item} foi encontrado(a) no cadastro.</p>
-                `
+            if (item === '') return
+
+            const resultados = nomes.filter(aluno => aluno.toLowerCase().includes(item))
+
+            if (resultados.length > 0) {
+                searchRes.innerHTML += `<p><strong>Alunos encontrados na lista: </strong></p>`
+
+                resultados.forEach(aluno => {
+                    const pos = nomes.indexOf(aluno) + 1
+
+                    searchRes.innerHTML += `
+                    <p>O(a) aluno(a) está cadastrado(a).</p>
+                    <p><strong>Nome do aluno: </strong>${aluno}</p>
+                    <p><strong>Posição na lista: </strong>${pos}</p>
+                    `
+                })
             } else {
                 searchRes.innerHTML += `
-                    <p>O(a) aluno(a) <strong>${item}</strong> não foi encontrado(a) na lista de alunos.</p>
+                    <p>O(a) aluno(a) <strong>${nomePesquisa.value}</strong> não foi encontrado(a) na lista de alunos.</p>
                 `
             }
         })
