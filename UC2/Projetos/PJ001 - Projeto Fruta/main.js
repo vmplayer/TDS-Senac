@@ -25,12 +25,19 @@ function addItem(fruta, valorAtual) {
 }
 
 function viewCart() {
-    if (carrinho.lenght === 0) {
+    if (carrinho.length === 0) {
         console.log("O seu carrinho está vazio.")
     } else {
+        let contador = {}
         for (let i = 0; i < carrinho.length; i++) {
             const item = carrinho[i]
-            console.log(item.nome)
+            const nomeFruta = item.nome
+            
+            if (!contador[nomeFruta]) {
+                contador[nomeFruta] = 1
+            } else {
+                contador[nomeFruta]++
+            }
         }
     }
 
