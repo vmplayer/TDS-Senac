@@ -51,10 +51,10 @@ let listaNova = ["Daniel", "Rodorlfo", "Ronaldo R9", "Australopitéco"]
 
 let elementSearch = rl.question('Qual elemento voce quer encontrar? ')
 // let n = listaNova.indexOf(elementSearch) + 1
-let achou = listaNova.includes(qual)
+let achou = listaNova.includes(elementSearch)
 
-if (n === 0) {
+if (!achou) {
     console.log("O personagem não foi encontrado.")
 } else {
-    console.log(`O personagem que você quer é o número ${n}.`)
+    console.log(`O personagem que você quer é o número ${achou}.`)
 }
