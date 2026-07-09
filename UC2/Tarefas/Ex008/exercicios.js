@@ -33,7 +33,7 @@ lista.forEach((item, i) => {
 
 console.log("\n=== EXERCICIO 4 ===\n")
 
-const frutas = ["Maca", "Banana", "Maca do Notch", "Jogan", "Frutas Douradas de Lothlórien"]
+const frutas = ["Maca", "Banana", "Maca do Notch", "Jogan", "Frutas Douradas de Lothlorien"]
 
 console.log("Frutas disponíveis:")
 for (let fruta of frutas) {
