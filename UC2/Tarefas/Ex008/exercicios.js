@@ -44,7 +44,7 @@ let search = rls.question("Qual fruta voce quer pesquisar? ")
 let result = frutas.includes(search)
 
 if (!result) {
-    console.log("A fruta não está disponível.")
+    console.log("A fruta desejada não foi encontrada.")
 } else {
     console.log("A fruta desejada foi encontrada.")
 }
@@ -80,11 +80,13 @@ while (produtos.length < 5) {
     produtos.push(produto)
 }
 
+console.log()
 produtos.forEach((item, i) => {
     console.log(`[${i + 1}] - ${item}`)
 })
 
-let qualProduto = rls.question("Qual produto voce deseja remover? ")
+let qualProduto = rls.question("\nQual produto voce deseja remover? \nSelecione o produto digitando o nome dele ou escrevendo o seu numero. \n")
+console.log("")
 let resultado = produtos.includes(qualProduto)
 let num = Number(qualProduto)
 let resultadoNum = num > 0 && num <= produtos.length
