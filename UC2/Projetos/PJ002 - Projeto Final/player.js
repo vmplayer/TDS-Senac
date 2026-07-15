@@ -1,10 +1,11 @@
-const rls = require('readline-sync')
-
-player = {
+let player = {
     nome: "",
     classe: "",
     hp: "",
-    atk: ""
+    maxhp: "",
+    atk: "",
+    lvl: "",
+    exp: ""
 }
 
 let classes = [
