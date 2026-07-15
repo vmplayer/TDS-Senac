@@ -1,0 +1,16 @@
+const rls = require('readline-sync')
+
+player = {
+    nome: "",
+    classe: "",
+    hp: "",
+    atk: ""
+}
+
+let classes = [
+    { id: 1, nome: "Guerreiro", hp: 120, atk: 18 },
+    { id: 2, nome: "Mago", hp: 80, atk: 25 },
+    { id: 3, nome: "Arqueiro", hp: 100, atk: 20 }
+]
+
+module.exports = { player, classes }
