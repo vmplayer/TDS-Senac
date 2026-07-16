@@ -37,12 +37,14 @@ Atualmente, o foco está em construir uma base sólida nas seguintes ferramentas
 
 ## 📚 Detalhamento das Unidades Curriculares (UCs)
 
-### ⏳ Em Andamento (Módulo Atual)
+### ✅ Concluído
 
 #### 📐 [UC1](./UC1) - Planejamento de Softwares (Sistemas)
 Foco em entender as demandas do mercado, estruturar a arquitetura da informação e desenvolver protótipos funcionais que resolvam problemas reais.
 * **Professor:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
 * **Repositório de Referência:** [Acessar UC1_TDS26-1M](https://github.com/dhDSouza/UC1_TDS26-1M)
+
+### ⏳ Em Andamento (Módulo Atual)
 
 #### 💻 [UC2](./UC2) - Algoritmos
 Introdução ao pensamento computacional. Desenvolvimento de lógica através de algoritmos, manipulação da linguagem de máquina e interações diretas com o sistema através de comandos de terminal.
