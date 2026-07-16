@@ -322,9 +322,9 @@ O projeto deve utilizar:
 | Critério                                                                    | Conclusão |
 | --------------------------------------------------------------------------- | --------: |
 | Cadastro de Personagem                                                      | yyyyyyyyy |
-| Sistema de Inventário                                                       | --------- |
+| Sistema de Inventário                                                       | yyyyyyyyy |
 | Menu principal                                                              | yyyyyyyyy |
-| Exploração                                                                  | xxxxxxxxx |
+| Exploração                                                                  | yyyyyyyyy |
 | Combate                                                                     | xxxxxxxxx |
 | Status do jogador                                                           | yyyyyyyyy |
 | Missões                                                                     | xxxxxxxxx |
@@ -337,6 +337,6 @@ O projeto deve utilizar:
 | Conquistas                                                                  | xxxxxxxxx |
 | Loja                                                                        | xxxxxxxxx |
 | Chefe final                                                                 | --------- |
-| Equipamentos                                                                | xxxxxxxxx |
+| Itens                                                                       | yyyyyyyyy |
 | Combate - Esquiva                                                           | xxxxxxxxx |
 | Combate - Crítico                                                           | xxxxxxxxx |
