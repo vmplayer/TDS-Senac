@@ -1,4 +1,4 @@
-const { player, classes } = require('./player.js')
+const { player, classes } = require('./playerSystem.js')
 
 let enemies = [
     { nome: "Goblin", vida: 30, ataque: 8, drop: "veneno" },
