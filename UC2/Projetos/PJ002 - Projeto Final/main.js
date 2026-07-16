@@ -10,7 +10,7 @@ const cores = {
     reset: "\x1b[0m"
 }
 
-// Funções do menu e configurações básicas ====
+// Funções do menu e configurações básicas 
 
 function nameMask() {
     player.nome = rls.question('Digite o seu nome: ')
@@ -251,7 +251,7 @@ function gameOver() {
     console.log("Fim de jogo.")
 }
 
-// Execução do código ==========
+// Execução do código 
 
 console.clear()
 console.log('\n=== CRIAR PERSONAGEM ===\n')
