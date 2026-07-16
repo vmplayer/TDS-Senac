@@ -4,8 +4,8 @@ let player = {
     hp: "",
     maxhp: "",
     atk: "",
-    lvl: "",
-    blood: ""
+    lvl: 0,
+    blood: 100
 }
 
 let classes = [
