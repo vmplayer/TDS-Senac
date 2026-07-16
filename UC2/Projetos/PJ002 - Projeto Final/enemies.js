@@ -6,3 +6,4 @@ let enemies = [
     { nome: "Dragão", vida: 200, ataque: 20, drop: "end" }
 ]
 
+module.exports = { enemies }

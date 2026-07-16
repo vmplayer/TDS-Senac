@@ -318,3 +318,25 @@ O projeto deve utilizar:
 | Uso de objetos                                                                 |     10 |
 | Organização em funções                                                         |     10 |
 | Clareza do código (indentação, nomes de variáveis e comentários)               |     10 |
+
+| Critério                                                                    | Conclusão |
+| --------------------------------------------------------------------------- | --------: |
+| Cadastro de Personagem                                                      | yyyyyyyyy |
+| Sistema de Inventário                                                       | --------- |
+| Menu principal                                                              | yyyyyyyyy |
+| Exploração                                                                  | xxxxxxxxx |
+| Combate                                                                     | xxxxxxxxx |
+| Status do jogador                                                           | yyyyyyyyy |
+| Missões                                                                     | xxxxxxxxx |
+| Morte do jogador                                                            | --------- |
+| Conclusão                                                                   | --------- |
+| Sistema de Nível e Experiência                                              | --------- |
+
+| Critério Extra                                                              | Conclusão |
+| --------------------------------------------------------------------------- | --------: |
+| Conquistas                                                                  | xxxxxxxxx |
+| Loja                                                                        | xxxxxxxxx |
+| Chefe final                                                                 | --------- |
+| Equipamentos                                                                | xxxxxxxxx |
+| Combate - Esquiva                                                           | xxxxxxxxx |
+| Combate - Crítico                                                           | xxxxxxxxx |
