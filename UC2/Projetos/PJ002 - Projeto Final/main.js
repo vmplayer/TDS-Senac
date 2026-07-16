@@ -1,7 +1,14 @@
 const rls = require('readline-sync')
-const { player, classes } = require('./player')
-const { inventory, weapons, misc } = require('./inventario.js')
-const { enemies } = require('./enemies.js')
+const { player, classes } = require('./playerSystem.js')
+const { inventory, initItem, maxItems, weapons, misc } = require('./inventoryManager.js')
+const { enemies } = require('./enemiesSystem.js')
+
+const cores = {
+    white: "\x1b[37m",
+    green: "\x1b[32m",
+    red: "\x1b[31m",
+    reset: "\x1b[0m"
+}
 
 // Funções do menu e configurações básicas ====
 
@@ -54,8 +61,9 @@ function classSelect() {
 
 function menu() {
     let menu = true
+
     while (menu) {
-        console.clear()
+        console.clear()        
         console.log(`
              === AÇÕES ===
 
@@ -97,7 +105,6 @@ function menu() {
             case '7':
                 console.log("Saindo...")
                 menu = false
-            
         }
     }
 }
@@ -106,20 +113,63 @@ function explore() {
     console.clear()
     console.log("Explorando...")
 
-    let itemReceived = Math.floor(Math.random() * 10)
+    let itemReceived = Math.floor(Math.random() * 8)
 
     switch (itemReceived) {
         case 0:
-            giveItem = 'None'
+            console.log("A sua busca foi inútil.")
             break
         
         case 1:
-            giveItem = ''
-    }
+            addItem(itemReceived)
+            break
 
+        case 2:
+            addItem(itemReceived)
+            break
+        
+        case 3:
+            addItem(itemReceived)
+            break
+        
+        case 4:
+            addItem(itemReceived)
+            break
+        
+        case 5:
+            addItem(itemReceived)
+            break
+        
+        case 6:
+            addItem(itemReceived)
+            break
+        
+        case 7:
+            addItem(itemReceived)
+            break
+    }
 
     console.log('[ESPAÇO] Voltar')
     rls.keyIn('', { limit: ' ' })
+}
+
+function addItem(i) {
+    if (inventory.length < maxItems) {
+        if (i === 0) {
+            console.log("A sua busca foi apenas perca de tempo.")
+            player.blood -= 20
+        } else if (i >= 1 && i < 6) {
+            inventory.push(weapons[i - 1].nome)
+            player.blood -= 10
+            console.log(weapons[i - 1].nome)
+        } else if (i >= 6 && i < 8) {
+            inventory.push(misc[i - 6].nome)
+            player.blood -= 10
+            console.log(misc[i - 6].nome)
+        }
+    } else {
+        console.log("Meu corpo não aguenta mais que isso. Não.")
+    }
 }
 
 function showStats() {
@@ -133,7 +183,7 @@ function showStats() {
         ATAQUE:  ${player.atk} (+ATK DA ARMA (EXTRA))
          NÍVEL:  ${player.lvl}
         SANGUE:  ${player.blood}
-         ITENS:  ${inventory.itemsOn}/${inventory.maxItemsOn}
+         ITENS:  ${inventory.length}/20
 
         [ESPAÇO] Voltar à página principal
     `)
@@ -142,18 +192,31 @@ function showStats() {
 }
 
 function openInventory() {
-    console.clear()
-    console.log("Vendo inventário...")
+console.clear()
+    console.log("       === INVENTÁRIO ===\n")
 
-    console.log("[ESPAÇO] Voltar")
+    inventory.forEach((item, i) => {
+        if (weapons) {
+            cores.red
+            console.log(`       [${i + 1}] - ${item} [${inventory[i].type}]`)
+            cores.reset
+        } else if (misc) {
+            cores.green
+            console.log(`       [${i + 1}] - ${item} [${inventory[i].type}]`)
+            cores.reset
+        }
+    });
+
+    console.log("\n       [ESPAÇO] Voltar")
     rls.keyIn('', { limit: ' ' })
 }
 
 function rest() {
     console.clear()
     console.log("Descansando...")
+    player.blood += 15
 
-    console.log("[ESPAÇO] Voltar")
+    console.log("\n[ESPAÇO] Voltar")
     rls.keyIn('', { limit: ' ' })
 }
 
@@ -187,8 +250,6 @@ function gameOver() {
     console.clear()
     console.log("Fim de jogo.")
 }
-
-
 
 // Execução do código ==========
 
