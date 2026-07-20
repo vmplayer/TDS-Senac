@@ -1,3 +1,5 @@
+const { gameOver } = require('./main.js')
+
 let player = {
     nome: "",
     classe: "",
@@ -6,10 +8,6 @@ let player = {
     atk: "",
     lvl: 0,
     blood: 100
-}
-
-const die = () => {
-    if (player.hp <= 0) gameOver(0)
 }
 
 let classes = [
