@@ -18,6 +18,7 @@ Para facilitar a navegação, as aulas e projetos estão organizados diretamente
 ```text
 ├── UC1/                  # Planejamento de Softwares (Briefings, Protótipos e Mercado)
 ├── UC2/                  # Algoritmos e Lógica de Programação (JavaScript & Terminal)
+├── UC3/                  # Manipulação de dados (MySQL, PostgreSQL, Oracle Server, SQL Server)
 ├── UC5/                  # Analisar Orientações Técnicas (Documentação & Inglês Técnico)
 └── README.md             # Documentação do repositório
 ```
@@ -44,12 +45,17 @@ Foco em entender as demandas do mercado, estruturar a arquitetura da informaçã
 * **Professor:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
 * **Repositório de Referência:** [Acessar UC1_TDS26-1M](https://github.com/dhDSouza/UC1_TDS26-1M)
 
-### ⏳ Em Andamento (Módulo Atual)
-
 #### 💻 [UC2](./UC2) - Algoritmos
 Introdução ao pensamento computacional. Desenvolvimento de lógica através de algoritmos, manipulação da linguagem de máquina e interações diretas com o sistema através de comandos de terminal.
 * **Professor:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
 * **Repositório de Referência:** [Acessar UC2_TDS26-1M](https://github.com/dhDSouza/UC2_TDS26-1M)
+
+### ⏳ Em Andamento (Módulo Atual)
+
+#### [UC3](./UC3) - Banco de Dados
+
+* **Referência:** [UC3](https://leosouzasenac.github.io/UC3-26-1M/)
+* **Professor:** [Leonardo Souza](https://github.com/LeoSouzaSenac)
 
 #### 🇬🇧 [UC5](./UC5) - Analisar Orientações Técnicas (Inglês I)
 Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender documentações oficiais, tratamento de erros em terminais e fóruns técnicos na língua inglesa.
@@ -67,7 +73,6 @@ Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender
 
 | Código | Unidade Curricular | Foco Previsto |
 | :---: | :--- | :--- |
-| **UC3** | Banco de Dados | Modelagem conceitual/lógica e manipulação de dados com SQL. |
 | **UC4** | Programação Orientada a Objetos | Conceitos avançados de arquitetura de software (POO) usando **TypeScript**. |
 | **UC6** | Projeto Integrador 1 (PI 1) | Desenvolvimento prático aplicando o conhecimento acumulado até aqui. |
 | **UC7** | Elaborar Orientações Técnicas | Escrita técnica, documentações de APIs e relatórios em inglês (Inglês II). |
