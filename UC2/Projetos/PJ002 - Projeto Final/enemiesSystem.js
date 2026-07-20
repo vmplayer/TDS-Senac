@@ -1,9 +1,11 @@
 const { player, classes } = require('./playerSystem.js')
 
 let enemies = [
-    { nome: "Goblin", vida: 30, ataque: 8, drop: "veneno" },
-    { nome: "Orc", vida: 50, ataque: 12, drop: "faca velha" },
-    { nome: "Dragão", vida: 200, ataque: 20, drop: "end" }
+    { nome: "Goblin", hp: 30, atk: 8, def: 5, drop: "veneno" },
+    { nome: "Orc", hp: 50, atk: 12, def: 8, drop: "faca velha" },
+    { nome: "Dragão", hp: 200, atk: 20, def: 12, drop: "end" }
 ]
 
-module.exports = { enemies }
+activeEnemies = []
+
+module.exports = { enemies, activeEnemies }

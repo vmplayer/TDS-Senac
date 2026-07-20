@@ -8,6 +8,10 @@ let player = {
     blood: 100
 }
 
+const die = () => {
+    if (player.hp <= 0) gameOver(0)
+}
+
 let classes = [
     { id: 1, nome: "Guerreiro", hp: 120, atk: 18 },
     { id: 2, nome: "Mago", hp: 80, atk: 25 },
