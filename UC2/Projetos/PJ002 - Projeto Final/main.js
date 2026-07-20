@@ -103,6 +103,7 @@ function menu() {
                 break
             
             case '7':
+                console.clear()
                 console.log("Saindo...")
                 menu = false
         }
@@ -214,57 +215,82 @@ function achievements() {
 
 function fight(i) {
     i -= 7
-    activeEnemies.push(i)
+    activeEnemies = [{...enemies[i]}]
 
     console.clear()
+    console.log(activeEnemies[0])
     console.log("Lutando...")
 
-    console.log(`
-         === LUTA ===
-        
-        [1] - Bater
-        [2] - Mochila
-        [3] - Correr
-    `)
+    while(activeEnemies[0].hp > 0 && player.hp > 0) {
+        console.log(`
+            === LUTA ===
+            
+            [1] - Bater
+            [2] - Mochila
+            [3] - Correr
+        `)
 
-    let fightOption = rls.keyIn('', { limit: '123' })
-    switch (fightOption) {
-        case '1':
-            hit(i)
-            break
-        
-        case '2':
-            openInventory()
-            break
-        
-        case '3':
-            run()
-            break
-    }
-
-    console.log(`
-          === STATUS ===
+        console.log(`
+            === STATUS ===
         Inimigo: ${activeEnemies.nome}
         Vida: ${activeEnemies.hp}
         Defesa: ${activeEnemies.def}
-    `)
+        `)
+
+        let fightOption = rls.keyIn('', { limit: '123' })
+        switch (fightOption) {
+            case '1':
+                hit(i)
+                break
+            
+            case '2':
+                openInventory()
+                break
+            
+            case '3':
+                run()
+                break
+        }
+    }
 
     console.log('[ESPAÇO] Voltar')
     rls.keyIn('', { limit: ' ' })
 }
 
-function hit(i) {
-    let playerDamage
-    let enemyDamage
+function hit() {
+    let enemy = activeEnemies[0]
 
-    if (player.atk > enemies[i].atk) {
-        playerDamage = player.atk - enemies[i].atk
-        enemies[i].hp -= playerDamage
-    } else if (player.atk < enemies[i].atk) {
-        enemyDamage = enemies[i].atk - player.atk
+    let playerDamage = player.atk - enemy.def
+    let enemyDamage = enemy.atk - player.def
+
+    if (playerDamage > 0) {
+        console.log(`Eu tirei ${cores.red}${playerDamage}${cores.reset} pontos de vida dele!`)
+        enemy.hp -= playerDamage
+    } else {
+        console.log()
+    }
+
+    if (enemyDamage > 0) {
         player.hp -= enemyDamage
     } else {
-        console.log(`E então as se bateram e se anularam uma com a outra...`)
+        console.log("O inimigo é um lixo.")
+    }
+
+    if (enemyDamage === 0 && playerDamage === 0) {
+        console.log("E então os nossos ataques colidiram antes de se anularem entre si...")
+    }
+
+    if (enemy.hp <= 0) {
+        enemy.hp = 0
+    } else if (player.hp <= 0) {
+        player.hp = 0
+    }
+
+    if (player.hp <= 0) {
+        console.log("Você morreu.")
+    } else if (enemy.hp <= 0) {
+        console.log("Você derrotou o ", enemy)
+        return
     }
 }
 
@@ -297,4 +323,3 @@ console.log(`\nEu acho que eu iria querer ser um ${player.classe}...`)
 
 addInitItem() // Adiciona os itens iniciais no inventário
 menu() // Chama a função de inicializar o menu
-
