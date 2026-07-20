@@ -6,6 +6,6 @@ let enemies = [
     { nome: "Dragão", hp: 200, atk: 20, def: 12, drop: "end" }
 ]
 
-activeEnemies = []
+let activeEnemies = []
 
 module.exports = { enemies, activeEnemies }
