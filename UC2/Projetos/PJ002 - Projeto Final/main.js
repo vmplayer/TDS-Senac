@@ -164,6 +164,7 @@ function showStats() {
         SANGUE:  ${player.blood}
          ITENS:  ${inventory.length}/${maxItems}
    NV. MOCHILA:  ${backpackLVL}
+INIMIGOS DERTD:  ${player.enemiesDefeated}
 
         [ESPAÇO] Voltar à página principal
     `)
@@ -192,9 +193,12 @@ console.clear()
 function rest() {
     let restLimit = 3
     let restRound
+    let addBlood
     console.clear()
-    console.log("Descansando...")
-    player.blood += 15
+    addBlood = 15
+    player.blood += addBlood
+    console.log("Finalmente em paz...")
+    console.log(`[SISTEMA] Você dormiu e recebeu ${addBlood} de sangue.`)
 
     console.log("\n[ESPAÇO] Voltar")
     rls.keyIn('', { limit: ' ' })
@@ -210,7 +214,7 @@ function market() {
 
 function achievements() {
     console.clear()
-    console.log("Visualizando conquistas")
+    console.log("Visualizando conquistas...")
 
     console.log("[ESPAÇO] Voltar")
     rls.keyIn('', { limit: ' ' })
@@ -236,10 +240,10 @@ function fight(i) {
         `)
 
         console.log(`
-        === STATUS DO INIMIGO ===
-        Inimigo: ${enemy.nome}
-        Vida: ${enemy.hp}
-        Defesa: ${enemy.def}
+        === STATUS DO INIMIGO === === STATUS DO JOGADOR ===
+         Inimigo: ${enemy.nome}                 Nome: ${player.nome}
+            Vida: ${enemy.hp}                      Vida: ${player.hp} 
+          Defesa: ${enemy.def}                     Defesa: ${player.def}
         `)
 
         let fightOption = rls.keyIn('', { limit: '123' })
@@ -253,46 +257,69 @@ function fight(i) {
                 break
             
             case '3':
-                run()
+                if (run(enemy)) return
                 break
         }
     }
-
-    console.log('[ESPAÇO] Voltar')
-    rls.keyIn('', { limit: ' ' })
 }
+/*
+O jogador usa itens e se prepara >
+O jogador ataca ataca >
+O sistema verifica se o ataque é válido e a vida do inimigo >
+SE o a vida for <= 0, ele elimina o inimigo, se for maior, o inimigo (sistema) ataca >
+O sistema verifica se o ataque foi válido e a vida do jogador >
+SE a vida for menor ou igual a 0, ele chama o fim do jogo (gameOver(id)), se for maior,
+Ele retorna pra tela de seleção (primeira parte desse texto)
+*/
 
 function hit(enemy) {
+    let playerDamage = Math.max(0, player.atk - enemy.def)
+    enemy.hp -= playerDamage
 
-    let playerDamage = player.atk - enemy.def
-    let enemyDamage = enemy.atk - player.def
-
+    console.clear();
     if (playerDamage > 0) {
-        console.log(`Eu tirei ${cores.red}${playerDamage}${cores.reset} pontos de vida dele!`)
-        enemy.hp -= playerDamage
-        console.log(player.hp)
+        console.log(`\nVocê atacou e tirou ${cores.red}${playerDamage}${cores.reset} de vida do ${enemy.nome}!`)
     } else {
-        console.log()
+        console.log(`\nSeu ataque nem arranhou a defesa do ${enemy.nome}...`)
     }
 
-    if (enemyDamage > 0) {
-        player.hp -= enemyDamage
-    } else {
-        console.log("Ele não conseguiu me bater...")
-    }
-
-    if (enemyDamage === 0 && playerDamage === 0) {
-        console.log("E então os nossos ataques colidiram antes de se anularem entre si...")
-    }
-
+    // === CHECAGEM DO INIMIGO ===
     if (enemy.hp <= 0) {
         enemy.hp = 0
-        console.log(`Eu consegui... Eu derrotei esse ${enemy.nome}!`)
+        console.log(`\nVocê derrotou o ${enemy.nome}!\n`)
         return
-    } else if (player.hp <= 0) {
+    }
+
+    // === CONTRA-ATAQUE DO INIMIGO ===
+    let enemyDamage = Math.max(0, enemy.atk - player.def)
+    player.hp -= enemyDamage
+
+    if (enemyDamage > 0) {
+        console.log(`Ai! Isso d- dó- dói tanto. Is- Maldito ${enemy.nome}. Maldi- Maldito!
+            Acho que perdi uns ${enemyDamage} pontos de vida.`)
+    } else {
+        console.log(`Esse ${enemy.nome} errou o golpe. Isso foi por pouco.`)
+    }
+
+    // === CHECAGEM DO JOGADOR ===
+    if (player.hp <= 0) {
         player.hp = 0
-        console.log("Você morreu.")
-        gameOver(0)
+        console.log(`\nVocê não aguenta mais suportar essa dor...`)
+        rls.keyInPause('Pressione [ESPAÇO]...')
+        gameOver(0);
+    }
+
+    console.log('\nPressione [ESPAÇO] para terminar o turno.')
+    rls.keyInPause('', { limit: ' ' })
+}
+
+function run(enemy) {
+    if (Math.random() > 0.5) {
+        console.log("*Ahh. Huff. Ahh.* Eu... *Argh.* Eu consegui fugir... *Argh*")
+        return true
+    } else {
+        console.log(`[${enemy.nome}] Você volta aqui!`)
+        return false
     }
 }
 
