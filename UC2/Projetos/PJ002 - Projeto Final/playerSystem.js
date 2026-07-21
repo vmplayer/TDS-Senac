@@ -6,7 +6,8 @@ let player = {
     atk: "",
     def: "",
     lvl: 0,
-    blood: 100
+    blood: 100,
+    enemiesDefeated: 0
 }
 
 let classes = [
