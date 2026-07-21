@@ -1,6 +1,7 @@
-const maxItems = 20
+let maxItems
 
 let inventory = []
+let backpackLVL = 1
 
 let initItem = [
     {
@@ -44,4 +45,10 @@ function addInitItem() {
     }
 }
 
-module.exports = { inventory, initItem, maxItems, weapons, misc, addInitItem }
+if (backpackLVL === 1) {
+    maxItems = 25
+} else if (backpackLVL === 2) {
+    maxItems = 50
+}
+
+module.exports = { inventory, backpackLVL, initItem, maxItems, weapons, misc, addInitItem }

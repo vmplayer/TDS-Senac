@@ -1,7 +1,7 @@
 const rls = require('readline-sync')
-const { player, classes } = require('./playerSystem.js')
-const { inventory, initItem, maxItems, weapons, misc, addInitItem } = require('./inventoryManager.js')
-const { enemies, activeEnemies } = require('./enemiesSystem.js')
+let { player, classes } = require('./playerSystem.js')
+let { inventory, backpackLVL, initItem, maxItems, weapons, misc, addInitItem } = require('./inventoryManager.js')
+let { enemies, activeEnemies } = require('./enemiesSystem.js')
 
 const cores = {
     white: "\x1b[37m",
@@ -37,6 +37,7 @@ function classSelect() {
                 player.hp = classes[0].hp
                 player.maxhp = classes[0].hp
                 player.atk = classes[0].atk
+                player.def = classes[0].def
                 break
 
             case 2:
@@ -44,6 +45,7 @@ function classSelect() {
                 player.hp = classes[1].hp
                 player.maxhp = classes[1].hp
                 player.atk = classes[1].atk
+                player.def = classes[1].def
                 break   
             
             case 3:
@@ -51,6 +53,7 @@ function classSelect() {
                 player.hp = classes[2].hp
                 player.maxhp = classes[2].hp
                 player.atk = classes[2].atk
+                player.def = classes[2].def
                 break
         
             default:
@@ -156,9 +159,11 @@ function showStats() {
         CLASSE:  ${player.classe}
           VIDA:  ${player.hp}/${player.maxhp}
         ATAQUE:  ${player.atk} (+ATK DA ARMA (EXTRA))
+        DEFESA:  ${player.def}
          NÍVEL:  ${player.lvl}
         SANGUE:  ${player.blood}
-         ITENS:  ${inventory.length}/20
+         ITENS:  ${inventory.length}/${maxItems}
+   NV. MOCHILA:  ${backpackLVL}
 
         [ESPAÇO] Voltar à página principal
     `)
@@ -214,33 +219,33 @@ function achievements() {
 // Combate
 
 function fight(i) {
-    i -= 7
-    activeEnemies = [{...enemies[i]}]
+    i -= 8
+    enemy = {...enemies[i]}
 
     console.clear()
-    console.log(activeEnemies[0])
+    console.log(enemy)
     console.log("Lutando...")
 
-    while(activeEnemies[0].hp > 0 && player.hp > 0) {
+    while(enemy.hp > 0 && player.hp > 0) {
         console.log(`
             === LUTA ===
             
-            [1] - Bater
-            [2] - Mochila
-            [3] - Correr
+            [1] - BATER
+            [2] - ITENS
+            [3] - CORRER
         `)
 
         console.log(`
-            === STATUS ===
-        Inimigo: ${activeEnemies.nome}
-        Vida: ${activeEnemies.hp}
-        Defesa: ${activeEnemies.def}
+        === STATUS DO INIMIGO ===
+        Inimigo: ${enemy.nome}
+        Vida: ${enemy.hp}
+        Defesa: ${enemy.def}
         `)
 
         let fightOption = rls.keyIn('', { limit: '123' })
         switch (fightOption) {
             case '1':
-                hit(i)
+                hit(enemy)
                 break
             
             case '2':
@@ -257,8 +262,7 @@ function fight(i) {
     rls.keyIn('', { limit: ' ' })
 }
 
-function hit() {
-    let enemy = activeEnemies[0]
+function hit(enemy) {
 
     let playerDamage = player.atk - enemy.def
     let enemyDamage = enemy.atk - player.def
@@ -266,6 +270,7 @@ function hit() {
     if (playerDamage > 0) {
         console.log(`Eu tirei ${cores.red}${playerDamage}${cores.reset} pontos de vida dele!`)
         enemy.hp -= playerDamage
+        console.log(player.hp)
     } else {
         console.log()
     }
@@ -273,7 +278,7 @@ function hit() {
     if (enemyDamage > 0) {
         player.hp -= enemyDamage
     } else {
-        console.log("O inimigo é um lixo.")
+        console.log("Ele não conseguiu me bater...")
     }
 
     if (enemyDamage === 0 && playerDamage === 0) {
@@ -282,15 +287,12 @@ function hit() {
 
     if (enemy.hp <= 0) {
         enemy.hp = 0
+        console.log(`Eu consegui... Eu derrotei esse ${enemy.nome}!`)
+        return
     } else if (player.hp <= 0) {
         player.hp = 0
-    }
-
-    if (player.hp <= 0) {
         console.log("Você morreu.")
-    } else if (enemy.hp <= 0) {
-        console.log("Você derrotou o ", enemy)
-        return
+        gameOver(0)
     }
 }
 

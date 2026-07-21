@@ -8,10 +8,10 @@
 | Sistema de Inventário                                                       | yyyyyyyyy |
 | Menu principal                                                              | yyyyyyyyy |
 | Exploração                                                                  | yyyyyyyyy |
-| Combate                                                                     | xxxxxxxxx |
+| Combate                                                                     | --------- |
 | Status do jogador                                                           | yyyyyyyyy |
 | Missões                                                                     | xxxxxxxxx |
-| Morte do jogador                                                            | --------- |
+| Morte do jogador                                                            | yyyyyyyyy |
 | Conclusão                                                                   | --------- |
 | Sistema de Nível e Experiência                                              | --------- |
 
@@ -20,6 +20,6 @@
 | Conquistas                                                                  | xxxxxxxxx |
 | Loja                                                                        | xxxxxxxxx |
 | Chefe final                                                                 | --------- |
-| Itens                                                                       | yyyyyyyyy |
+| Itens                                                                       | xxxxxxxxx |
 | Combate - Esquiva                                                           | xxxxxxxxx |
 | Combate - Crítico                                                           | xxxxxxxxx |
