@@ -3,7 +3,11 @@ let { player, classes } = require('./playerSystem.js')
 let { inventory, backpackLVL, initItem, maxItems, weapons, misc, addInitItem } = require('./inventoryManager.js')
 let { enemies, activeEnemies } = require('./enemiesSystem.js')
 
+let gameEnd = false // Variável para finalizar o jogo
+
+// Cores que serão usadas para colorir o terminal
 const cores = {
+    gray: "\x1b[37m",
     white: "\x1b[37m",
     green: "\x1b[32m",
     red: "\x1b[31m",
@@ -66,6 +70,8 @@ function menu() {
     let menu = true
 
     while (menu) {
+        if (gameEnd) menu = false
+
         console.clear()        
         console.log(`
              === AÇÕES ===
@@ -184,7 +190,7 @@ console.clear()
         } else if (item.type === 'init') {
             console.log(`       ${cores.white}[${i + 1}] - ${inventory[i].nome} [${inventory[i].type}]${cores.reset}`)
         }
-    });
+    })
 
     console.log("\n       [ESPAÇO] Voltar")
     rls.keyIn('', { limit: ' ' })
@@ -276,7 +282,7 @@ function hit(enemy) {
     let playerDamage = Math.max(0, player.atk - enemy.def)
     enemy.hp -= playerDamage
 
-    console.clear();
+    console.clear()
     if (playerDamage > 0) {
         console.log(`\nVocê atacou e tirou ${cores.red}${playerDamage}${cores.reset} de vida do ${enemy.nome}!`)
     } else {
@@ -287,6 +293,7 @@ function hit(enemy) {
     if (enemy.hp <= 0) {
         enemy.hp = 0
         console.log(`\nVocê derrotou o ${enemy.nome}!\n`)
+        player.enemiesDefeated++
         return
     }
 
@@ -306,16 +313,19 @@ function hit(enemy) {
         player.hp = 0
         console.log(`\nVocê não aguenta mais suportar essa dor...`)
         rls.keyInPause('Pressione [ESPAÇO]...')
-        gameOver(0);
+        gameOver(0)
+        console.log('\nPressione [ESPAÇO] para encerrar o jogo.')
+    } else {
+        console.log('\nPressione [ESPAÇO] para terminar o turno.')
     }
 
-    console.log('\nPressione [ESPAÇO] para terminar o turno.')
+    
     rls.keyInPause('', { limit: ' ' })
 }
 
 function run(enemy) {
     if (Math.random() > 0.5) {
-        console.log("*Ahh. Huff. Ahh.* Eu... *Argh.* Eu consegui fugir... *Argh*")
+        console.log(`${cores.gray}*Ahh. Huff. Ahh.*${cores.reset} Eu... ${cores.gray}*Argh.*${cores.reset} Eu consegui fugir... ${cores.gray}*Argh*${cores.reset}`)
         return true
     } else {
         console.log(`[${enemy.nome}] Você volta aqui!`)
@@ -328,15 +338,42 @@ function run(enemy) {
 function gameComplete() {
     console.clear()
     console.log("Final BOM")
+    gameEnd = true
 }
 
 function gameOver(id) {
     console.clear()
     if (id === 0) {
         console.log("Final RUIM - 1")
+        gameEnd = true
+        return
     } else if (id === 1) {
         console.log("Final RUIM - 2")
+        gameEnd = true
+        return
     }
+}
+
+// Missões
+
+function tasks() {
+    let tasks = [
+        {
+            name: "O Caçador de Sombras",
+            description: "Derrote 3 Sombras.",
+            completed: false
+        },
+        {
+            name: "Cara de Pôquer",
+            description: "Derrote 3 Mascarados.",
+            completed: false
+        },
+        {
+            name: "",
+            description: "",
+            completed: false
+        }
+    ]
 }
 
 // Execução do código 

@@ -7,7 +7,8 @@ let player = {
     def: "",
     lvl: 0,
     blood: 100,
-    enemiesDefeated: 0
+    enemiesDefeated: 0,
+    enemiesDefType: []
 }
 
 let classes = [
