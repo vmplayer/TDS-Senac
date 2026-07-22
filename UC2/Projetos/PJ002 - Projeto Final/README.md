@@ -1,6 +1,6 @@
 # RPG de Terminal \[Projeto Final\]
 
-> 
+## Ainda não ta completo, se quiser dar uma enroladinha assim pra ver, sabe?
 
 | Critério                                                                    | Conclusão |
 | --------------------------------------------------------------------------- | --------: |
