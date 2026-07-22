@@ -8,7 +8,9 @@ let player = {
     lvl: 0,
     blood: 100,
     enemiesDefeated: 0,
-    enemiesDefType: []
+    enemiesDefType: [],
+    restTimes: 0,
+    hasEscaped: 0
 }
 
 let classes = [
