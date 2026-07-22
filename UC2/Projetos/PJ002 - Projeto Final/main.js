@@ -14,6 +14,55 @@ const cores = {
     reset: "\x1b[0m"
 }
 
+// Missões que o jogador precisa fazer para desbloquear as conquistas
+let tasks = [
+    {
+        name: "O Caçador de Sombras", // Angra - The Shadow Hunter
+        description: "Derrote uma Sombra.",
+        completed: false
+    },
+    {
+        name: "Cara de Pôquer", // Lady Gaga - Poker Face
+        description: "Derrote um Mascarado.",
+        completed: false
+    },
+    /*{
+        name: "",
+        description: "Derrote O Criador.",
+        completed: false
+    },
+    {
+        name: "",
+        description: "Abra três baús.",
+        completed: false
+    },*/
+    {
+        name: "Ainda Vivo", // Portal 2 OST - Still Alive
+        description: "Descanse 5 vezes.",
+        completed: false
+    },
+    {
+        name: "Fugitivo", // Bon Jovi - Runaway
+        description: "Fuja uma vez.",
+        completed: false
+    }/*,
+    {
+        name: "Cabeça de lixo", // Alice in Chains - Junkhead
+        description: "Compre algo no mercado.",
+        completed: false
+    },
+    {
+        name: "", 
+        description: "Evolua de nível.",
+        completed: false
+    },
+    {
+        name: "",
+        description: "Se cure uma vez.",
+        completed: false
+    }*/
+]
+
 // Funções do menu e configurações básicas 
 
 function nameMask() {
@@ -81,7 +130,7 @@ function menu() {
             [3] - INVENTÁRIO
             [4] - DESCANSAR
             [5] - LOJA
-            [6] - CONQUISTAS
+            [6] - MISSÕES E CONQUISTAS
             [7] - SAIR
         `)
 
@@ -108,6 +157,7 @@ function menu() {
                 break
 
             case '6':
+                achieve()
                 achievements()
                 break
             
@@ -197,12 +247,11 @@ console.clear()
 }
 
 function rest() {
-    let restLimit = 3
-    let restRound
     let addBlood
     console.clear()
-    addBlood = 15
+    addBlood = 7
     player.blood += addBlood
+    player.restTimes++
     console.log("Finalmente em paz...")
     console.log(`[SISTEMA] Você dormiu e recebeu ${addBlood} de sangue.`)
 
@@ -220,7 +269,24 @@ function market() {
 
 function achievements() {
     console.clear()
-    console.log("Visualizando conquistas...")
+    console.log("Visualizando missões e conquistas...")
+
+    console.log(`       === CONQUISTAS === `)
+
+    tasks.forEach((achievement, i) => {
+        let achievementStatus 
+        if (achievement.completed === false) {
+            achievementStatus = "Não Alcançado!"
+        } else {
+            achievementStatus = "Alcançado!"
+        }
+
+        console.log(`
+            [${i + 1}] - ${achievement.name}
+            ${achievement.description}
+            STATUS: ${achievementStatus.toUpperCase()}
+        `)
+    })
 
     console.log("[ESPAÇO] Voltar")
     rls.keyIn('', { limit: ' ' })
@@ -241,16 +307,20 @@ function fight(i) {
             === LUTA ===
             
             [1] - BATER
-            [2] - ITENS
-            [3] - CORRER
+            [2] - CORRER
         `)
 
         console.log(`
-        === STATUS DO INIMIGO === === STATUS DO JOGADOR ===
-         Inimigo: ${enemy.nome}                 Nome: ${player.nome}
-            Vida: ${enemy.hp}                      Vida: ${player.hp} 
-          Defesa: ${enemy.def}                     Defesa: ${player.def}
-        `)
+        === STATUS DO INIMIGO === 
+         Inimigo: ${enemy.nome}                
+            Vida: ${enemy.hp}                       
+          Defesa: ${enemy.def}                     
+        
+        === STATUS DO JOGADOR ===
+            Nome: ${player.nome}
+            Vida: ${player.hp}
+          Defesa: ${player.def}
+          `)
 
         let fightOption = rls.keyIn('', { limit: '123' })
         switch (fightOption) {
@@ -259,10 +329,6 @@ function fight(i) {
                 break
             
             case '2':
-                openInventory()
-                break
-            
-            case '3':
                 if (run(enemy)) return
                 break
         }
@@ -294,6 +360,7 @@ function hit(enemy) {
         enemy.hp = 0
         console.log(`\nVocê derrotou o ${enemy.nome}!\n`)
         player.enemiesDefeated++
+        player.enemiesDefType.push(enemy.type)
         return
     }
 
@@ -326,6 +393,7 @@ function hit(enemy) {
 function run(enemy) {
     if (Math.random() > 0.5) {
         console.log(`${cores.gray}*Ahh. Huff. Ahh.*${cores.reset} Eu... ${cores.gray}*Argh.*${cores.reset} Eu consegui fugir... ${cores.gray}*Argh*${cores.reset}`)
+        player.hasEscaped++
         return true
     } else {
         console.log(`[${enemy.nome}] Você volta aqui!`)
@@ -356,24 +424,26 @@ function gameOver(id) {
 
 // Missões
 
-function tasks() {
-    let tasks = [
-        {
-            name: "O Caçador de Sombras",
-            description: "Derrote 3 Sombras.",
-            completed: false
-        },
-        {
-            name: "Cara de Pôquer",
-            description: "Derrote 3 Mascarados.",
-            completed: false
-        },
-        {
-            name: "",
-            description: "",
-            completed: false
-        }
-    ]
+function achieve() {
+    if (player.enemiesDefType === "Sombra") {
+        tasks[0].completed = true
+    }
+
+    if (player.enemiesDefType === "O Mascarado") {
+        tasks[1].completed = true
+    }
+
+    // if (player.enemiesDefType === 'O Criador') {
+    //     tasks[2].completed = true
+    // }
+
+    if (player.restTimes === '5') {
+        tasks[2].completed = true
+    }
+
+    if (player.hasEscaped) {
+        tasks[3].completed = true
+    }
 }
 
 // Execução do código 
