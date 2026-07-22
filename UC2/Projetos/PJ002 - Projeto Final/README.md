@@ -2,24 +2,24 @@
 
 ## Ainda não ta completo, se quiser dar uma enroladinha assim pra ver, sabe?
 
-| Critério                                                                    | Conclusão |
-| --------------------------------------------------------------------------- | --------: |
-| Cadastro de Personagem                                                      | yyyyyyyyy |
-| Sistema de Inventário                                                       | yyyyyyyyy |
-| Menu principal                                                              | yyyyyyyyy |
-| Exploração                                                                  | yyyyyyyyy |
-| Combate                                                                     | --------- |
-| Status do jogador                                                           | yyyyyyyyy |
-| Missões                                                                     | xxxxxxxxx |
-| Morte do jogador                                                            | yyyyyyyyy |
-| Conclusão                                                                   | --------- |
-| Sistema de Nível e Experiência                                              | --------- |
+| Critério                                                                    | Status       |
+| --------------------------------------------------------------------------- | -----------: |
+| Cadastro de Personagem                                                      | Completo     |
+| Sistema de Inventário                                                       | Atualização  |
+| Menu principal                                                              | Completo     |
+| Exploração                                                                  | Atualização  |
+| Combate                                                                     | Terminando   |
+| Status do jogador                                                           | Completo     |
+| Missões                                                                     | Completo     |
+| Morte do jogador                                                            | Terminando   |
+| Conclusão                                                                   | Em Produção  |
+| Sistema de Nível e Experiência                                              | Não iniciado |
 
-| Critério Extra                                                              | Conclusão |
-| --------------------------------------------------------------------------- | --------: |
-| Conquistas                                                                  | xxxxxxxxx |
-| Loja                                                                        | xxxxxxxxx |
-| Chefe final                                                                 | --------- |
-| Itens                                                                       | xxxxxxxxx |
-| Combate - Esquiva                                                           | xxxxxxxxx |
-| Combate - Crítico                                                           | xxxxxxxxx |
+| Critério Extra                                                              | Conclusão    |
+| --------------------------------------------------------------------------- | -----------: |
+| Conquistas                                                                  | Não iniciado |
+| Loja                                                                        | Não iniciado |
+| Chefe final                                                                 | Atualização  |
+| Itens                                                                       | Não iniciado |
+| Combate - Esquiva                                                           | Não iniciado |
+| Combate - Crítico                                                           | Não iniciado |
