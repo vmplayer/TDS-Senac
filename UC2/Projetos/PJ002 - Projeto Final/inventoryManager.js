@@ -6,17 +6,17 @@ let inventory = []
 
 let initItem = [
     {
-        nome: "Foto queimada",
+        name: "Foto queimada",
         description: "Há algo escrito atrás:\n Agora o co**o de uma alma q*e eu adoro quer mo****\nVo** sem*** *e di*se qu* **o ***e*ia a*** *o* **",
         type: "init"
     },
     {
-        nome: "Ursinho rasgado",
+        name: "Ursinho rasgado",
         description: "Não consigo lembrar de quando ganhei isso... Será que existe algum valor nisso?\nQue perca de tempo...",
         type: "init"
     },
     {
-        nome: "Faca de brinquedo",
+        name: "Faca de brinquedo",
         description: "Uma faca...\nAcho que é só isso mesmo. Um brinquedo velho que insisti em trazer comigo.",
         type: "init"
     }
@@ -26,31 +26,31 @@ let initItem = [
 
 let weapons = [
     { 
-        nome: "Opressão",
+        name: "Opressão",
         description: "A opressão... Como sempre, como sempre, ele sempre faz isso, de novo e de novo.",
         type: "atk",
         atk: 2
     },
     { 
-        nome: "Insulto", 
+        name: "Insulto", 
         description: "Insulto, aquilo que sempre nos falam, né? Eu realmente ligo pra isso?",
         type: "atk", 
         atk: 2
     },
     { 
-        nome: "A Verdade", 
+        name: "A Verdade", 
         description: "Dói, né? Insensível, né?", 
         type: "atk", 
         atk: 2
     },
     { 
-        nome: "Culpa", 
+        name: "Culpa", 
         description: "A sua arma é a culpa.", 
         type: "atk", 
         atk: 2
     },
     { 
-        nome: "Tempo", 
+        name: "Tempo", 
         description: "Tempo, o tempo leva até a flor mais bela, e o que muda? A nova flor vai florescer, e o tempo vai nos deixar com nada além de insetos grunhindo com sua fome e raiva.", 
         type: "atk", 
         atk: 2
@@ -61,14 +61,16 @@ let weapons = [
 
 let misc = [ 
     { 
-        nome: "Atenção", 
+        name: "Atenção", 
         description: "Nunca é demais, né?", 
-        type: "misc"
+        type: "misc",
+        cura: 12
     },
     { 
-        nome: "Entorpecente", 
+        name: "Entorpecente", 
         description: "Pare de se contorcer.", 
-        type: "misc" 
+        type: "misc",
+        cura: 12
     }
 ]
 

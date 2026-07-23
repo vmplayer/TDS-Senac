@@ -55,6 +55,7 @@ Introdução ao pensamento computacional. Desenvolvimento de lógica através de
 #### [UC3](./UC3) - Banco de Dados
 
 * **Referência:** [UC3](https://leosouzasenac.github.io/UC3-26-1M/)
+* **Repositório de referência:** [Acessar UC3-26-1M](https://github.com/LeoSouzaSenac/UC3-26-1M)
 * **Professor:** [Leonardo Souza](https://github.com/LeoSouzaSenac)
 
 #### 🇬🇧 [UC5](./UC5) - Analisar Orientações Técnicas (Inglês I)

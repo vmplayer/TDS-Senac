@@ -1,5 +1,5 @@
 let player = {
-    nome: "",
+    name: "",
     classe: "",
     hp: "",
     maxhp: "",
@@ -18,9 +18,9 @@ let player = {
 // Classes contendo as informações dos jogadores
 
 let classes = [
-    { id: 1, nome: "Guerreiro", hp: 120, atk: 18, def: 12 },
-    { id: 2, nome: "Mago", hp: 80, atk: 25, def: 8 },
-    { id: 3, nome: "Arqueiro", hp: 100, atk: 20, def: 10 }
+    { id: 1, name: "Guerreiro", hp: 120, atk: 18, def: 12 },
+    { id: 2, name: "Mago", hp: 80, atk: 25, def: 8 },
+    { id: 3, name: "Arqueiro", hp: 100, atk: 20, def: 10 }
 ]
 
 module.exports = { player, classes }
