@@ -1,6 +1,8 @@
+// Bibliotecas e arquivos externos
+
 const rls = require('readline-sync')
 let { player, classes } = require('./playerSystem.js')
-let { inventory, backpackLVL, initItem, maxItems, weapons, misc, addInitItem } = require('./inventoryManager.js')
+let { inventory, initItem, maxItems, weapons, misc, addInitItem, rmInitItem, rmItem, removeLastItem } = require('./inventoryManager.js')
 let { enemies, activeEnemies } = require('./enemiesSystem.js')
 
 let gameEnd = false // Variável para finalizar o jogo
@@ -26,16 +28,6 @@ let tasks = [
         description: "Derrote um Mascarado.",
         completed: false
     },
-    /*{
-        name: "",
-        description: "Derrote O Criador.",
-        completed: false
-    },
-    {
-        name: "",
-        description: "Abra três baús.",
-        completed: false
-    },*/
     {
         name: "Ainda Vivo", // Portal 2 OST - Still Alive
         description: "Descanse 5 vezes.",
@@ -45,29 +37,18 @@ let tasks = [
         name: "Fugitivo", // Bon Jovi - Runaway
         description: "Fuja uma vez.",
         completed: false
-    }/*,
-    {
-        name: "Cabeça de lixo", // Alice in Chains - Junkhead
-        description: "Compre algo no mercado.",
-        completed: false
     },
     {
-        name: "", 
-        description: "Evolua de nível.",
+        name: "Vamos dizer pelo dia 9", // Alice in Chains - Sludge Factory
+        description: "Conclua o jogo.",
         completed: false
-    },
-    {
-        name: "",
-        description: "Se cure uma vez.",
-        completed: false
-    }*/
+    }
 ]
 
-// Funções do menu e configurações básicas 
+// Cadastro do jogador
 
 function nameMask() {
     player.nome = rls.question('Digite o seu nome: ')
-    console.log(`Acorde, ${player.nome}.`)
 }
 
 function classSelect() {
@@ -82,38 +63,37 @@ function classSelect() {
         `)
 
         console.log('Se eu pudesse ser um herói, eu seria...')
-        player.classe = rls.questionInt()
+        player.classe = rls.keyIn('', { limit: '123'})
 
         switch (player.classe) {
-            case 1:
+            case '1':
                 player.classe = classes[0].nome
                 player.hp = classes[0].hp
                 player.maxhp = classes[0].hp
                 player.atk = classes[0].atk
                 player.def = classes[0].def
-                break
+            break
 
-            case 2:
+            case '2':
                 player.classe = classes[1].nome
                 player.hp = classes[1].hp
                 player.maxhp = classes[1].hp
                 player.atk = classes[1].atk
                 player.def = classes[1].def
-                break   
+            break   
             
-            case 3:
+            case '3':
                 player.classe = classes[2].nome
                 player.hp = classes[2].hp
                 player.maxhp = classes[2].hp
                 player.atk = classes[2].atk
                 player.def = classes[2].def
-                break
-        
-            default:
-                player.classe = ""
+            break
         }
     }
 }
+
+// Menu principal
 
 function menu() {
     let menu = true
@@ -129,45 +109,43 @@ function menu() {
             [2] - VER STATUS
             [3] - INVENTÁRIO
             [4] - DESCANSAR
-            [5] - LOJA
-            [6] - MISSÕES E CONQUISTAS
-            [7] - SAIR
+            [5] - MISSÕES E CONQUISTAS
+            [6] - SAIR
         `)
 
         let menuOption = rls.keyIn('', {limit: '1234567'})
         switch (menuOption) {
             case '1':
                 explore()
-                break
+            break
 
             case '2':
                 showStats()
-                break
+            break
 
             case '3':
                 openInventory()
-                break
+            break
 
             case '4':
                 rest()
-                break
+            break
 
             case '5':
-                market()
-                break
-
-            case '6':
                 achieve()
                 achievements()
-                break
-            
-            case '7':
+            break
+
+            case '6':
                 console.clear()
                 console.log("Saindo...")
                 menu = false
+            break
         }
     }
 }
+
+// Explorar
 
 function explore() {
     console.clear()
@@ -206,6 +184,8 @@ function addItem(i) {
     }
 }
 
+// Status do jogador
+
 function showStats() {
     console.clear()
     console.log(`
@@ -219,7 +199,6 @@ function showStats() {
          NÍVEL:  ${player.lvl}
         SANGUE:  ${player.blood}
          ITENS:  ${inventory.length}/${maxItems}
-   NV. MOCHILA:  ${backpackLVL}
 INIMIGOS DERTD:  ${player.enemiesDefeated}
 
         [ESPAÇO] Voltar à página principal
@@ -228,23 +207,100 @@ INIMIGOS DERTD:  ${player.enemiesDefeated}
     rls.keyIn('', { limit: ' ' })
 }
 
+// Inventário e uso de itens
+
 function openInventory() {
-console.clear()
+    console.clear()
     console.log("       === INVENTÁRIO ===\n")
 
-    inventory.forEach((item, i) => {
-        if (item.type === 'atk') {
-            console.log(`       ${cores.red}[${i + 1}] - ${inventory[i].nome} [${inventory[i].type}]${cores.reset}`)
-        } else if (item.type === 'misc') {
-            console.log(`       ${cores.green}[${i + 1}] - ${inventory[i].nome} [${inventory[i].type}]${cores.reset}`)
-        } else if (item.type === 'init') {
-            console.log(`       ${cores.white}[${i + 1}] - ${inventory[i].nome} [${inventory[i].type}]${cores.reset}`)
+    if (inventory.length === 0) {
+        console.log("       Ta vazio...")
+        console.log("\n       [ESPAÇO] Voltar")
+        rls.keyIn('', { limit: ' ' })
+        return
+    }
+
+    let count = {}
+    let uniqueItems = []
+    
+    inventory.forEach(item => {
+        if (!item) return
+
+        if (!count[item.nome]) {
+            count[item.nome] = { ...item, qtd: 1 }
+            uniqueItems.push(item)
+        } else {
+            count[item.nome].qtd++
         }
     })
 
-    console.log("\n       [ESPAÇO] Voltar")
-    rls.keyIn('', { limit: ' ' })
+    let invIndex = 1
+    for (let item of uniqueItems) {
+        let cor = cores.white
+        if (item.type === 'atk') cor = cores.red
+        if (item.type === 'misc') cor = cores.green
+
+        let qtdTexto = count[item.nome].qtd > 1 ? ` [x${count[item.nome].qtd}]` : ""
+        console.log(`       ${cor}[${invIndex}] - ${item.nome}${qtdTexto} (${item.type})${cores.reset}`)
+        invIndex++
+    }
+
+    console.log("\n            [W] Remover Itens iniciais")
+    console.log("          [NUM] Usar/Equipar item")
+    console.log("       [ESPAÇO] Voltar")
+    
+    let validKeys = 'W '
+    for (let i = 1; i <= uniqueItems.length; i++) {
+        validKeys += i.toString()
+    }
+
+    let inventoryOption = rls.keyIn('\nOpcao: ', { limit: validKeys }).toUpperCase()
+
+    if (inventoryOption === 'W') {
+        rmInitItem()
+        console.log("\nVocê descartou as memórias iniciais...")
+        rls.keyInPause('', { limit: ' '})
+    } else if (inventoryOption === ' ') {
+        return
+    } else {
+        let selectedNum = parseInt(inventoryOption) - 1
+        let selectedItem = uniqueItems[selectedNum]
+        useItem(selectedItem.nome)
+    }
 }
+
+function useItem(nomeItem) {
+    let realIndex = inventory.findIndex(i => i && i.nome === nomeItem)
+    if (realIndex === -1) return
+    
+    let item = inventory[realIndex]
+
+    if (item.type === 'init') {
+        console.log(`\nIsso é só uma memória... Não pode ser usado.`)
+        rls.keyInPause('', { limit: ' '})
+        return
+    }
+
+    console.clear()
+    console.log(`\nVocê usou: ${item.nome}!`)
+    
+    if (item.type === 'atk') { // O dano não ta entrando, revisa isso depois eu do futuro
+        player.tempAtkBonus += 2
+        player.bonusRounds = 2
+        console.log(`${cores.red}Sua raiva aumenta. Você ganhou +2 de ATK por 2 turnos!${cores.reset}`)
+    } 
+    else if (item.type === 'misc') {
+        let cura = Math.floor(Math.random() * 7) + 4 
+        player.hp += cura
+        if (player.hp > player.maxhp) player.hp = player.maxhp
+        console.log(`${cores.green}O alívio te acalma. Você recuperou ${cura} pontos de Vida!${cores.reset}`)
+    }
+
+    rmItem(realIndex)
+    rls.keyInPause('\nPressione [ESPAÇO] para continuar...', { limit: ' '})
+}
+
+// Descansar
 
 function rest() {
     let addBlood
@@ -259,13 +315,7 @@ function rest() {
     rls.keyIn('', { limit: ' ' })
 }
 
-function market() {
-    console.clear()
-    console.log("Entrando no mercado...")
-
-    console.log("[ESPAÇO] Voltar")
-    rls.keyIn('', { limit: ' ' })
-}
+// Conquistas
 
 function achievements() {
     console.clear()
@@ -273,6 +323,13 @@ function achievements() {
 
     console.log(`       === CONQUISTAS === `)
 
+    showAchievements()
+
+    console.log("[ESPAÇO] Voltar")
+    rls.keyIn('', { limit: ' ' })
+}
+
+function showAchievements() {
     tasks.forEach((achievement, i) => {
         let achievementStatus 
         if (achievement.completed === false) {
@@ -287,9 +344,6 @@ function achievements() {
             STATUS: ${achievementStatus.toUpperCase()}
         `)
     })
-
-    console.log("[ESPAÇO] Voltar")
-    rls.keyIn('', { limit: ' ' })
 }
 
 // Combate
@@ -298,27 +352,27 @@ function fight(i) {
     i -= 8
     enemy = {...enemies[i]}
 
-    console.clear()
-    console.log(enemy)
-    console.log("Lutando...")
-
     while(enemy.hp > 0 && player.hp > 0) {
+        console.clear()
         console.log(`
             === LUTA ===
             
             [1] - BATER
-            [2] - CORRER
+            [2] - INVENTÁRIO
+            [3] - FUGIR
         `)
 
         console.log(`
         === STATUS DO INIMIGO === 
          Inimigo: ${enemy.nome}                
             Vida: ${enemy.hp}                       
+          Ataque: ${enemy.atk}
           Defesa: ${enemy.def}                     
         
         === STATUS DO JOGADOR ===
             Nome: ${player.nome}
             Vida: ${player.hp}
+          Ataque: ${player.atk}
           Defesa: ${player.def}
           `)
 
@@ -326,26 +380,31 @@ function fight(i) {
         switch (fightOption) {
             case '1':
                 hit(enemy)
-                break
-            
+            break
+
             case '2':
+                openInventory()
+            break
+            
+            case '3':
                 if (run(enemy)) return
-                break
+            break
         }
     }
 }
+
 /*
 O jogador usa itens e se prepara >
-O jogador ataca ataca >
+O jogador ataca >
 O sistema verifica se o ataque é válido e a vida do inimigo >
-SE o a vida for <= 0, ele elimina o inimigo, se for maior, o inimigo (sistema) ataca >
+SE a vida for <= 0, ele elimina o inimigo, se for maior, o inimigo (sistema) ataca >
 O sistema verifica se o ataque foi válido e a vida do jogador >
 SE a vida for menor ou igual a 0, ele chama o fim do jogo (gameOver(id)), se for maior,
 Ele retorna pra tela de seleção (primeira parte desse texto)
 */
 
 function hit(enemy) {
-    let playerDamage = Math.max(0, player.atk - enemy.def)
+    let playerDamage = Math.max(0, (player.atk + player.tempAtkBonus) - enemy.def)
     enemy.hp -= playerDamage
 
     console.clear()
@@ -379,15 +438,22 @@ function hit(enemy) {
     if (player.hp <= 0) {
         player.hp = 0
         console.log(`\nVocê não aguenta mais suportar essa dor...`)
-        rls.keyInPause('Pressione [ESPAÇO]...')
-        gameOver(0)
         console.log('\nPressione [ESPAÇO] para encerrar o jogo.')
+        gameOver(0)
     } else {
         console.log('\nPressione [ESPAÇO] para terminar o turno.')
     }
 
     
-    rls.keyInPause('', { limit: ' ' })
+    rls.keyIn('', { limit: ' ' })
+
+    if (player.bonusRounds > 0) {
+        player.bonusRounds--
+        if (player.bonusRounds === 0) {
+            player.tempAtkBonus = 0
+            console.log(`\n${cores.gray}[SISTEMA] O efeito do bônus de ataque passou.${cores.reset}`)
+        }
+    }
 }
 
 function run(enemy) {
@@ -407,6 +473,13 @@ function gameComplete() {
     console.clear()
     console.log("Final BOM")
     gameEnd = true
+
+    console.log(`
+        === CONQUISTAS ALCANÇADAS ===
+    `)
+    achieve()
+    showAchievements()
+    process.exit(0)// Comando do Node para finalizar o jogo (não tava funcionando por causa de Call Stack, então fui direto pelo node mesmo)
 }
 
 function gameOver(id) {
@@ -414,35 +487,32 @@ function gameOver(id) {
     if (id === 0) {
         console.log("Final RUIM - 1")
         gameEnd = true
-        return
     } else if (id === 1) {
         console.log("Final RUIM - 2")
         gameEnd = true
         return
     }
+
+    console.log(`
+        === CONQUISTAS ALCANÇADAS ===
+    `)
+    achieve()
+    showAchievements()
+    process.exit(0) // Comando do Node.js para finalizar o jogo
 }
 
 // Missões
 
 function achieve() {
-    if (player.enemiesDefType === "Sombra") {
-        tasks[0].completed = true
-    }
+    if (player.enemiesDefType.includes("Sombra")) tasks[0].completed = true
+    if (player.enemiesDefType.includes("O Mascarado")) tasks[1].completed = true
+    if (player.restTimes >= 5) tasks[2].completed = true
+    if (player.hasEscaped > 0) tasks[3].completed = true
 
-    if (player.enemiesDefType === "O Mascarado") {
-        tasks[1].completed = true
-    }
-
-    // if (player.enemiesDefType === 'O Criador') {
-    //     tasks[2].completed = true
-    // }
-
-    if (player.restTimes === '5') {
-        tasks[2].completed = true
-    }
-
-    if (player.hasEscaped) {
-        tasks[3].completed = true
+    let win = tasks.slice(0, 4).every(t => t.completed)
+    if (win && !gameEnd) {
+        tasks[4].completed = true
+        gameComplete()
     }
 }
 
