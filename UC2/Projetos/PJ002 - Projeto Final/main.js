@@ -8,7 +8,7 @@ let { enemies, activeEnemies } = require('./enemiesSystem.js')
 let gameEnd = false // Variável para finalizar o jogo
 
 // Cores que serão usadas para colorir o terminal
-const cores = {
+const colors = {
     gray: "\x1b[37m",
     white: "\x1b[37m",
     green: "\x1b[32m",
@@ -48,7 +48,7 @@ let tasks = [
 // Cadastro do jogador
 
 function nameMask() {
-    player.nome = rls.question('Digite o seu nome: ')
+    player.name = rls.question('Digite o seu nome: ')
 }
 
 function classSelect() {
@@ -67,7 +67,7 @@ function classSelect() {
 
         switch (player.classe) {
             case '1':
-                player.classe = classes[0].nome
+                player.classe = classes[0].name
                 player.hp = classes[0].hp
                 player.maxhp = classes[0].hp
                 player.atk = classes[0].atk
@@ -75,7 +75,7 @@ function classSelect() {
             break
 
             case '2':
-                player.classe = classes[1].nome
+                player.classe = classes[1].name
                 player.hp = classes[1].hp
                 player.maxhp = classes[1].hp
                 player.atk = classes[1].atk
@@ -83,7 +83,7 @@ function classSelect() {
             break   
             
             case '3':
-                player.classe = classes[2].nome
+                player.classe = classes[2].name
                 player.hp = classes[2].hp
                 player.maxhp = classes[2].hp
                 player.atk = classes[2].atk
@@ -99,6 +99,7 @@ function menu() {
     let menu = true
 
     while (menu) {
+        achieve() // Se tiver feito todas as conquistas, ele zera o jogo aqui.
         if (gameEnd) menu = false
 
         console.clear()        
@@ -132,7 +133,6 @@ function menu() {
             break
 
             case '5':
-                achieve()
                 achievements()
             break
 
@@ -165,6 +165,8 @@ function explore() {
     rls.keyIn('', { limit: ' ' })
 }
 
+// Adiciona o item no inventário
+
 function addItem(i) {
     if (inventory.length < maxItems) {
         if (i === 0) {
@@ -173,11 +175,11 @@ function addItem(i) {
         } else if (i >= 1 && i < 6) {
             inventory.push(weapons[i - 1])
             player.blood -= 10
-            console.log(weapons[i - 1].nome)
+            console.log(weapons[i - 1].name)
         } else if (i >= 6 && i < 8) {
             inventory.push(misc[i - 6])
             player.blood -= 10
-            console.log(misc[i - 6].nome)
+            console.log(misc[i - 6].name)
         }
     } else {
         console.log("Meu corpo não aguenta mais que isso. Não.")
@@ -191,10 +193,10 @@ function showStats() {
     console.log(`
         === STATUS DO JOGADOR ===
         
-          NOME:  ${player.nome}
+          NOME:  ${player.name}
         CLASSE:  ${player.classe}
           VIDA:  ${player.hp}/${player.maxhp}
-        ATAQUE:  ${player.atk} (+ATK DA ARMA (EXTRA))
+        ATAQUE:  ${player.atk} [${player.tempAtkBonus}]
         DEFESA:  ${player.def}
          NÍVEL:  ${player.lvl}
         SANGUE:  ${player.blood}
@@ -207,7 +209,7 @@ INIMIGOS DERTD:  ${player.enemiesDefeated}
     rls.keyIn('', { limit: ' ' })
 }
 
-// Inventário e uso de itens
+// Inventário e uso de itens === TO REFATORANDO AQUI ===
 
 function openInventory() {
     console.clear()
@@ -226,22 +228,22 @@ function openInventory() {
     inventory.forEach(item => {
         if (!item) return
 
-        if (!count[item.nome]) {
-            count[item.nome] = { ...item, qtd: 1 }
+        if (!count[item.name]) {
+            count[item.name] = { ...item, qtd: 1 }
             uniqueItems.push(item)
         } else {
-            count[item.nome].qtd++
+            count[item.name].qtd++
         }
     })
 
     let invIndex = 1
     for (let item of uniqueItems) {
-        let cor = cores.white
-        if (item.type === 'atk') cor = cores.red
-        if (item.type === 'misc') cor = cores.green
+        let cor = colors.white
+        if (item.type === 'atk') cor = colors.red
+        if (item.type === 'misc') cor = colors.green
 
-        let qtdTexto = count[item.nome].qtd > 1 ? ` [x${count[item.nome].qtd}]` : ""
-        console.log(`       ${cor}[${invIndex}] - ${item.nome}${qtdTexto} (${item.type})${cores.reset}`)
+        let qtdTexto = count[item.name].qtd > 1 ? ` [x${count[item.name].qtd}]` : ""
+        console.log(`       ${cor}[${invIndex}] - ${item.name}${qtdTexto} (${item.type})${colors.reset}`)
         invIndex++
     }
 
@@ -265,12 +267,12 @@ function openInventory() {
     } else {
         let selectedNum = parseInt(inventoryOption) - 1
         let selectedItem = uniqueItems[selectedNum]
-        useItem(selectedItem.nome)
+        useItem(selectedItem.name)
     }
 }
 
-function useItem(nomeItem) {
-    let realIndex = inventory.findIndex(i => i && i.nome === nomeItem)
+function useItem(nameItem) {
+    let realIndex = inventory.findIndex(i => i && i.name === nameItem)
     if (realIndex === -1) return
     
     let item = inventory[realIndex]
@@ -282,18 +284,18 @@ function useItem(nomeItem) {
     }
 
     console.clear()
-    console.log(`\nVocê usou: ${item.nome}!`)
+    console.log(`\nVocê usou: ${item.name}!`)
     
     if (item.type === 'atk') { // O dano não ta entrando, revisa isso depois eu do futuro
         player.tempAtkBonus += 2
         player.bonusRounds = 2
-        console.log(`${cores.red}Sua raiva aumenta. Você ganhou +2 de ATK por 2 turnos!${cores.reset}`)
+        console.log(`${colors.red}Sua raiva aumenta. Você ganhou +2 de ATK por 2 turnos!${colors.reset}`)
     } 
-    else if (item.type === 'misc') {
+    else if (item.type === 'misc') { // Ei eu de cima, a vida também não ta
         let cura = Math.floor(Math.random() * 7) + 4 
         player.hp += cura
         if (player.hp > player.maxhp) player.hp = player.maxhp
-        console.log(`${cores.green}O alívio te acalma. Você recuperou ${cura} pontos de Vida!${cores.reset}`)
+        console.log(`${colors.green}O alívio te acalma. Você recuperou ${cura} pontos de Vida!${colors.reset}`)
     }
 
     rmItem(realIndex)
@@ -303,13 +305,12 @@ function useItem(nomeItem) {
 // Descansar
 
 function rest() {
-    let addBlood
-    console.clear()
-    addBlood = 7
-    player.blood += addBlood
+    player.blood += 7
     player.restTimes++
+
+    console.clear()
     console.log("Finalmente em paz...")
-    console.log(`[SISTEMA] Você dormiu e recebeu ${addBlood} de sangue.`)
+    console.log(`[SISTEMA] Você dormiu e recebeu 7 de sangue.`)
 
     console.log("\n[ESPAÇO] Voltar")
     rls.keyIn('', { limit: ' ' })
@@ -349,7 +350,7 @@ function showAchievements() {
 // Combate
 
 function fight(i) {
-    i -= 8
+    i -= 8 // Reduz o total de itens que vem antes dos inimigos no explore().
     enemy = {...enemies[i]}
 
     while(enemy.hp > 0 && player.hp > 0) {
@@ -364,13 +365,13 @@ function fight(i) {
 
         console.log(`
         === STATUS DO INIMIGO === 
-         Inimigo: ${enemy.nome}                
+         Inimigo: ${enemy.name}                
             Vida: ${enemy.hp}                       
           Ataque: ${enemy.atk}
           Defesa: ${enemy.def}                     
         
         === STATUS DO JOGADOR ===
-            Nome: ${player.nome}
+            Nome: ${player.name}
             Vida: ${player.hp}
           Ataque: ${player.atk}
           Defesa: ${player.def}
@@ -399,7 +400,7 @@ O jogador ataca >
 O sistema verifica se o ataque é válido e a vida do inimigo >
 SE a vida for <= 0, ele elimina o inimigo, se for maior, o inimigo (sistema) ataca >
 O sistema verifica se o ataque foi válido e a vida do jogador >
-SE a vida for menor ou igual a 0, ele chama o fim do jogo (gameOver(id)), se for maior,
+SE a vida for menor ou igual a 0, ele chama o fim do jogo (gameOver()), se for maior,
 Ele retorna pra tela de seleção (primeira parte desse texto)
 */
 
@@ -409,15 +410,15 @@ function hit(enemy) {
 
     console.clear()
     if (playerDamage > 0) {
-        console.log(`\nVocê atacou e tirou ${cores.red}${playerDamage}${cores.reset} de vida do ${enemy.nome}!`)
+        console.log(`\nVocê atacou e tirou ${colors.red}${playerDamage}${colors.reset} de vida do ${enemy.name}!`)
     } else {
-        console.log(`\nSeu ataque nem arranhou a defesa do ${enemy.nome}...`)
+        console.log(`\nSeu ataque nem arranhou a defesa do ${enemy.name}...`)
     }
 
     // === CHECAGEM DO INIMIGO ===
     if (enemy.hp <= 0) {
         enemy.hp = 0
-        console.log(`\nVocê derrotou o ${enemy.nome}!\n`)
+        console.log(`\nVocê derrotou o ${enemy.name}!\n`)
         player.enemiesDefeated++
         player.enemiesDefType.push(enemy.type)
         return
@@ -428,10 +429,10 @@ function hit(enemy) {
     player.hp -= enemyDamage
 
     if (enemyDamage > 0) {
-        console.log(`Ai! Isso d- dó- dói tanto. Is- Maldito ${enemy.nome}. Maldi- Maldito!
+        console.log(`Ai! Isso d- dó- dói tanto. Is- Maldito ${enemy.name}. Maldi- Maldito!
             Acho que perdi uns ${enemyDamage} pontos de vida.`)
     } else {
-        console.log(`Esse ${enemy.nome} errou o golpe. Isso foi por pouco.`)
+        console.log(`Esse ${enemy.name} errou o golpe. Isso foi por pouco.`)
     }
 
     // === CHECAGEM DO JOGADOR ===
@@ -439,7 +440,7 @@ function hit(enemy) {
         player.hp = 0
         console.log(`\nVocê não aguenta mais suportar essa dor...`)
         console.log('\nPressione [ESPAÇO] para encerrar o jogo.')
-        gameOver(0)
+        gameOver()
     } else {
         console.log('\nPressione [ESPAÇO] para terminar o turno.')
     }
@@ -451,18 +452,18 @@ function hit(enemy) {
         player.bonusRounds--
         if (player.bonusRounds === 0) {
             player.tempAtkBonus = 0
-            console.log(`\n${cores.gray}[SISTEMA] O efeito do bônus de ataque passou.${cores.reset}`)
+            console.log(`\n${colors.gray}[SISTEMA] O efeito do bônus de ataque passou.${colors.reset}`)
         }
     }
 }
 
 function run(enemy) {
     if (Math.random() > 0.5) {
-        console.log(`${cores.gray}*Ahh. Huff. Ahh.*${cores.reset} Eu... ${cores.gray}*Argh.*${cores.reset} Eu consegui fugir... ${cores.gray}*Argh*${cores.reset}`)
+        console.log(`${colors.gray}*Ahh. Huff. Ahh.*${colors.reset} Eu... ${colors.gray}*Argh.*${colors.reset} Eu consegui fugir... ${colors.gray}*Argh*${colors.reset}`)
         player.hasEscaped++
         return true
     } else {
-        console.log(`[${enemy.nome}] Você volta aqui!`)
+        console.log(`[${enemy.name}] Você volta aqui!`)
         return false
     }
 }
@@ -473,31 +474,27 @@ function gameComplete() {
     console.clear()
     console.log("Final BOM")
     gameEnd = true
+    achieve()
 
     console.log(`
         === CONQUISTAS ALCANÇADAS ===
     `)
-    achieve()
     showAchievements()
+    
     process.exit(0)// Comando do Node para finalizar o jogo (não tava funcionando por causa de Call Stack, então fui direto pelo node mesmo)
 }
 
-function gameOver(id) {
+function gameOver() {
     console.clear()
-    if (id === 0) {
-        console.log("Final RUIM - 1")
-        gameEnd = true
-    } else if (id === 1) {
-        console.log("Final RUIM - 2")
-        gameEnd = true
-        return
-    }
+    console.log("Final RUIM")
+    gameEnd = true
+    achieve()
 
     console.log(`
         === CONQUISTAS ALCANÇADAS ===
     `)
-    achieve()
     showAchievements()
+    
     process.exit(0) // Comando do Node.js para finalizar o jogo
 }
 
@@ -521,7 +518,7 @@ function achieve() {
 console.clear()
 console.log('\n=== CRIAR PERSONAGEM ===\n')
 
-nameMask() // Chama a função de criar o nome da máscara
+nameMask() // Chama a função de criar o name da máscara
 classSelect() // Chama a função de selecionar a classe da máscara
 
 console.clear()
