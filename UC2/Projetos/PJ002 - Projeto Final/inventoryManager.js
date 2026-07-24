@@ -64,13 +64,13 @@ let misc = [
         name: "Atenção", 
         description: "Nunca é demais, né?", 
         type: "misc",
-        cura: 12
+        heal: 12
     },
     { 
         name: "Entorpecente", 
         description: "Pare de se contorcer.", 
         type: "misc",
-        cura: 12
+        heal: 12
     }
 ]
 

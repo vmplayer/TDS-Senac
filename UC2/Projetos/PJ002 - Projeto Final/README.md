@@ -45,7 +45,7 @@ Tenho alguns erros que vou tentar resolver amanhã, como o dano não estar entra
 
 Bem, vou corrigir tudo antes do final de semana, mas é visível que ficou muito mais complexo do que deveria, e muito confuso também. Planejo corrigir mesmo que você já tenha avaliado, mas se quiser enrolar, né...
 
-Faltam apenas estas funções para o jogo ficar
+Faltam apenas estas funções para o jogo ficar completo para avaliação: 
 
 `main.js`
 ```js
