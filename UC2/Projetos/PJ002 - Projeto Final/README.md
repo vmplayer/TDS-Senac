@@ -53,7 +53,7 @@ Acredito que os requisitos obrigatórios exigidos por você (professor) estejam 
 
 Quero otimizar o jogo ainda com o tempo para completar a tabela com tudo, mas, vou deixar abaixo o ID do commit onde está pronto para a avaliação:
 
-`se tu pegou antes de mim atualizar com o código, você foi rápido...`
+`b071ade`
 
 Faltam apenas estas funções para o jogo ficar totalmente completo: 
 
