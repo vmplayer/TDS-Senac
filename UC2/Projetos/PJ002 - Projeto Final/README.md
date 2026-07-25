@@ -1,15 +1,17 @@
 # RPG de Terminal \[Projeto Final\]
 
-> [!IMPORTANT]
-> LEIA O FINAL DO ARQUIVO
+### Como iniciar
 
-## Ainda não ta completo, se quiser dar uma enroladinha assim pra ver, sabe?
+**Para instalar a biblioteca necessária:** `npm init -y && npm i readline-sync`
 
-### Se já quiser ver agora:
+**Para abrir o projeto (ps):** `node .\main.js`
 
-Abra o jogo utilizando `node .\main.js`, faça as missões e, quando completar elas, pressione `6` para ver as conquistas.
+### Como completar o jogo:
 
-No jogo, você precisará concluir todas as **missões**, elas são também as **conquistas**.
+Ao jogar, pressione `5` no menu principal para acessar a interface de **Missões e Conquistas**, lá terá todas as conquistas necessárias para terminar o jogo.
+
+> [!TIP]
+> O requisito para fazer a missão "Vamos Dizer Pelo Dia 9" é concluir todas as outras missões.
 
 ### Inimigos:
 
@@ -37,43 +39,44 @@ Todos os itens de ataque darão exatamente **2 PONTOS** de dano.
 
 Todos os itens de defesa darão exatamente **12 PONTOS** de vida.
 
+Em alguma atualização futura eu vou desenvolver itens que darão mais defesa, o que impedirá que inimigos como **O Criador** possam te acertar.
+
+### Sobre os finais:
+
+**Final RUIM** e **Final BOM**: Os nomes são esses por causa da lore, mas, pela falta de tempo, não pude desenvolver a bossfight final. Quando eu conseguir, vou aprofundar os **Finais Ruins 1 e 2** e o **Final Bom**.
+
 ---
 
 ### Sobre o fato de ainda estar incompleto:
 
-Tenho alguns erros que vou tentar resolver amanhã, como o dano não estar entrando como extra e também preciso deixar esse código mais legível, inventei coisa demais, cortei muita coisa (como a loja) no final e deixei os restos mortais aí.
+Acredito que os requisitos obrigatórios exigidos por você (professor) estejam todos aí dentro.
 
-Bem, vou corrigir tudo antes do final de semana, mas é visível que ficou muito mais complexo do que deveria, e muito confuso também. Planejo corrigir mesmo que você já tenha avaliado, mas se quiser enrolar, né...
+Quero otimizar o jogo ainda com o tempo para completar a tabela com tudo, mas, vou deixar abaixo o ID do commit onde está pronto para a avaliação:
 
-Faltam apenas estas funções para o jogo ficar completo para avaliação: 
+`se tu pegou antes de mim atualizar com o código, você foi rápido...`
 
-`main.js`
-```js
-openInventory()
-useItem()
-hit(enemy)
-```
+Faltam apenas estas funções para o jogo ficar totalmente completo: 
 
 ## Status dos critérios exigidos:
 
 | Critério                                                                    | Status           |
 | --------------------------------------------------------------------------- | ---------------: |
 | Cadastro de Personagem                                                      | Completo         |
-| Sistema de Inventário                                                       | Completo \[REF\] |
+| Sistema de Inventário                                                       | Completo         |
 | Menu principal                                                              | Completo         |
 | Exploração                                                                  | Completo         |
-| Combate                                                                     | Completo \[REF\] |
+| Combate                                                                     | Completo         |
 | Status do jogador                                                           | Completo         |
 | Missões                                                                     | Completo         |
 | Morte do jogador                                                            | Completo         |
 | Conclusão                                                                   | Completo         |
 | Conquistas                                                                  | Completo         |
-| Itens                                                                       | Concluindo       |
+| Itens                                                                       | Completo         |
 
 | Planejo fazer depois                                                        | Conclusão        |
 | --------------------------------------------------------------------------- | ---------------: |
 | Sistema de Nível e Experiência                                              | Não iniciado     |
 | Loja                                                                        | Não iniciado     |
-| Chefe final                                                                 | Atualização      |
+| Chefe final                                                                 | Não iniciado     |
 | Combate - Esquiva                                                           | Não iniciado     |
 | Combate - Crítico                                                           | Não iniciado     |

@@ -77,8 +77,8 @@ let misc = [
 // Funções
 
 function addInitItem() {
-    for (let i of initItem) {
-        inventory.unshift(initItem[i])
+    for (let item of initItem) {
+        inventory.unshift(item)
     }
 }
 

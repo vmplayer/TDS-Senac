@@ -161,7 +161,7 @@ function explore() {
         addItem(itemReceived) 
     }
 
-    console.log('[ESPAÇO] Voltar')
+    console.log('[ESPAÇO] - Voltar')
     rls.keyIn('', { limit: ' ' })
 }
 
@@ -196,14 +196,14 @@ function showStats() {
           NOME:  ${player.name}
         CLASSE:  ${player.classe}
           VIDA:  ${player.hp}/${player.maxhp}
-        ATAQUE:  ${player.atk} [${player.tempAtkBonus}]
+        ATAQUE:  ${player.atk} [+${player.tempAtkBonus}]
         DEFESA:  ${player.def}
          NÍVEL:  ${player.lvl}
         SANGUE:  ${player.blood}
          ITENS:  ${inventory.length}/${maxItems}
 INIMIGOS DERTD:  ${player.enemiesDefeated}
 
-        [ESPAÇO] Voltar à página principal
+        [ESPAÇO] - Voltar à página principal
     `)
 
     rls.keyIn('', { limit: ' ' })
@@ -216,11 +216,13 @@ function openInventory() {
     console.log("       === INVENTÁRIO ===\n")
 
     if (inventory.length === 0) {
-        console.log("       Ta vazio...")
+        console.log("       Aqui parece tão vazio...")
         console.log("\n       [ESPAÇO] Voltar")
         rls.keyIn('', { limit: ' ' })
         return
     }
+
+    // Sistema para exibir o inventário com os itens unificados.
 
     let count = {}
     let uniqueItems = []
@@ -238,29 +240,29 @@ function openInventory() {
 
     let invIndex = 1
     for (let item of uniqueItems) {
-        let cor = colors.white
-        if (item.type === 'atk') cor = colors.red
-        if (item.type === 'misc') cor = colors.green
+        let color = colors.white
+        if (item.type === 'atk') color = colors.red
+        if (item.type === 'misc') color = colors.green
 
         let qtdTexto = count[item.name].qtd > 1 ? ` [x${count[item.name].qtd}]` : ""
-        console.log(`       ${cor}[${invIndex}] - ${item.name}${qtdTexto} (${item.type})${colors.reset}`)
+        console.log(`       ${color}[${invIndex}] - ${item.name}${qtdTexto} (${item.type})${colors.reset}`)
         invIndex++
     }
 
-    console.log("\n            [W] Remover Itens iniciais")
-    console.log("          [NUM] Usar/Equipar item")
-    console.log("       [ESPAÇO] Voltar")
+    console.log("\n            [W] - Remover Itens iniciais")
+    console.log("          [NUM] - Usar item (em combate)")
+    console.log("       [ESPAÇO] - Voltar")
     
-    let validKeys = 'W '
+    let validKeys = ' W'
     for (let i = 1; i <= uniqueItems.length; i++) {
         validKeys += i.toString()
     }
 
-    let inventoryOption = rls.keyIn('\nOpcao: ', { limit: validKeys }).toUpperCase()
+    let inventoryOption = rls.keyIn('   ', { limit: validKeys }).toUpperCase()
 
     if (inventoryOption === 'W') {
         rmInitItem()
-        console.log("\nVocê descartou as memórias iniciais...")
+        console.log("\nAcho que isso era tudo que era ligado ao meu passado...\nBem, tanto faz.")
         rls.keyInPause('', { limit: ' '})
     } else if (inventoryOption === ' ') {
         return
@@ -278,28 +280,30 @@ function useItem(nameItem) {
     let item = inventory[realIndex]
 
     if (item.type === 'init') {
-        console.log(`\nIsso é só uma memória... Não pode ser usado.`)
+        console.log(`\nIsso é só uma memória... Não ganho nada usando isso.`)
         rls.keyInPause('', { limit: ' '})
         return
     }
 
     console.clear()
     console.log(`\nVocê usou: ${item.name}!`)
-    
-    if (item.type === 'atk') { // O dano não ta entrando, revisa isso depois eu do futuro
+    console.log(`Descrição: ${item.description}`)
+        
+
+    if (item.type === 'atk') {
         player.tempAtkBonus += 2
         player.bonusRounds = 2
         console.log(`${colors.red}Sua raiva aumenta. Você ganhou +2 de ATK por 2 turnos!${colors.reset}`)
     } 
-    else if (item.type === 'misc') { // Ei eu de cima, a vida também não ta
-        let cura = Math.floor(Math.random() * 7) + 4 
-        player.hp += cura
+    else if (item.type === 'misc') {
+        let heal = 12
+        player.hp += heal
         if (player.hp > player.maxhp) player.hp = player.maxhp
-        console.log(`${colors.green}O alívio te acalma. Você recuperou ${cura} pontos de Vida!${colors.reset}`)
+        console.log(`${colors.green}Isso acalma tanto... Provavelmente recuperei ${heal} pontos de Vida com isso.${colors.reset}`)
     }
 
     rmItem(realIndex)
-    rls.keyInPause('\nPressione [ESPAÇO] para continuar...', { limit: ' '})
+    rls.keyInPause('\n[ESPAÇO] - Continuar', { limit: ' '})
 }
 
 // Descansar
@@ -312,7 +316,7 @@ function rest() {
     console.log("Finalmente em paz...")
     console.log(`[SISTEMA] Você dormiu e recebeu 7 de sangue.`)
 
-    console.log("\n[ESPAÇO] Voltar")
+    console.log("\n[ESPAÇO] - Voltar")
     rls.keyIn('', { limit: ' ' })
 }
 
@@ -326,7 +330,7 @@ function achievements() {
 
     showAchievements()
 
-    console.log("[ESPAÇO] Voltar")
+    console.log("[ESPAÇO] - Voltar")
     rls.keyIn('', { limit: ' ' })
 }
 
@@ -373,7 +377,7 @@ function fight(i) {
         === STATUS DO JOGADOR ===
             Nome: ${player.name}
             Vida: ${player.hp}
-          Ataque: ${player.atk}
+          Ataque: ${player.atk + player.tempAtkBonus}
           Defesa: ${player.def}
           `)
 
@@ -410,21 +414,21 @@ function hit(enemy) {
 
     console.clear()
     if (playerDamage > 0) {
-        console.log(`\nVocê atacou e tirou ${colors.red}${playerDamage}${colors.reset} de vida do ${enemy.name}!`)
+        console.log(`\nEu acertei! Eu acertei e isso deve ter tirado uns ${colors.red}${playerDamage}${colors.reset} pontos de vida do ${enemy.name}!`)
     } else {
-        console.log(`\nSeu ataque nem arranhou a defesa do ${enemy.name}...`)
+        console.log(`\nEu nem arranhei a defesa do ${enemy.name}...`)
     }
 
-    // === CHECAGEM DO INIMIGO ===
+    // Checagem da vida do inimigo
     if (enemy.hp <= 0) {
         enemy.hp = 0
-        console.log(`\nVocê derrotou o ${enemy.name}!\n`)
+        console.log(`\nE-Eu derrotei! Eu derrotei ${enemy.name}!\n`)
         player.enemiesDefeated++
         player.enemiesDefType.push(enemy.type)
         return
     }
 
-    // === CONTRA-ATAQUE DO INIMIGO ===
+    // Se tiver sobrevivido, o contra-ataque do inimigo
     let enemyDamage = Math.max(0, enemy.atk - player.def)
     player.hp -= enemyDamage
 
@@ -435,10 +439,11 @@ function hit(enemy) {
         console.log(`Esse ${enemy.name} errou o golpe. Isso foi por pouco.`)
     }
 
-    // === CHECAGEM DO JOGADOR ===
+    // Checagem da vida do jogador
     if (player.hp <= 0) {
         player.hp = 0
-        console.log(`\nVocê não aguenta mais suportar essa dor...`)
+        console.clear()
+        console.log(`\nO mundo... Os sussurros... Acho que estou afundando em alucinações...`)
         console.log('\nPressione [ESPAÇO] para encerrar o jogo.')
         gameOver()
     } else {
@@ -447,6 +452,8 @@ function hit(enemy) {
 
     
     rls.keyIn('', { limit: ' ' })
+
+    // Remove os bônus de ATK que o jogador recebeu
 
     if (player.bonusRounds > 0) {
         player.bonusRounds--

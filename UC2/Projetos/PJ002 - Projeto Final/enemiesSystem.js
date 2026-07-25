@@ -11,4 +11,3 @@ let enemies = [
 let activeEnemies = []
 
 module.exports = { enemies, activeEnemies }
- 

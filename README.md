@@ -44,15 +44,17 @@ Atualmente, o foco está em construir uma base sólida nas seguintes ferramentas
 Foco em entender as demandas do mercado, estruturar a arquitetura da informação e desenvolver protótipos funcionais que resolvam problemas reais.
 * **Professor:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
 * **Repositório de Referência:** [Acessar UC1_TDS26-1M](https://github.com/dhDSouza/UC1_TDS26-1M)
+* **Projeto final da UC:** [UC1 - Projeto Final](https://trello.com/b/AkJ7hqjj)
 
 #### 💻 [UC2](./UC2) - Algoritmos
 Introdução ao pensamento computacional. Desenvolvimento de lógica através de algoritmos, manipulação da linguagem de máquina e interações diretas com o sistema através de comandos de terminal.
 * **Professor:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
 * **Repositório de Referência:** [Acessar UC2_TDS26-1M](https://github.com/dhDSouza/UC2_TDS26-1M)
+* **Projeto final da UC:** [UC2 - Projeto Final](https://github.com/vmplayer/TDS-Senac/tree/main/UC2/Projetos/PJ002%20-%20Projeto%20Final)
 
 ### ⏳ Em Andamento (Módulo Atual)
 
-#### [UC3](./UC3) - Banco de Dados
+#### 🎲 [UC3](./UC3) - Banco de Dados
 
 * **Referência:** [UC3](https://leosouzasenac.github.io/UC3-26-1M/)
 * **Repositório de referência:** [Acessar UC3-26-1M](https://github.com/LeoSouzaSenac/UC3-26-1M)
@@ -65,6 +67,11 @@ Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender
 * **Projeto de jogos desenvolvido pelo [Professor Leonardo](https://github.com/LeoSouzaSenac):** [English Quest](https://leosouzasenac.github.io/englishGame/)
 * **Projeto de atividades desenvolvido pela [Professora Dalvana](https://github.com/DalvanaRibeiro):** [UC5ToBe](https://senacrs.my.canva.site/uc5tobe)
 
+#### [UC6](./UC6) Projeto Integrador 1 (PI 1)
+Desenvolvimento prático aplicando o conhecimento acumulado até aqui.
+
+* **Repositório de referência:** [UC6](https://github.com/LeoSouzaSenac/PI-26-1M)
+
 ---
 
 ### 🔮 Grade Completa do Curso (Planejamento Futuro)
@@ -75,7 +82,6 @@ Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender
 | Código | Unidade Curricular | Foco Previsto |
 | :---: | :--- | :--- |
 | **UC4** | Programação Orientada a Objetos | Conceitos avançados de arquitetura de software (POO) usando **TypeScript**. |
-| **UC6** | Projeto Integrador 1 (PI 1) | Desenvolvimento prático aplicando o conhecimento acumulado até aqui. |
 | **UC7** | Elaborar Orientações Técnicas | Escrita técnica, documentações de APIs e relatórios em inglês (Inglês II). |
 | **UC8** | Programação para Desktop | Fundamentos e sintaxe da linguagem **Java**. |
 | **UC9** | Desenvolver Aplicações Desktop | Criação de sistemas de software robustos com interface gráfica em **Java**. |
