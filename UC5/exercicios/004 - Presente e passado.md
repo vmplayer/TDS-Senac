@@ -110,3 +110,77 @@
 * They were not a tall and proud people. | They weren't a tall and proud people. -> Eles não eram um povo alto e orgulhoso.
 * They were not having fun. | They weren't having fun. -> Eles não estavam se divertindo.
 * They were not bleeding just to know they were alive. | They weren't bleeding just to know they were alive. -> Eles não sangravam só para saberem que estavam vivos.
+
+## Interrogativa \[Presente | Passado\]
+
+### I (Eu)
+* Am I a teacher? | Was I a teacher? 
+* Am I a robot? | Was I a robot?
+* Am I the dark knight? | Was I the dark knight?
+
+### You (Você)
+* Are you my friend? | Were you my friend?
+* Are you going to kill me? | Were you going to kill me?
+* Why are you such a idiot? | Were you such a idiot?
+
+### He (Ele)
+* Is he in a happy day? | Was he in a happy day?
+* He is not happy, is he feeling glad? | He was not happy, was he feeling glad?
+* Is he a pupper fish? | Was he a pupperfish?
+
+### She (Ela)
+* Is she very cool? | Was she very cool?
+* Is she having a nightmare right now? | Was she having a nightmare right now?
+* Is she in trouble? | Was she in trouble?
+
+### It (Isso)
+* Is it a sunny day? | Was it a sunny day?
+* Is it only a dream? | Was it only a dream?
+* Is it a random way to nowhere? | Was it a random way to nowhere?
+
+### We (Nós)
+* Are we all friends here? | Were we all friends here?
+* Are we going down now? | Were we going down now?
+* Are we just starfish on the beach? | Were we just starfish on the sea?
+
+### They (Eles)
+* Are they a tall and proud people? | Were they a tall and proud people?
+* Are they having fun? | Were they having fun?
+* Are they bleeding just to know they're alive? | Were they bleeding just to know they're alive?
+
+## Futuro
+
+### I (Eu)
+* I will be a teacher. -> Eu serei um professor.
+* I will be a robot. -> Eu serei um robô.
+* I will be the dark knight. - Eu serei o cavaleiro das trevas.
+
+### You (Você)
+* You will be my friend. -> Você vai ser meu amigo.
+* Will you kill me? -> Você vai me matar?
+* You will be such a idiot? -> Você vai ser tão idiota?
+
+### He (Ele)
+* He will be in a happy day. -> Ele vai estar em um dia feliz.
+* He will be not happy, he will be feeling glad. -> Ele não estará feliz, ele se sentirá contente.
+* He will be a pupper fish. -> Ele vai ser um baiacu.
+
+### She (Ela)
+* She will be very cool. -> Ela vai ser muito legal.
+* She will be having a nightmare... -> Ela vai ter um pesadelo...
+* She will be in trouble. -> Ela estará encrencada.
+
+### It (Isso)
+* It will be a sunny day. -> Vai ser um dia ensolarado.
+* It will be only a dream. -> Isso será apenas um sonho.
+* It will be a random way to nowhere. -> Isso será apenas um caminho aleatório para lugar nenhum.
+
+### We (Nós)
+* We will be all friends here. -> Todos nós vamos ser amigos aqui.
+* We will be going down now. -> Nós vamos estar descendo agora.
+* We will be just starfish on the beach. -> Nós vamos ser apenas estrelas do mar na praia.
+
+### They (Eles)
+* They will be a tall and proud people. -> Eles serão um povo forte e orgulhoso.
+* They will be having fun. -> Eles estarão se divertindo.
+* They will be bleeding just to know they're alive. -> Eles vão sangrar só para saberem que estão vivos.
