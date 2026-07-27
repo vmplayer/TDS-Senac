@@ -73,3 +73,40 @@
 * They were a tall and proud people. -> Eles eram um povo alto e orgulhoso.
 * They were having fun. -> Eles estavam se divertindo.
 * They were bleeding just to know they were alive. -> Eles sangravam só para saberem que estavam vivos.
+
+## Passado + Negativa + Contraída
+
+### I (Eu)
+* I was not a teacher. | I wasn't a teacher. -> Eu não era um professor.
+* I was not a robot. | I wasn't a robot. -> Eu não era um robô.
+* I was not the dark knight. | I wasn't the dark knight. -> Eu não fui o cavaleiro das trevas.
+
+### You (Você)
+* You were not my friend. | You weren't my friend -> Você era meu amigo.
+* Were not you going to kill me? | Weren't you going to kill me? -> Você não ia me matar?
+* Why were not you such a idiot? | Why weren't you such a idiot? -> Por quê você não foi tão idiota?
+
+### He (Ele)
+* He was not in a happy day. | He wasn't in a happy day. -> Ele não estava em um dia feliz.
+* He was not happy, he was not feeling glad. | He wasn't happy, he wasn't feeling glad. -> Ele não estava feliz, ele não se sentia contente.
+* He was not a pupper fish. He wasn't a pupperfish -> Ele não era um baiacu.
+
+### She (Ela)
+* She was not very cool. | She wasn't very cool. -> Ela não era muito legal.
+* She was not having a nightmare that time... | She wasn't not having a nightmare that time. -> Ela não estava tendo um pesadelo aquela hora...
+* She was not in trouble. | She wasn't in trouble. -> Ela não estava encrencada.
+
+### It (Isso)
+* It was not a sunny day. | It wasn't a sunny day. -> Não foi um dia ensolarado.
+* It was not only a dream. | It wasn't only a dream. -> Isso não foi apenas um sonho.
+* It was not only a random way to nowhere. | Ot wasn't only a random way to nowhere. -> Isso não foi apenas um caminho aleatório para lugar nenhum.
+
+### We (Nós)
+* We were not all friends here. | We weren't all friends here. -> Não éramos todos amigos aqui.
+* We were not going down there. | We weren't going down there. -> Nós não estávamos descendo lá.
+* We were not just starfish on the beach. | We weren't just starfish on the beach. -> Nós não éramos apenas estrelas do mar na praia.
+
+### They (Eles)
+* They were not a tall and proud people. | They weren't a tall and proud people. -> Eles não eram um povo alto e orgulhoso.
+* They were not having fun. | They weren't having fun. -> Eles não estavam se divertindo.
+* They were not bleeding just to know they were alive. | They weren't bleeding just to know they were alive. -> Eles não sangravam só para saberem que estavam vivos.
