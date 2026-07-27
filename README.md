@@ -67,14 +67,14 @@ Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender
 * **Projeto de jogos desenvolvido pelo [Professor Leonardo](https://github.com/LeoSouzaSenac):** [English Quest](https://leosouzasenac.github.io/englishGame/)
 * **Projeto de atividades desenvolvido pela [Professora Dalvana](https://github.com/DalvanaRibeiro):** [UC5ToBe](https://senacrs.my.canva.site/uc5tobe)
 
-#### [UC6](./UC6) Projeto Integrador 1 (PI 1)
-Desenvolvimento prático aplicando o conhecimento acumulado até aqui.
+#### 📓 [UC6](./UC6) Projeto Integrador 1 (PI 1)
+Desenvolvimento de projetos para o mundo e para o portfólio.
 
 * **Repositório de referência:** [UC6](https://github.com/LeoSouzaSenac/PI-26-1M)
 
 ---
 
-### 🔮 Grade Completa do Curso (Planejamento Futuro)
+### 🔮 Próximas UCs
 
 <details>
 <summary>📂 Clique aqui para expandir e visualizar as próximas UCs</summary>
