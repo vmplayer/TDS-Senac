@@ -29,7 +29,7 @@ Para facilitar a navegação, as aulas e projetos estão organizados diretamente
 
 Atualmente, o foco está em construir uma base sólida nas seguintes ferramentas e fundamentos:
 
-- **Linguagens & Ambientes:** JavaScript (ES6+), NodeJS, SQL Terminal (Windows)
+- **Linguagens & Ambientes:** JavaScript (ES6+), NodeJS, SQL, Terminal (Windows)
 - **Metodologias de Projetos:** Análise de mercado, Arquitetura da Informação, Planejamento de Banco de Dados Criação de *Briefings* e Prototipagem.
 - **Leitura Técnica:** Interpretação de documentações e códigos em Língua Inglesa.
 - **Versionamento:** Git & GitHub.
