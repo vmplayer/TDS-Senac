@@ -12,11 +12,9 @@ O MER é a sigla para Modelo Entidade Relacionamento. Ele é, basicamente, um **
 
 Ao fazer o MER, nós estamos cuidando para que nosso banco saia exatamente como necessário, sem mais nem menos. Assim, evitamos retrabalho lá na frente.
 
-## Onde e como eu posso fazer este desenho?
+## Onde e como eu posso fazer esse desenho?
 
-O MER pode ser feito em qualquer plataforma ou programa que permita desenhar. Existem programas específicos para trabalhar com ele, mas você pode usar até mesmo o Canva, o Photoshop, o Paint ou até mesmo numa folha de papel. No entanto, eu recomendo utilizar os programas específicos como o BrModelo: 
-
-- https://www.brmodeloweb.com/
+O MER pode ser feito em qualquer plataforma ou programa que permita desenhar. Existem alguns programas específicos para trabalhar com ele, mas você pode usar até mesmo o Canva, o PhotoShop, o Paint ou até mesmo numa folha de papel. No entanto, eu recomendo utilizar os programas específicos como o <u>[BRModelo Web](https://www.brmodeloweb.com/)</u>.
 
 ## Qual o passo a passo para desenharmos?
 
