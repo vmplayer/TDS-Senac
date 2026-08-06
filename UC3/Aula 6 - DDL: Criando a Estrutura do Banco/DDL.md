@@ -77,7 +77,16 @@ Pense só, criamos nossas tabelas mas aí vem o pensamgento: "Puts! Os clientes 
     ALTER TABLE clientes MODIFY COLUMN nome VARCHAR(150);
 ```
 
-### Alterar e renomear uma coluna
+#### Alterar e renomear uma tabela
+```SQL
+    ALTER TABLE nome_da_tabela RENAME TO nome_novo;
+```
+
+```SQL
+    ALTER TABLE itens_vendas RENAME TO itens;
+```
+
+#### Alterar e renomear uma coluna
 ```SQL
     ALTER TABLE nome_da_tabela RENAME COLUMN nome_antigo TO nome_novo;
 ```
@@ -86,11 +95,44 @@ Pense só, criamos nossas tabelas mas aí vem o pensamgento: "Puts! Os clientes 
     ALTER TABLE itens_vendas RENAME COLUMN quantidade TO qtd;
 ```
 
-### Alterar e remover uma coluna
+#### Alterar e remover uma coluna
 ```SQL
     ALTER TABLE nome_da_tabela RENAME COLUMN nome_da_coluna;
 ```
 
 ```SQL
     ALTER TABLE clientes DROP COLUMN cpf;
+```
+
+#### Alterar e adicionar chaves estrangeiras (foreign keys)
+```SQL
+    ALTER TABLE nome_da_tabela ADD CONSTRAINT nome_da_fk FOREIGN KEY (nome_da_coluna_fk) REFERENCES nome_da_tabela_referenciada(nome_da_coluna_referenciada);
+```
+
+```SQL
+    ALTER TABLE itens_vendas ADD CONSTRAINT fk_vendas FOREIGN KEY (id_venda) REFERENCES vendas(id_venda);
+```
+
+### Passo 6 - Mandando as tabelas de arrasta
+
+Como que fazemos para apagar nossas tabelas? Se criarmos uma tabela que não vamos mais precisar, temos que ter um jeito de mandar ela pro vinagre.
+
+> PRECISAMOS TER CUIDADO, POIS ESTE COMANDO É **IRREVERSÍVEL**!
+
+#### Apagar uma tabela inteira
+```SQL
+    DROP TABLE IF EXISTS nome_da_tabela;
+```
+
+```SQL
+    DROP TABLE IF EXISTS itens;
+```
+
+#### Apagar um banco de dados inteiro
+```SQL
+    DROP DATABASE IF EXISTS nome_do_bando_de_dados;
+```
+
+```SQL
+    DROP DATABASE IF EXISTS loja_bicicletas;
 ```
