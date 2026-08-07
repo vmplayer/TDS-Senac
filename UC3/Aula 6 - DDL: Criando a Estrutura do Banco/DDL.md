@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS bicicletas(
     id_bicicletas INT PRIMARY KEY AUTO_INCREMENT
     modelo VARCHAR(50) NOT NULL
     preco DECIMAL(10,2) NOT NULL
-)
+);
 ```
 Isso se traduz para *criar tabela chamada nome_da_tabela se ela já não existir*.
 
