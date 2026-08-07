@@ -39,21 +39,23 @@ CREATE TABLE IF NOT EXISTS bicicletas(
     preco DECIMAL(10,2) NOT NULL
 )
 ```
-. Isso se traduz para *criar tabela chamada nome_da_tabela se ela já não existir*.
+Isso se traduz para *criar tabela chamada nome_da_tabela se ela já não existir*.
 
 
-### Passo 4 - Adicionando uma chave estrangeira
+### PASSO 4 - Tabelas com CHAVES ESTRANGEIRAS
+Para criarmos uma chave estrangeira (FOREIGN KEY) precisamos de um comando específico.
+Vamos então criar a tabela 'vendas', que liga com 'clientes', deste modo:
 
-```SQL
-CREATE TABLE IF NOT EXISTS itens_vendas (
-	id_itens_venda INT PRIMARY KEY AUTO_INCREMENT,
-    id_venda INT NOT NULL,
-    id_bicicleta INT NOT NULL,
-    quantidade INT NOT NULL DEFAULT 1,
-    FOREIGN KEY (id_venda) REFERENCES vendas(id_venda),
-    FOREIGN KEY (id_bicicleta) REFERENCES bicicletas(id_bicicleta)
-);
+```sql
+    CREATE TABLE IF NOT EXISTS vendas(
+        id_venda INT PRIMARY KEY AUTO_INCREMENT,
+        id_cliente INT NOT NULL,
+        FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+    );
 ```
+No exemplo acima, logo após criarmos a coluna `id_cliente`, usamos o comando `FOREIGN KEY`. O `(id_cliente)` indica qual a coluna que é nossa chave estrangeira. O `REFERENCES clientes(id_clientes)` indica com qual tabela (clientes) e em qual coluna desta tabela (id_clientes) estamos fazendo a ligação. Sempre crie todas as colunas primeiro e só final crie todas as foreign keys.
+
+### Tente você mesmo(a): agora você deve criar a tabela itens_vendas. Utilize o que você aprendeu sobre foreign keys. Lembre-se: nesta tabela são 2 foreign keys diferentes. Crie primeiro as colunas e só depois crie as chaves estrangeiras.
 
 ### Passo 5 - Como alterar tabelas já criadas
 
