@@ -56,9 +56,10 @@ Introdução ao pensamento computacional. Desenvolvimento de lógica através de
 
 #### 🎲 [UC3](./UC3) - Banco de Dados
 Aulas sobre planejamento de banco de dados, desenvolvimento prático utilizando SGBDs como MySQL Workbench e aplicação em projetos pessoais.
-* **Referência:** [UC3](https://leosouzasenac.github.io/UC3-26-1M/)
-* **Repositório de referência:** [Acessar UC3-26-1M](https://github.com/LeoSouzaSenac/UC3-26-1M)
 * **Professor:** [Leonardo Souza](https://github.com/LeoSouzaSenac)
+* **Repositório de referência:** [Acessar UC3-26-1M](https://github.com/LeoSouzaSenac/UC3-26-1M)
+* **Referência:** [UC3](https://leosouzasenac.github.io/UC3-26-1M/)
+* **Atividade:** [Guilda SQL](https://leosouzasenac.github.io/exercicio-banco-de-dados/)
 
 #### 📑 [UC5](./UC5) - Analisar Orientações Técnicas (Inglês I)
 Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender documentações oficiais, tratamento de erros em terminais e fóruns técnicos na língua inglesa.
