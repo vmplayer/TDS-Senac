@@ -20,6 +20,7 @@ Para facilitar a navegação, as aulas e projetos estão organizados diretamente
 ├── UC2/                  # Algoritmos e Lógica de Programação (JavaScript & Terminal)
 ├── UC3/                  # Manipulação de dados (MySQL, PostgreSQL, Oracle Server, SQL Server)
 ├── UC5/                  # Analisar Orientações Técnicas (Documentação & Inglês Técnico)
+├── UC6/                  # Projeto Integrador
 └── README.md             # Documentação do repositório
 ```
 
