@@ -1,9 +1,3 @@
-**Nome:** Valdir Gabriel Pinheiro de Lara
-
-Tem só duas aí, mas talvez alguma seja boa o suficiente?
-
----
-
 ## Idéia 1
 
 ### O que é?
