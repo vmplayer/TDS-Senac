@@ -35,3 +35,16 @@ Aqui eu deixo uma tabela com as principais diferenças:
 | Resolução Temporal     | Tempo real (minuto a minuto)           | A cada 2 a 12 dias (passagem orbital)   |
 | Custo de Escala        | Alto (requer compra de novos sensores) | Baixo (código roda globalmente livre)   |
 
+## Idéia 2
+
+### O que é?
+
+Um sistema de gestão para empresas (podem ser pequenas, ou até mesmo grandes).
+
+Algumas vezes, as empresas não conseguem fazer boa gestão financeira, dos trabalhadores e de todos os recursos que fornecem para as equipes e funcionários.
+
+Desenvolver um sistema open-source seria capaz de ajudar empresas pequenas, como pessoas que até então trabalhavam por conta e estão iniciando na área, e também algumas empresas grandes a ter um sistema que realmente funciona.
+
+### E se...
+
+E se isso fosse aplicado em órgãos governamentais? Talvez pudesse ser feita uma boa gestão sobre quanto cada pessoa ganha, como os professores, médicos e políticos (que infelizmente eles tem salário)
