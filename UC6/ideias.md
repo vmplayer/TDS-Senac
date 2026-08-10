@@ -1,5 +1,7 @@
 **Nome:** Valdir Gabriel Pinheiro de Lara
 
+Tem só duas aí, mas talvez alguma seja boa o suficiente?
+
 ---
 
 ## Idéia 1
@@ -20,7 +22,7 @@ As pessoas que mais sofrem com isso são os **agricultores** e pessoas que vivem
 
 E se no lugar de aplicar isso na área rural, fosse aplicado na área urbana? Como calcular a umidade do solo e do ar poderia evitar problemas em grandes centros e pontos mais afastados dos rios ou vegetação?
 
-E se essa idéia fosse juntada com a [Idéia 2](#idéia-2), garantindo que o usuário receba auxilio em casos pós-desastre no mesmo aplicativo?
+E se essa idéia visasse garantir que o usuário receba auxilio em casos pós-desastre no mesmo aplicativo?
 
 A tecnologia já realizaria isso automaticamente, enviando alertas e atualizando seu status frequentemente.
 
