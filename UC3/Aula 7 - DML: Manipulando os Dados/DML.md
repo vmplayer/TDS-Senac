@@ -38,3 +38,7 @@ Para alterarmos uma informação que já existe em uma tabela (exemplo: mudar o 
 ```sql
     UPDATE nome_da_tabela SET nome_da_coluna = novo_valor WHERE condicao;
 ```
+
+```sql
+    UPDATE livros SET titulo = "O Inferno de Xablau" WHERE id = 7;
+```
