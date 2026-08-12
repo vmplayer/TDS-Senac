@@ -42,3 +42,8 @@ Para alterarmos uma informação que já existe em uma tabela (exemplo: mudar o 
 ```sql
     UPDATE livros SET titulo = "O Inferno de Xablau" WHERE id = 7;
 ```
+
+Trocar o titulo de 2 livros
+Trocar o autor de 2 livros
+
+DELETAR o livro de ID 4
