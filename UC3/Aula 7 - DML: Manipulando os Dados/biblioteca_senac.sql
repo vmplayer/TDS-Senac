@@ -27,3 +27,11 @@ INSERT INTO livros (titulo, autor) VALUES (
 );
 
 UPDATE livros SET titulo = "O Inferno de Xablau" WHERE id = 7;
+
+UPDATE livros SET titulo = "Mataram Nosso Zagueiro" WHERE id = 4;
+UPDATE livros SET titulo = "Uma Breve História dos Tratores em Ucraniano" WHERE id = 5;
+
+UPDATE livros SET autor = "Clodes Rivas Martos" WHERE id = 4;
+UPDATE livros SET autor = "Marina Lewycka" WHERE id = 5;
+
+DELETE FROM livros WHERE id = 6;
