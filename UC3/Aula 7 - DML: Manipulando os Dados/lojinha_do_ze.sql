@@ -60,6 +60,6 @@ ALTER TABLE produtos MODIFY COLUMN categoria VARCHAR(80) NOT NULL;
 ALTER TABLE itens_venda ADD CONSTRAINT fk_item_produto FOREIGN KEY (id_produto) REFERENCES produtos(id_produto);
 
 DELETE FROM itens_venda WHERE id_item = 2;
-DROP TABLE testes_estagiario; -- essa tabela nem existe, mas ta ai (???)
+DROP TABLE testes_estagiario; -- Essa tabela nem existe, mas ta ai (???)
 
-DROP DATABASE lojinha_do_ze;
+DROP DATABASE lojinha_do_ze; -- NÃO EXECUTAR
