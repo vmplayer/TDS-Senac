@@ -1,4 +1,4 @@
-# DML = Como inserir, atualizar e deletar informações dentro das tabelas
+# DML - Como inserir, atualizar e deletar informações dentro das tabelas
 
 ## DML significa `Data Manipulation Language`, ou `Linguagem de Manipulação de Dados`. Através dela nós conseguimos inserir dados novos, atualizá-los e/ou deletá-los.
 
