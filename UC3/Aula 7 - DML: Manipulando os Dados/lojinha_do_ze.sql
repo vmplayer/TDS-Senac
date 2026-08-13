@@ -46,3 +46,20 @@ INSERT INTO clientes (nome, telefone, saldo_fiado) VALUES
 INSERT INTO vendas (id_cliente, data_venda) VALUES (2, "2026-08-12");
 INSERT INTO itens_venda (id_venda, id_produto, quantidade) VALUES (1, 1, 2);
 INSERT INTO itens_venda (id_venda, id_produto, quantidade) VALUES (1, 2, 1);
+
+UPDATE produtos SET estoque = 18 WHERE id_produto = 1;
+UPDATE produtos SET preco = 2.25 WHERE id_produto = 2;
+UPDATE clientes SET saldo_fiado = 0 WHERE id_cliente = 1;
+
+DELETE FROM produtos WHERE id_produto = 4;
+
+ALTER TABLE produtos ADD COLUMN validade DATE NOT NULL DEFAULT "2027-01-01";
+ALTER TABLE clientes RENAME COLUMN telefone TO whatsapp;
+ALTER TABLE produtos MODIFY COLUMN categoria VARCHAR(80) NOT NULL;
+
+ALTER TABLE itens_venda ADD CONSTRAINT fk_item_produto FOREIGN KEY (id_produto) REFERENCES produtos(id_produto);
+
+DELETE FROM itens_venda WHERE id_item = 2;
+DROP TABLE testes_estagiario; -- essa tabela nem existe, mas ta ai (???)
+
+DROP DATABASE lojinha_do_ze;
