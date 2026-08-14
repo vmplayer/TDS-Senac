@@ -66,4 +66,4 @@ Selecione apenas o modelo e marcas.
 
 Selecione apenas os carros que tiverem a marca `FERRARI`.
 
-Selecione a mara e a cor, mas apenas dos carros que tiverem a cor `vermelho`. Coloque o apelido Marca_Do_Carro e Cor_Do_Carro.
+Selecione a marca e a cor, mas apenas dos carros que tiverem a cor `vermelho`. Coloque o apelido Marca_Do_Carro e Cor_Do_Carro.
