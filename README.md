@@ -53,7 +53,7 @@ Introdução ao pensamento computacional. Desenvolvimento de lógica através de
 * **Repositório de Referência:** [Acessar UC2_TDS26-1M](https://github.com/dhDSouza/UC2_TDS26-1M)
 * **Projeto final da UC:** [UC2 - Projeto Final](https://github.com/vmplayer/TDS-Senac/tree/main/UC2/Projetos/PJ002%20-%20Projeto%20Final)
 
-### ⏳ Em Andamento (Módulo Atual)
+### ⏳ Em Andamento
 
 #### 🎲 [UC3](./UC3) - Banco de Dados
 Aulas sobre planejamento de banco de dados, desenvolvimento prático utilizando SGBDs como MySQL Workbench e aplicação em projetos pessoais.
