@@ -26,4 +26,4 @@ SELECT modelo, marca FROM carros;
 
 SELECT * FROM carros WHERE marca = "Ferrari";
 
-SELECT marca AS Marca_Do_Carro, cor AS Cor_Do_Carro FROM carros WHERE cor = "vermelho"
+SELECT marca AS Marca_Do_Carro, cor AS Cor_Do_Carro FROM carros WHERE cor = "Vermelho";
