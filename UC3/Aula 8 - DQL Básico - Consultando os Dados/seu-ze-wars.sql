@@ -95,3 +95,43 @@ ALTER TABLE clientes ADD COLUMN compras_semana INT;
 UPDATE clientes SET compras_semana = 20 WHERE id_cliente = 1;
 UPDATE clientes SET compras_semana = 42 WHERE id_cliente = 2;
 UPDATE clientes SET compras_semana = 2 WHERE id_cliente = 3;
+
+SELECT * FROM clientes WHERE pontos >= 90 OR compras_semana > 5;
+
+SELECT * FROM produtos WHERE NOT categoria = "Bebidas Alcoolicas Importadas";
+
+SELECT * FROM clientes WHERE pontos BETWEEN 50 AND 90;
+
+SELECT * FROM produtos WHERE categoria IN ('Bebidas', 'Salgados', 'Padaria');
+
+-- Criando os prêmios
+CREATE TABLE IF NOT EXISTS premios (
+    id_premio INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL
+);
+INSERT INTO premios (nome) VALUES
+("Viagem para Osasco"),
+("Banheira Espacial"),
+("Sabre de luz"),
+("Kit Jogo de Panelas");
+
+SELECT * FROM premios WHERE nome LIKE 'Kit%';
+
+SELECT * FROM premios WHERE nome LIKE '%Espacial';
+
+-- Adicionando a Arlene ao sistema
+INSERT INTO clientes (nome, whatsapp, saldo_fiado, pontos, categoria_favorita, compras_semana) VALUES 
+("Arlene", "51993421242", 0.00, 42, "Bebidas Alcoolicas", 11);
+
+SELECT * FROM clientes WHERE nome LIKE '%Arlene%';
+
+-- Adicionando o ano de cadastro para os clientes
+ALTER TABLE clientes ADD COLUMN ano_cadastro INT;
+UPDATE clientes SET ano_cadastro = 2010 WHERE id_cliente = 1;
+UPDATE clientes SET ano_cadastro = 1992 WHERE id_cliente = 2;
+UPDATE clientes SET ano_cadastro = 2004 WHERE id_cliente = 3;
+UPDATE clientes SET ano_cadastro = 2026 WHERE id_cliente = 4;
+INSERT INTO clientes (nome, whatsapp, saldo_fiado, pontos, categoria_favorita, compras_semana, ano_cadastro) VALUES 
+("Cristóvão Colombo", "51993422142", 0.00, 199, "Bebidas Alcoolicas", 0, 1984);
+
+SELECT * FROM clientes WHERE ano_cadastro LIKE '198_';
