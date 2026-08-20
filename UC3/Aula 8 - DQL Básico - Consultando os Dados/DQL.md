@@ -54,16 +54,177 @@
     SELECT * FROM livros WHERE autor = "J. R. R. Xablau";
 ```
 
-### Exercício:
+### Passo 6 - Como selecionar tudo de uma tabela que seja DIFERENTE de algo (mostra tudo menos aquele valor)
 
-Crie uma tabela carros, com id_carro, modelo, cor e marca
+```sql
+    -- Seleciona todos os itens MENOS aqueles com o valor especificado.
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna <> valor;
+```
 
-Insira pelo menos 10 carros, divididos entre 3 marcas e 2 cores.
+```sql
+    SELECT * FROM livros
+    WHERE genero <> 'Fantasia';
+```
 
-Selecione TUDO da tabela carros.
+### Passo 7.1 - Como selecionar apenas valores que são maiores que algo
+```sql
+    -- Seleciona itens que tenham o preço MAIOR que 50
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna > valor;
+```
 
-Selecione apenas o modelo e marcas.
+```sql
+    SELECT * FROM livros
+    WHERE preco > 50;
+```
 
-Selecione apenas os carros que tiverem a marca `FERRARI`.
+### Passo 7.2 - Como selecionar apenas valores que são menores que algo
+```sql
+    -- Seleciona itens que tenham o preço MENOR que 30
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna < valor;
+```
 
-Selecione a marca e a cor, mas apenas dos carros que tiverem a cor `vermelho`. Coloque o apelido Marca_Do_Carro e Cor_Do_Carro.
+```sql
+    SELECT * FROM livros
+    WHERE preco < 30;
+```
+
+### Passo 8.1 - Como selecionar valores que são MAIORES OU IGUAIS a algo
+```sql
+    -- Seleciona itens que tenham o valor MAIOR OU IGUAL a algo
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna >= valor;
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE preco >= 50;
+```
+
+### Passo 8.2 - Como selecionar valores que são MENORES OU IGUAIS a algo
+```sql
+    -- Seleciona itens que tenham o valor MENOR OU IGUAL a algo
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna <= valor;
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE preco <= 50;
+```
+
+### Passo 9 - Como selecionar com duas ou mais condições ao mesmo tempo
+```sql
+    -- Seleciona itens que tenham a primeira condição mas que também tem o preço MENOR QUE o valor
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna = valor AND nome_da_coluna < valor;
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE genero = 'Fantasia' AND preco < 60;
+```
+
+### Passo 10 - Como selecionar com uma condição ou outra ao mesmo tempo
+```sql
+    -- Seleciona itens que tenham ou a primeira condição, ou a segunda
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna = valor OR nome_da_coluna = valor;
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE genero = 'Fantasia' OR genero = 'Distopia';
+```
+
+### Passo 11 - Como selecionar EXCLUINDO determinado valor de consulta (funciona parecido com o DIFERENTE)
+```sql
+    -- Seleciona todos os itens, MENOS o valor da condição
+    SELECT selecao FROM nome_da_tabela
+    WHERE NOT nome_da_coluna = valor;
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE NOT genero = 'Fantasia';
+```
+
+### Passo 12 - Como selecionar apenas valores entre determinado intervalo
+```sql
+    -- Seleciona apenas itens cuja condição está entre valor 1 e valor 2
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna BETWEEN valor AND valor;
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE preco BETWEEN 20 AND 50;
+```
+
+### Passo 13 - Como selecionar apenas valores entre os que listarmos
+```sql
+    -- Seleciona apenas os itens que estejam de acordo com os valores da condição (podem ser mais que dois valores)
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna IN (valor, valor, valor);
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE genero IN ('Fantasia', 'Romance')
+```
+
+```sql
+    -- Também podemos combinar condições usando AND e OR, por exemplo:
+    SELECT * FROM livros
+    WHERE genero IN ('Fantasia', 'Romance') AND preco > 30;
+```
+
+### Passo 14.1 - Como selecionar apenas um valor que COMEÇA com tal caractere
+```sql
+    -- Seleciona apenas itens que começam com valor
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna LIKE 'valor%';
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE titulo LIKE 'O%';
+```
+
+### Passo 14.2 - Como selecionar um valor que TERMINA com tal caractere
+```sql
+    -- Seleciona apenas itens que terminam com o valor exigido
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna LIKE '%valor';
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE titulo LIKE '%Xablau';
+```
+
+### Passo 14.3 - Como selecionar um valor que CONTÉM tal(is) caracteres
+```sql
+    -- Seleciona apenas itens que tenham o valor da condição em algum lugar
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna LIKE '%valor%';
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE titulo LIKE '%aventuras%';
+```
+
+### Passo 14.4 - Como selecionar um valor que tem um ou mais caracteres 'faltando'
+```sql
+    -- Seleciona um ano tendo uma década de 80 sem se importar se é 81, 81, 83, etc.
+    SELECT selecao FROM nome_da_tabela
+    WHERE nome_da_coluna LIKE 'valo_';
+```
+
+```sql
+    SELECT * FROM livros
+    WHERE ano_publicacao LIKE '198_';
+```
