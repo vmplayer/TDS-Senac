@@ -219,12 +219,49 @@
 
 ### Passo 14.4 - Como selecionar um valor que tem um ou mais caracteres 'faltando'
 ```sql
-    -- Seleciona um ano tendo uma década de 80 sem se importar se é 81, 81, 83, etc.
+    -- Seleciona um valor que contenha a palavra 'valo', sem se importar se a última letra for 'r', 'a', 'b', {...}
     SELECT selecao FROM nome_da_tabela
     WHERE nome_da_coluna LIKE 'valo_';
 ```
 
 ```sql
+    -- Seleciona um ano tendo uma década de 80 sem se importar se é 81, 81, 83, etc.
     SELECT * FROM livros
     WHERE ano_publicacao LIKE '198_';
+```
+
+### Passo 15 - Como selecionar algo e ordenar por ordem alfabética/numérica
+
+```sql
+    -- ESSE COMANDO É O PADRÃO DO ORDER BY, NÃO SENDO OBRIGATÓRIO O USO DE "ASC"
+    -- Ordena os itens pelo nome da coluna, de A a Z, de 0 a 9.
+    SELECT selecao FROM nome_da_tabela
+    ORDER BY nome_da_coluna ASC; -- ASCENDENTE
+```
+
+```sql
+    -- Ordena os itens pelo nome da coluna, de Z a A, de 9 a 0.
+    SELECT selecao FROM nome_da_tabela
+    ORDER BY nome_da_coluna DESC; -- DESCENDENTE
+```
+
+```sql
+    -- Ordena os livros pelo título, de ordem decrescente
+    SELECT * FROM livros
+    ORDER BY titulo DESC;
+```
+
+### Passo 16 - Como limitar o número de resultados de um SELECT
+
+```sql
+    -- Imprime apenas 5 itens
+    SELECT selecao FROM nome_da_tabela
+    LIMIT 5;
+```
+
+```sql
+    -- Seleciona todos os livros onde o ano de publicação seja maior que 1943 e que esteja disponível, do primeiro ao último, até 3 livros
+    SELECT * FROM livros
+    WHERE ano_publicacao > 1943 AND disponivel
+    ORDER BY ano_publicacao LIMIT 3;
 ```
