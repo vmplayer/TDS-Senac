@@ -265,3 +265,84 @@
     WHERE ano_publicacao > 1943 AND disponivel
     ORDER BY ano_publicacao LIMIT 3;
 ```
+
+### Passo 17 - Como contar o número de registros
+Podemos fazer isso utilizando a função de agregação `COUNT(*)`. Ela conta quantos registros existem na nossa tabela que obedecem a tal condição (se houver).
+
+```sql
+    -- Conta quantos itens existem na tabela
+    SELECT COUNT(nome_da_coluna) FROM nome_da_tabela;
+```
+
+```sql
+    -- Conta quantos filmes existem na tabela
+    SELECT COUNT(*) FROM filme;
+```
+
+```sql
+    -- Conta quantos filmes de ação existem na tabela
+    SELECT COUNT(*) FROM filme WHERE genero = 'Ação';
+```
+
+```sql
+    -- Conta quantos filmes existem sem contar valores nulos
+    SELECT COUNT(nome_da_coluna) FROM filme;
+```
+
+### Passo 18 - Como somar balores de uma tabela
+Para somar qualquer valor numérico (NUMERICO) podemos usar a função SUM(nome_da_coluna). ELa faz a soma de todos os valores que selecionamos, com ou sem WHERE.
+
+```sql
+    SELECT SUM(nome_da_coluna) FROM filme;
+```
+
+```sql
+    -- Soma toda a coluna bilheteria
+    SELECT SUM(bilheteria) FROM filme;
+```
+
+```sql
+    -- Soma toda a bilheteria dos filmes de 2020 em diante
+    SELECT SUM(bilheteria) FROM filme WHERE ano_lancamento >= 2020;
+```
+
+### Passo 19 - Como calcular média de valores de uma coluna
+Podemos calcular a média NUMÉRICA de valores de uma coluna utilizando a função `AVG(nome_da_coluna)`;
+
+```sql
+    -- Calcula a média de todos os valores da coluna exigida
+    SELECT AVG(nome_da_coluna) FROM nome_da_tabela;
+```
+
+```sql
+    -- Calcula a média de bilheteria de todos os filmes
+    SELECT AVG(bilheteria) FROM filme;
+```
+
+```sql
+    -- Calcla a média de bilheteria só dos filmes com a nota igual ou menor que 7.
+    SELECT AVG(bilheteria) FROM filme WHERE nota <= 7;
+```
+
+### Passo 20 - Como calcular o MENOR valor e o MAIOR valor
+Se a gente precisar encontrar o menor e o maior valor dentro de uma coluna, usamos o `MAX(nome_da_coluna)` e o `MIN(nome_da_coluna)`.
+
+```sql
+    -- Encontrar o item com o MENOR valor da coluna
+    SELECT MIN(nome_da_coluna) FROM nome_da_tabela
+```
+
+```sql
+    -- Encontrar o filme com a MENOR nota
+    SELECT MIN(nota) FROM filme;
+```
+
+```sql
+    -- Encontrar o item com o MAIOR valor da coluna
+    SELECT MAX(nome_da_coluna) FROM nome_da_tabela
+```
+
+```sql
+    -- Encontrar o filme com a MAIOR nota
+    SELECT MAX(nota) FROM filme;
+```
