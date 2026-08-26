@@ -15,7 +15,7 @@ CREATE TABLE filme (
     oscar INT DEFAULT 0
 );
 
-SELECT titulo, ano_lancamento FROM filme 
+SELECT titulo, ano_lancamento FROM filme
 ORDER BY ano_lancamento DESC LIMIT 10;
 
 SELECT titulo, ano_lancamento FROM filme 
@@ -40,3 +40,27 @@ ORDER BY nota DESC, ano_lancamento DESC LIMIT 10;
 SELECT titulo, genero, nota, ano_lancamento, duracao_minutos FROM filme 
 WHERE ano_lancamento >= 2010 AND nota >= 7.5 AND duracao_minutos <= 150 AND genero IN ('Acao', 'Aventura', 'Ficcao Cientifica') 
 ORDER BY nota DESC, ano_lancamento DESC LIMIT 5;
+
+-- Conta quantos filmes existem na lista
+SELECT COUNT(*) AS numero_de_filmes FROM filme;
+
+-- Mostra quantos filmes são de ação
+SELECT COUNT(*) AS numero_de_filmes_de_acao FROM filme WHERE genero = 'Ação';
+
+INSERT INTO filme (titulo, diretor, genero, ano_lancamento, pais, duracao_minutos, nota, oscar) VALUES (
+    "Xablau e a Preda Filosofal", "Steven Xablau", "Aventura", 2000, "Afeganistão", 899, 10, 9
+);
+
+SELECT COUNT(bilheteria) FROM filme;
+
+SELECT SUM(bilheteria) FROM filme;
+
+SELECT SUM(bilheteria) FROM filme WHERE ano_lancamento >= 2020;
+
+SELECT AVG(bilheteria) AS Media FROM filme WHERE nota <= 7;
+
+SELECT * FROM filme WHERE nota <= 7;
+
+-- Em uma única consulta (um único SELECT), me mostre quantos filmes tem no total, qual a média das notas, qual a nota máxima e qual a nota mínima. Usem apelidos para as colunas.
+
+SELECT COUNT(*) AS quantidade_de_filmes, AVG(nota) AS media_de_nota, MAX(nota) AS nota_maxima, MIN(nota) AS nota_minima FROM filme;
