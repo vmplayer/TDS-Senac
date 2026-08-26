@@ -62,5 +62,4 @@ SELECT AVG(bilheteria) AS Media FROM filme WHERE nota <= 7;
 SELECT * FROM filme WHERE nota <= 7;
 
 -- Em uma única consulta (um único SELECT), me mostre quantos filmes tem no total, qual a média das notas, qual a nota máxima e qual a nota mínima. Usem apelidos para as colunas.
-
 SELECT COUNT(*) AS quantidade_de_filmes, AVG(nota) AS media_de_nota, MAX(nota) AS nota_maxima, MIN(nota) AS nota_minima FROM filme;
