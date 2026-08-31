@@ -9,7 +9,7 @@
 ### You
 
 - Você gosta de futebol? => Do You like soccer?
-- Você mora perto da escola? => Do You live next to the school?
+- Você mora perto da escola? => Do You live near school?
 - Você gosta de assistir filmes? => Do You like to watch movies?
 
 ### He
@@ -41,3 +41,35 @@
 - Eles moram aqui? => Do they live here?
 - Eles gostam de estudar? => Do they like to study?
 - Eles andam de bicicleta? => Do they ride bikes?
+
+# Exercício 2 - Frases Interrogativas e Negativas com o Do / Does
+
+#### Perguntas:
+* I
+* You
+* She
+
+#### Negativas:
+* He
+* We
+* I
+
+### Interrogativas
+* **Do I** have to do my lessons later?
+* **Do You** care, after all?
+* After everything **she does**, **do** you think you're still protecting her?
+
+### Negativas
+* **He doesn't** try to get out yet.
+* **We don't** have the will to save you.
+* **I don't** go to school.
+
+# Exercício 3 - Algumas atividades
+
+1. Reescreva uma frase que você já utilizou nos exercícios anteriores (não nos meus exemplos) utilizando o DID. Também escreva a tradução destra frase em português:
+
+**Frase Original:** Does he study math?
+
+**Frase reescrita:** **Did he** study math?
+
+**Tradução:** Ele estudou matemática?
