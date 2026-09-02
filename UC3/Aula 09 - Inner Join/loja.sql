@@ -167,3 +167,124 @@ INSERT INTO item_pedido (pedido_id, produto_id, quantidade) VALUES
 (18, 5, 1);
 
 -- EXERCÍCIOS DAQUI PARA BAIXO --
+
+-- 1. Clientes e pedidos
+SELECT p.id, c.nome, p.data_pedido, p.status
+FROM pedido AS p
+INNER JOIN cliente AS c ON p.cliente_id = c.id
+ORDER BY p.id;
+
+-- 2. Produtos e categorias
+SELECT p.nome, p.preco, c.nome
+FROM produto AS p
+INNER JOIN categoria AS c ON p.categoria_id = c.id
+ORDER BY p.id;
+
+-- 3. Pedidos e vendedores
+SELECT p.id, v.nome, v.setor, p.data_pedido
+FROM pedido AS p
+INNER JOIN vendedor AS v ON p.vendedor_id = v.id
+ORDER BY p.id;
+
+-- 4. Itens e produtos
+SELECT i.id, p.nome, i.quantidade
+FROM item_pedido AS i
+INNER JOIN produto AS p ON i.produto_id = p.id
+ORDER BY i.id;
+
+SELECT * FROM produto;
+
+-- 5. Cliente responsável por cada produto comprado
+SELECT 
+    c.nome, 
+    p.id AS numero_pedido, 
+    i.id AS numero_produto, 
+    i.quantidade
+FROM pedido AS p
+INNER JOIN cliente AS c ON p.cliente_id = c.id
+INNER JOIN item_pedido AS i ON p.id = i.produto_id
+ORDER BY c.nome;
+
+-- 6. Produtos existentes em cada pedido
+SELECT 
+    pe.id AS numero_pedido, 
+    pr.nome, 
+    i.quantidade
+FROM item_pedido AS i
+INNER JOIN pedido AS pe ON i.pedido_id = pe.id
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+ORDER BY pe.id;
+
+-- 7. Clientes e vendedores
+SELECT 
+    c.nome AS nome_cliente, 
+    v.nome AS nome_vendedor, 
+    p.id AS numero_pedido, 
+    p.data_pedido
+FROM pedido AS p
+INNER JOIN cliente AS c ON p.cliente_id = c.id
+INNER JOIN vendedor AS v ON p.vendedor_id = v.id
+ORDER BY p.id;
+
+-- 8. Produto e sua categoria
+SELECT 
+    p.nome AS nome_produto,
+    c.nome AS categoria, 
+    i.quantidade 
+FROM produto AS p
+INNER JOIN categoria AS c ON p.categoria_id = c.id
+INNER JOIN item_pedido AS i ON p.id = i.produto_id
+ORDER BY c.nome;
+
+-- 9. Histórico de compras
+SELECT 
+    c.nome AS cliente,
+    p.id AS numero_pedido,
+    pr.nome AS produto,
+    i.quantidade,
+    pr.preco
+FROM pedido AS p
+INNER JOIN item_pedido AS i ON p.id = i.pedido_id
+INNER JOIN cliente AS c ON p.cliente_id = c.id
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+ORDER BY c.nome;
+
+-- 10. Histórico de vendas por vendedor
+SELECT
+    v.nome AS vendedor,
+    p.id AS numero_pedido,
+    pr.nome AS produto,
+    i.quantidade
+FROM pedido AS p
+INNER JOIN vendedor AS v ON p.vendedor_id = v.id
+INNER JOIN item_pedido AS i ON p.id = i.pedido_id
+INNER JOIN produto AS pr on i.produto_id = pr.id
+ORDER BY v.nome;
+
+-- 11. Produtos comprados por clientes do Rio Grande do Sul
+SELECT 
+    c.nome AS cliente,
+    c.cidade,
+    pr.nome AS produto,
+    i.quantidade
+FROM pedido AS p
+INNER JOIN cliente AS c ON p.cliente_id = c.id
+INNER JOIN item_pedido AS i ON p.id = i.pedido_id
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+WHERE c.estado = "RS"
+ORDER BY c.nome;
+
+-- 12. Pedidos entregues
+SELECT
+    pe.id AS numero_pedido,
+    c.nome AS cliente,
+    pr.nome AS produto,
+    i.quantidade
+FROM pedido AS pe
+INNER JOIN cliente AS c ON pe.cliente_id = c.id
+INNER JOIN item_pedido AS i ON pe.id = i.pedido_id
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+WHERE pe.status = "Entregue"
+ORDER BY pe.id;
+
+-- 13. Relatório completo de vendas
