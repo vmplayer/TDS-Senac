@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento Facilitado</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: aliceblue;
+        }
+
+        body > header {
+            background-color: rgb(61, 197, 231);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        body > header > h1 {
+            margin-left: 20px;
+            align-self: center;
+        }
+
+        body > header > nav > ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        body > header > nav > ul > li {
+            font-weight: bold;
+        }
+
+        body > header > nav > ul > li:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        body > header > nav > ul > li#github {
+            background-color: rgb(100, 50, 165);
+            padding: 21px;
+            transform: translateY(-20px);
+            color: #fff;
+        }
+
+        body > header > nav > ul > li#github:hover {
+            background-color: rgb(73, 31, 129);
+        }
+
+        body > main {
+            background-color: #fff;
+            margin: 0px 10px 10px 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Atendimento facilitado</h1>
+        <nav>
+            <ul>
+                <li id="index">Página Inicial</li>
+                <li id="portfolio">Meus projetos</li>
+                <li id="github">Meu GitHub</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form method="post" autocomplete="on">
+            <p>
+                <label for="iest">Tipo de serviço: </label>
+                <select name="estado" id="iest">
+
+                    <option id="opts" value="" selected>--- SELECIONE ---</option>
+                    <optgroup label="Serviços">
+                        <option value="S1">Serviço 1</option>
+                        <option value="S2">Serviço 2</option>
+                        <option value="S3">Serviço 3</option>
+                    </optgroup>
+
+                    <optgroup label="Consertos">
+                        <option value="C1">Conserto 1</option>
+                        <option value="C2">Conserto 2</option>
+                        <option value="C3">Conserto 3</option>
+                    </optgroup>
+                </select>
+            </p>
+
+            <p>
+                <label for="iprof">Problema: </label>
+                <input type="text" name="prof" id="iprof" list="lstprof" placeholder="Qual é o seu problema?">
+                <datalist id="lstprof">
+                    <option value="NLIG">Não liga</option>
+                    <option value="NGIR">Não gira</option>
+                    <option value="NSEI">Não sei</option>
+                    <option value="VAZ">Vazamento</option>
+                </datalist>
+            </p>
+
+            <p>
+                <label for="imsg">Detalhes: </label> <br>
+                <textarea name="msg" id="imsg" cols="30" rows="10" maxlength="300" placeholder="Descreva o seu problema aqui"></textarea>
+            </p>
+
+            <p>
+                <input type="reset" value="Limpar">
+                <input type="submit" value="Enviar">
+            </p>
+        </form>
+        <div class="resultado">
+            <h2>Os resultados ficarão aqui embaixo: </h2>
+            <div class="resultado-box"></div>
+        </div>
+    </main>
+
+    <script id="page">
+        const indexbtn = document.querySelector('#index')
+        const gitbtn = document.querySelector('#github')
+
+        const indexLink = './index.html'
+        const gitLink = 'https://github.com/vmplayer'
+
+        gitbtn.addEventListener('click', () => {
+            window.open(gitLink, '_blank')
+        })
+
+        gitbtn.addEventListener('click', () => {
+            window.location.href = indexLink
+        })
+    </script>
+
+    <script>
+        const formulario = document.querySelector('form')
+        const resultado = document.getElementsByClassName('resultado-box')[0]
+        const selectServico = document.getElementById('iest')
+        const titulo = document.getElementById('iprof')
+        const desc = document.getElementById('imsg')
+
+        formulario.addEventListener('submit', (event) => {
+
+            event.preventDefault()
+
+            let serSelec = selectServico.options[selectServico.selectedIndex].text
+            let titSelec = titulo.value
+            let descSelec = desc.value
+
+            if (selectServico.value === "" || titulo === "") {
+                alert("Por favor, selecione um serviço!")
+                return
+            }
+
+            resultado.innerHTML = `<p><strong>Serviço selecionado:</strong> ${serSelec}</p>`
+            resultado.innerHTML += `<p><strong>Problema:</strong> ${titSelec}</p>`
+            resultado.innerHTML += `<p><strong>Descrição:</strong><br></p>`
+            resultado.innerText += descSelec
+        })
+    </script>
+</body>
+</html>
