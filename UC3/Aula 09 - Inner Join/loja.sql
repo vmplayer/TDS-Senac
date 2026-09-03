@@ -193,11 +193,11 @@ SELECT * FROM produto;
 SELECT 
     c.nome, 
     p.id AS numero_pedido, 
-    i.id AS numero_produto, 
+    i.produto_id AS numero_produto, 
     i.quantidade
 FROM pedido AS p
 INNER JOIN cliente AS c ON p.cliente_id = c.id
-INNER JOIN item_pedido AS i ON p.id = i.produto_id
+INNER JOIN item_pedido AS i ON p.id = i.pedido_id
 ORDER BY c.nome;
 
 -- 6. Produtos existentes em cada pedido
@@ -301,4 +301,120 @@ INNER JOIN categoria AS ct ON pr.categoria_id = ct.id
 ORDER BY cl.nome;
 
 -- 14. Produtos da categoria Games
+SELECT 
+    c.nome AS cliente,
+    pr.nome AS produto,
+    i.quantidade,
+    p.data_pedido
+FROM pedido AS p
+INNER JOIN cliente AS c ON p.cliente_id = c.id
+INNER JOIN item_pedido AS i ON p.id = i.pedido_id
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+INNER JOIN categoria AS ct ON pr.categoria_id = ct.id
+WHERE ct.nome = "Games"
+ORDER BY c.nome;
 
+-- 15. Compras de computadores
+SELECT 
+    cl.nome AS cliente,
+    cl.cidade,
+    pr.nome AS produto,
+    pr.preco,
+    pe.data_pedido
+FROM item_pedido AS i
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+INNER JOIN pedido AS pe ON i.pedido_id = pe.id
+INNER JOIN cliente AS cl ON pe.cliente_id = cl.id
+INNER JOIN categoria AS ct ON pr.categoria_id = ct.id
+WHERE ct.nome = "Computadores"
+ORDER BY cl.nome;
+
+-- 16. Valor de cada item comprado
+SELECT 
+    pe.id AS numero_pedido,
+    pr.nome AS produto,
+    pr.preco,
+    i.quantidade,
+    (pr.preco * i.quantidade) AS valor_item
+FROM item_pedido AS i
+INNER JOIN pedido AS pe ON i.pedido_id = pe.id
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+ORDER BY pe.id;
+
+-- 17. Valor dos itens comprados por cada cliente
+SELECT 
+    c.nome AS cliente,
+    pr.nome AS produto,
+    i.quantidade,
+    pr.preco,
+    (pr.preco * i.quantidade) AS valor_item
+FROM item_pedido AS i
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+INNER JOIN pedido AS pe ON i.pedido_id = pe.id
+INNER JOIN cliente AS c ON pe.cliente_id = c.id
+ORDER BY c.nome;
+
+-- 18. Compras acima de R$1.000
+SELECT 
+    c.nome AS cliente,
+    pr.nome AS produto,
+    i.quantidade,
+    (pr.preco * i.quantidade) AS valor_item
+FROM item_pedido AS i
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+INNER JOIN pedido AS pe ON i.pedido_id = pe.id
+INNER JOIN cliente AS c ON pe.cliente_id = c.id
+WHERE (pr.preco * i.quantidade) > 1000
+ORDER BY valor_item ASC;
+
+-- 19. Compras feitas pelo vendedor Marcos Silva
+SELECT 
+    c.nome AS cliente,
+    pr.nome AS produto,
+    i.quantidade,
+    pe.data_pedido
+FROM pedido AS pe
+INNER JOIN item_pedido AS i ON pe.id = i.pedido_id
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+INNER JOIN vendedor AS v ON pe.vendedor_id = v.id
+INNER JOIN cliente AS c ON pe.cliente_id = c.id
+WHERE v.nome = "Marcos Silva"
+ORDER BY pr.preco ASC;
+
+-- 20. Celulares vendidos
+SELECT 
+    cl.nome AS cliente,
+    v.nome AS vendedor,
+    pr.nome AS produto,
+    i.quantidade,
+    pe.status
+FROM pedido AS pe
+INNER JOIN cliente AS cl ON pe.cliente_id = cl.id
+INNER JOIN vendedor AS v ON pe.vendedor_id = v.id
+INNER JOIN item_pedido AS i ON pe.id = i.pedido_id
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+INNER JOIN categoria AS ct ON pr.categoria_id = ct.id
+WHERE ct.nome = "Celulares"
+ORDER BY cl.nome ASC;
+
+-- 21. Relatório detalhado
+SELECT 
+    pe.id AS numero_pedido,
+    pe.data_pedido,
+    cl.nome AS cliente,
+    cl.cidade,
+    v.nome AS vendedor,
+    v.setor,
+    pr.nome AS produto,
+    ct.nome AS categoria,
+    pr.preco,
+    i.quantidade,
+    (pr.preco * i.quantidade) AS valor_total,
+    pe.status
+FROM pedido AS pe
+INNER JOIN cliente AS cl ON pe.cliente_id = cl.id
+INNER JOIN vendedor AS v ON pe.vendedor_id = v.id
+INNER JOIN item_pedido AS i ON pe.id = i.pedido_id
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+INNER JOIN categoria AS ct ON pr.categoria_id = ct.id
+ORDER BY pe.data_pedido DESC;
