@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara ou Coroa</title>
+    <style>
+        body {
+            background-color: #3c3c3c;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+        }
+
+        div#start {
+            background-color: lightblue;
+            padding: 3px;
+            width: 200px;
+            user-select: none;
+        }
+
+        div#start:hover {
+            cursor: pointer;
+            background-color: rgb(139, 194, 212);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Cara ou Coroa</h1>
+        <div id="result">O seu resultado é...
+            <div id="result-value">
+            </div>
+        </div>
+        <div id="start">Girar a moeda</div>
+        <div id="sum">
+            <h1>Sumário</h1>
+            <ul>
+                <li>CARA = SIM</li>
+                <li>COROA = NÃO</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        const start = document.getElementById('start')
+        const result = document.getElementById('result')
+        const resultValue = document.getElementById('result-value')
+        let spin
+        let spinResult
+        function spinTheCoin() {
+            spin = Math.floor(Math.random() * 2)
+            if (spin >= 1) {
+                spinResult = "Cara"
+            } else {
+                spinResult = "Coroa"
+            }
+        
+            resultValue.innerText = spinResult
+            resultValue.innerText += "\n" + spin
+        }
+
+        start.addEventListener('click', () => {
+          spinTheCoin()
+        })
+    </script>
+</body>
+</html>
