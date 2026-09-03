@@ -9,19 +9,16 @@ CREATE TABLE cliente (
     estado CHAR(2) NOT NULL
 );
 
-
 CREATE TABLE vendedor (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     setor VARCHAR(50) NOT NULL
 );
 
-
 CREATE TABLE categoria (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(80) NOT NULL
 );
-
 
 CREATE TABLE produto (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -33,7 +30,6 @@ CREATE TABLE produto (
     FOREIGN KEY (categoria_id)
         REFERENCES categoria(id)
 );
-
 
 CREATE TABLE pedido (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -48,7 +44,6 @@ CREATE TABLE pedido (
     FOREIGN KEY (vendedor_id)
         REFERENCES vendedor(id)
 );
-
 
 CREATE TABLE item_pedido (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -287,4 +282,23 @@ INNER JOIN produto AS pr ON i.produto_id = pr.id
 WHERE pe.status = "Entregue"
 ORDER BY pe.id;
 
+SELECT * FROM produto;
+
 -- 13. Relatório completo de vendas
+SELECT 
+    cl.nome AS cliente,
+    pe.id AS numero_pedido,
+    pe.data_pedido,
+    pr.nome AS produto,
+    ct.nome AS categoria,
+    i.quantidade,
+    pr.preco
+FROM item_pedido AS i
+INNER JOIN pedido AS pe ON i.pedido_id = pe.id
+INNER JOIN cliente AS cl ON pe.cliente_id = cl.id
+INNER JOIN produto AS pr ON i.produto_id = pr.id
+INNER JOIN categoria AS ct ON pr.categoria_id = ct.id
+ORDER BY cl.nome;
+
+-- 14. Produtos da categoria Games
+
