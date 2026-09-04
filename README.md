@@ -16,24 +16,26 @@ O objetivo deste espaço é documentar toda a minha jornada de aprendizado, serv
 Para facilitar a navegação, as aulas e projetos estão organizados diretamente por pastas dedicadas a cada Unidade Curricular:
 
 ```text
+┌── Adicional/            # Arquivos e estudos fora do planejamento das aulas (ou seja, por conta própria)
 ├── UC1/                  # Planejamento de Softwares (Briefings, Protótipos e Mercado)
 ├── UC2/                  # Algoritmos e Lógica de Programação (JavaScript & Terminal)
 ├── UC3/                  # Manipulação de dados (MySQL, PostgreSQL, Oracle Server, SQL Server)
 ├── UC5/                  # Analisar Orientações Técnicas (Documentação & Inglês Técnico)
-├── UC6/                  # Projeto Integrador
+├── UC6/                  # Projeto Integrador I.
 └── README.md             # Documentação do repositório
 ```
 
 ---
 
-## 🛠️ Tecnologias & Conceitos Explorados nas Aulas
+## 🛠️ Ferramentas e GitHub Stats:
 
-Atualmente, o foco está em construir uma base sólida nas seguintes ferramentas e fundamentos:
-
-- **Linguagens & Ambientes:** JavaScript (ES6+), NodeJS, MySQL, MySQL Workbench, Terminal (Windows)
-- **Metodologias de Projetos:** Análise de mercado, Arquitetura da Informação, Planejamento de Banco de Dados, Criação de *Briefings* e Prototipagem.
-- **Leitura Técnica:** Interpretação de documentações e códigos em Língua Inglesa.
-- **Versionamento:** Git & GitHub.
+<div align="center">
+  <img src="https://dashboard.snapcraft.io/site_media/appmedia/2020/04/mysql-workbench.png" alt="MySQL Workbench" width="50px" height="50px">
+  <img src="https://github.com/user-attachments/assets/ca3621f3-2b17-4005-a553-02066c91fe48" alt="Node.JS" width="50px" height="50px">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" alt="Git" width="50px" height="50px">
+  <img src="https://images.icon-icons.com/3685/PNG/512/github_logo_icon_229278.png" alt="GitHub" width="50px" height="50px">
+  <!-- <img src="" alt="" width="50px" height="50px"> -->
+</div>
 
 ---
 
