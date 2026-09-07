@@ -25,19 +25,25 @@ Para facilitar a navegação, as aulas e projetos estão organizados diretamente
 └── README.md             # Documentação do repositório
 ```
 
----
-
-## 🛠️ Ferramentas e GitHub Stats:
+## 🛠️ Ferramentas:
 
 <div align="center">
   <img src="https://dashboard.snapcraft.io/site_media/appmedia/2020/04/mysql-workbench.png" alt="MySQL Workbench" width="50px" height="50px">
   <img src="https://github.com/user-attachments/assets/ca3621f3-2b17-4005-a553-02066c91fe48" alt="Node.JS" width="50px" height="50px">
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" alt="Git" width="50px" height="50px">
   <img src="https://images.icon-icons.com/3685/PNG/512/github_logo_icon_229278.png" alt="GitHub" width="50px" height="50px">
+  <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/trello-logo-icon.png" alt="Trello" width="50px" height="50px">
   <!-- <img src="" alt="" width="50px" height="50px"> -->
 </div>
 
----
+## ✏️ Linguagens:
+
+<div align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/16925/16925957.png" alt="SQL" width="50px" height="50px">
+  <img src="https://images.icon-icons.com/2108/PNG/512/javascript_icon_130900.png" alt="JavaScript" width="50px" height="50px">
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt="TypeScript" width="50px" height="50px">
+  <!-- <img src="" alt="" width="50px" height="50px"> -->
+</div>
 
 ## 📚 Detalhamento das Unidades Curriculares (UCs)
 
