@@ -1,6 +1,7 @@
 # 🚀 Técnico em Desenvolvimento de Sistemas (TDS)
 
 ![Status](https://img.shields.io/badge/Status-Em%20Andamento-success?style=for-the-badge)
+![valdircoml](https://img.shields.io/badge/valdircoml-LINKEDIN-0a66c2?style=for-the-badge)
 ![Senac](https://img.shields.io/badge/Senac--RS-TDS-004a8d?style=for-the-badge)
 
 Repositório centralizado para armazenamento de projetos, desafios, anotações de aulas e exercícios práticos desenvolvidos durante o Curso Técnico em Desenvolvimento de Sistemas no **Senac-RS**. 
@@ -80,9 +81,8 @@ Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender
 #### 📓 [UC6](./UC6) Projeto Integrador 1 (PI 1)
 Desenvolvimento de projetos para o mundo e para o portfólio.
 
+* **Página de referência:** [Projeto Integrador](https://leosouzasenac.github.io/PI-26-1M/)
 * **Repositório de referência:** [UC6](https://github.com/LeoSouzaSenac/PI-26-1M)
-
----
 
 ### 🔮 Próximas UCs
 
@@ -92,21 +92,20 @@ Desenvolvimento de projetos para o mundo e para o portfólio.
 | Código | Unidade Curricular | Foco Previsto |
 | :---: | :--- | :--- |
 | **UC4** | Programação Orientada a Objetos | Conceitos avançados de arquitetura de software (POO) usando **TypeScript**. |
-| **UC7** | Elaborar Orientações Técnicas | Escrita técnica, documentações de APIs e relatórios em inglês (Inglês II). |
+| **UC7** | Elaborar Orientações Técnicas | Escrita técnica, documentações de APIs e relatórios **em inglês (Inglês II)**. |
 | **UC8** | Programação para Desktop | Fundamentos e sintaxe da linguagem **Java**. |
 | **UC9** | Desenvolver Aplicações Desktop | Criação de sistemas de software robustos com interface gráfica em **Java**. |
 | **UC10**| GitHub | Fluxos de trabalho avançados em equipe (Git Flow, Code Review). |
-| **UC11**| Testes (Testar Programas) | Garantia de qualidade por meio de testes automatizados e unitários. |
-| **UC12**| Frontend | Construção de interfaces web modernas e responsivas. |
-| **UC13**| Backend | Desenvolvimento de APIs, rotas, regras de negócio e servidores. |
-| **UC14**| Deploy | Publicação de aplicações em ambientes de nuvem e setups de CI/CD. |
+| **UC11**| Testes (Testar Programas) | Garantia de qualidade por meio de **testes automatizados** e unitários. |
+| **UC12**| Frontend | Construção de **interfaces web modernas** e **responsivas**. |
+| **UC13**| Backend | Desenvolvimento de **APIs**, **rotas**, **regras de negócio** e **servidores**. |
+| **UC14**| Deploy | **Publicação de aplicações** em ambientes de nuvem e setups de CI/CD. |
 | **UC15**| Programação Mobile | Criação de aplicativos nativos para Android e iOS com **React Native**. |
-| **UC16**| UX/UI | Princípios de Interface e Experiência do Usuário aplicados ao software. |
-| **UC17**| Projeto Integrador 2 (PI 2) | Projeto final de conclusão do curso consolidando toda a stack de desenvolvimento. |
+| **UC16**| UX/UI | Princípios de **Interface** e **Experiência do Usuário** aplicados ao software. |
+| **UC17**| Projeto Integrador 2 (PI 2) | **Projeto final** de **conclusão do curso** consolidando toda a stack de desenvolvimento. |
 
 </details>
 
----
 
 ## 👨‍💻 Como Rodar os Códigos Localmente
 
@@ -123,13 +122,4 @@ cd TDS-Senac
 cd UC2
 ```
 
----
-
-## 🎯 Objetivos Pessoais
-- [ ] Construir uma base sólida em lógica e arquitetura de software para o mercado.
-- [ ] Criar projetos práticos e funcionais durante os Projetos Integradores.
-- [ ] Desenvolver a maturidade técnica necessária visando a graduação em **Ciência da Computação** no futuro.
-
----
-**Autor:** [vmplayer](https://github.com/vmplayer)  
-🎨 *Mantendo a organização em dia para focar apenas no código.*
+### Autor: [vmplayer](https://github.com/vmplayer) 
