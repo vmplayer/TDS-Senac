@@ -62,14 +62,14 @@ Introdução ao pensamento computacional. Desenvolvimento de lógica através de
 * **Repositório de Referência:** [Acessar UC2_TDS26-1M](https://github.com/dhDSouza/UC2_TDS26-1M)
 * **Projeto final da UC:** [UC2 - Projeto Final](https://github.com/vmplayer/TDS-Senac/tree/main/UC2/Projetos/PJ002%20-%20Projeto%20Final)
 
-### ⏳ Em Andamento
-
 #### 🎲 [UC3](./UC3) - Banco de Dados
 Aulas sobre planejamento de banco de dados, desenvolvimento prático utilizando SGBDs como MySQL Workbench e aplicação em projetos pessoais.
 * **Professor:** [Leonardo Souza](https://github.com/LeoSouzaSenac)
 * **Repositório de referência:** [Acessar UC3-26-1M](https://github.com/LeoSouzaSenac/UC3-26-1M)
 * **Referência:** [UC3](https://leosouzasenac.github.io/UC3-26-1M/)
 * **Atividade:** [Guilda SQL](https://leosouzasenac.github.io/exercicio-banco-de-dados/)
+
+### ⏳ Em Andamento
 
 #### 📑 [UC5](./UC5) - Analisar Orientações Técnicas (Inglês I)
 Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender documentações oficiais, tratamento de erros em terminais e fóruns técnicos na língua inglesa.
@@ -83,6 +83,7 @@ Desenvolvimento de projetos para o mundo e para o portfólio.
 
 * **Página de referência:** [Projeto Integrador](https://leosouzasenac.github.io/PI-26-1M/)
 * **Repositório de referência:** [UC6](https://github.com/LeoSouzaSenac/PI-26-1M)
+* O repositório do projeto do PI ficará **oculto** até a disponibilização de uma versão oficial.
 
 ### 🔮 Próximas UCs
 
