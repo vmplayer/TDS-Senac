@@ -21,8 +21,9 @@ Para facilitar a navegação, as aulas e projetos estão organizados diretamente
 ├── UC1/                  # Planejamento de Softwares (Briefings, Protótipos e Mercado)
 ├── UC2/                  # Algoritmos e Lógica de Programação (JavaScript & Terminal)
 ├── UC3/                  # Manipulação de dados (MySQL, PostgreSQL, Oracle Server, SQL Server)
+├── UC4/                  # Lógica de programação com objetos (POO - TypeScript)
 ├── UC5/                  # Analisar Orientações Técnicas (Documentação & Inglês Técnico)
-├── UC6/                  # Projeto Integrador I.
+├── UC6/                  # Projeto Integrador I - Planejamento
 └── README.md             # Documentação do repositório
 ```
 
@@ -52,18 +53,21 @@ Para facilitar a navegação, as aulas e projetos estão organizados diretamente
 
 #### 📐 [UC1](./UC1) - Planejamento de Softwares (Sistemas)
 Foco em entender as demandas do mercado, estruturar a arquitetura da informação e desenvolver protótipos funcionais que resolvam problemas reais.
+
 * **Professor:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
 * **Repositório de Referência:** [Acessar UC1_TDS26-1M](https://github.com/dhDSouza/UC1_TDS26-1M)
 * **Projeto final da UC:** [UC1 - Projeto Final](https://trello.com/b/AkJ7hqjj)
 
 #### 💻 [UC2](./UC2) - Algoritmos
 Introdução ao pensamento computacional. Desenvolvimento de lógica através de algoritmos, manipulação da linguagem de máquina e interações diretas com o sistema através de comandos de terminal.
+
 * **Professor:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
 * **Repositório de Referência:** [Acessar UC2_TDS26-1M](https://github.com/dhDSouza/UC2_TDS26-1M)
 * **Projeto final da UC:** [UC2 - Projeto Final](https://github.com/vmplayer/TDS-Senac/tree/main/UC2/Projetos/PJ002%20-%20Projeto%20Final)
 
 #### 🎲 [UC3](./UC3) - Banco de Dados
 Aulas sobre planejamento de banco de dados, desenvolvimento prático utilizando SGBDs como MySQL Workbench e aplicação em projetos pessoais.
+
 * **Professor:** [Leonardo Souza](https://github.com/LeoSouzaSenac)
 * **Repositório de referência:** [Acessar UC3-26-1M](https://github.com/LeoSouzaSenac/UC3-26-1M)
 * **Referência:** [UC3](https://leosouzasenac.github.io/UC3-26-1M/)
@@ -71,8 +75,15 @@ Aulas sobre planejamento de banco de dados, desenvolvimento prático utilizando 
 
 ### ⏳ Em Andamento
 
+#### [UC4](./UC4) - Programação Orientada a Objetos (POO)
+Conceitos avançados de arquitetura de software (POO) usando **TypeScript**.
+
+* **Professor:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
+* **Repositório de Referência:** [Acessar UC1_TDS26-1M](https://github.com/dhDSouza/UC4_TDS26-1M)
+
 #### 📑 [UC5](./UC5) - Analisar Orientações Técnicas (Inglês I)
 Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender documentações oficiais, tratamento de erros em terminais e fóruns técnicos na língua inglesa.
+
 * **Professor:** [Leonardo Souza](https://github.com/LeoSouzaSenac)
 * **Repositório de Referência:** [Acessar UC5-26-1M](https://github.com/LeoSouzaSenac/UC5-26-1M)
 * **Projeto de jogos desenvolvido pelo [Professor Leonardo](https://github.com/LeoSouzaSenac):** [English Quest](https://leosouzasenac.github.io/englishGame/)
@@ -92,7 +103,6 @@ Desenvolvimento de projetos para o mundo e para o portfólio.
 
 | Código | Unidade Curricular | Foco Previsto |
 | :---: | :--- | :--- |
-| **UC4** | Programação Orientada a Objetos | Conceitos avançados de arquitetura de software (POO) usando **TypeScript**. |
 | **UC7** | Elaborar Orientações Técnicas | Escrita técnica, documentações de APIs e relatórios **em inglês (Inglês II)**. |
 | **UC8** | Programação para Desktop | Fundamentos e sintaxe da linguagem **Java**. |
 | **UC9** | Desenvolver Aplicações Desktop | Criação de sistemas de software robustos com interface gráfica em **Java**. |
@@ -124,3 +134,4 @@ cd UC2
 ```
 
 ### Autor: [vmplayer](https://github.com/vmplayer) 
+"We all listen to D>E>A>T>H>M>E>T>A>L"
