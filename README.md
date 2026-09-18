@@ -75,7 +75,7 @@ Aulas sobre planejamento de banco de dados, desenvolvimento prático utilizando 
 
 ### ⏳ Em Andamento
 
-#### [UC4](./UC4) - Programação Orientada a Objetos (POO)
+#### 🧭 [UC4](./UC4) - Programação Orientada a Objetos (POO)
 Conceitos avançados de arquitetura de software (POO) usando **TypeScript**.
 
 * **Professor:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
