@@ -4,49 +4,49 @@ function criarLinha(linha: number): string {
     return `-=+ ATIVIDADE ${linha} +=-`;
 }
 
-// console.log(criarLinha(1))
+console.log(criarLinha(1))
 
-// function dobrar(a: number): number {
-//     return a * 2;
-// }
+function dobrar(a: number): number {
+    return a * 2;
+}
 
-// let numDobrar: number = rls.questionInt("Diga um numero: ");
-// console.log(dobrar(numDobrar));
+let numDobrar: number = rls.questionInt("Diga um numero: ");
+console.log(dobrar(numDobrar));
 
-// console.log(criarLinha(2))
+console.log(criarLinha(2))
 
-// function saudacao(nome: string): string {
-//     return `Olá, ${nome}!`;
-// }
+function saudacao(nome: string): string {
+    return `Olá, ${nome}!`;
+}
 
-// let nomeSaudacao: string = rls.question("Qual o seu nome? ");
-// console.log(saudacao(nomeSaudacao));
+let nomeSaudacao: string = rls.question("Qual o seu nome? ");
+console.log(saudacao(nomeSaudacao));
 
-// console.log(criarLinha(3))
+console.log(criarLinha(3))
 
-// let nomeDeAmigos: string[] = [];
+let nomeDeAmigos: string[] = [];
 
-// let nomeAmigo: string = rls.question("Diga o nome de um amigo seu: ");
-// nomeDeAmigos.push(nomeAmigo);
-// nomeAmigo = rls.question("Diga outro amigo: ");
-// nomeDeAmigos.push(nomeAmigo);
-// nomeAmigo = rls.question("Diga um ultimo nome: ");
-// nomeDeAmigos.push(nomeAmigo);
+let nomeAmigo: string = rls.question("Diga o nome de um amigo seu: ");
+nomeDeAmigos.push(nomeAmigo);
+nomeAmigo = rls.question("Diga outro amigo: ");
+nomeDeAmigos.push(nomeAmigo);
+nomeAmigo = rls.question("Diga um ultimo nome: ");
+nomeDeAmigos.push(nomeAmigo);
 
-// nomeDeAmigos.forEach((i) => {
-//     console.log(i);
-// });
+nomeDeAmigos.forEach((i) => {
+    console.log(i);
+});
 
-// console.log(criarLinha(4))
+console.log(criarLinha(4))
 
-// let tuple: [string, number];
+let tuple: [string, number];
 
-// let tuplaNome = rls.question("Qual o seu nome? ");
-// let tuplaIdade = rls.questionInt("Qual a sua idade? ");
+let tuplaNome = rls.question("Qual o seu nome? ");
+let tuplaIdade = rls.questionInt("Qual a sua idade? ");
 
-// tuple = [tuplaNome, tuplaIdade];
+tuple = [tuplaNome, tuplaIdade];
 
-// console.log(tuple);
+console.log(tuple);
 
 console.log(criarLinha(5));
 
@@ -89,3 +89,38 @@ QUAL O SEU NÍVEL DE ACESSO?
     break;
 }
 
+let pessoa: { nome: string; idade: number; email: string } = {
+    nome: "",
+    idade: 0,
+    email: "adminacess@admin.net"
+};
+
+const perguntarNome: string = rls.question("Qual o seu nome? ");
+const perguntarIdade: number = rls.questionInt("Qual a sua idade? ");
+const perguntarEmail: string = rls.question("Qual o seu email? ");
+
+pessoa.nome = perguntarNome;
+pessoa.idade = perguntarIdade;
+pessoa.email = perguntarEmail;
+
+for (let dado of Object.values(pessoa)) {
+    console.log(dado);
+}
+
+function lancarErro(motivo: string): never {
+    throw new Error(motivo);
+}
+
+console.log(`
+Como funciona?
+Aperte [ESPAÇO] para jogar um ERRO, ou
+Aperte [F] para apenas finalizar o código com SUCESSO.
+`);
+
+let chave: string = rls.keyIn("", { limit: ' fF' });
+
+if (chave === ' ') {
+    lancarErro("Você escolheu isso.");
+} else if (chave === 'f' || chave === 'F') {
+    console.log("Finalizado com sucesso!");
+};
