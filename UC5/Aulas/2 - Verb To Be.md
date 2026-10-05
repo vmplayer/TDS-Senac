@@ -14,15 +14,16 @@ Ele é usado para:
 
 ## Forma afirmativa
 
-| Sujeito | Forma | Pronúncia (brasileirês) |
-|----------|--------|--------------------------|
-| I | am | ãm |
-| You | are | ar |
-| He | is | iz |
-| She | is | iz |
-| It | is | iz |
-| We | are | ar |
-| They | are | ar |
+| Sujeito | Tradução                                       | Forma do verbo **to be** | Pronúncia (brasileirês) |
+| ------- | ---------------------------------------------- | ------------------------ | ----------------------- |
+| I       | Eu                                             | am                       | ãm                      |
+| You     | Você / Vocês                                   | are                      | ar                      |
+| He      | Ele                                            | is                       | iz                      |
+| She     | Ela                                            | is                       | iz                      |
+| It      | Ele / Ela (para objetos ou animais)            | is                       | iz                      |
+| We      | Nós                                            | are                      | ar                      |
+| They    | Eles / Elas                                    | are                      | ar                      |
+
 
 ---
 
