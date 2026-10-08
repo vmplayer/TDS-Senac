@@ -61,4 +61,10 @@ let pessoas: {nome: string, cidade: string, emprego?: boolean}[] = [
 
 console.log(pessoas);
 
-// FALTA O IF
+for (let pessoa of pessoas) {
+    if (pessoa.emprego === true) {
+        console.log(`${pessoa.nome} da cidade ${pessoa.cidade} está trabalhando.`);
+    } else {
+        console.log(`${pessoa.nome} da cidade ${pessoa.cidade} está desempregado.`)
+    }
+}
