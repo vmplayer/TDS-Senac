@@ -1,17 +1,17 @@
 let nome: string = "valval";
-// let minhaIdade: number = 31;
-// let desligado: boolean = true;
+let minhaIdade: number = 31;
+let desligado: boolean = true;
 
-// function somar(a: number, b: number):number {
-//     return a + b;
-// }
+function somar(a: number, b: number):number {
+    return a + b;
+}
 
-// console.log(somar(10,90));
+console.log(somar(10,90));
 
-// // Arrays em TypeScript
-// let compras: string[] = ["Pão", "Leite", "Manteiga"];
+// Arrays em TypeScript
+let compras: string[] = ["Pão", "Leite", "Manteiga"];
 
-// let numeros: Array<number> = [1, 2, 3]
+let numeros: Array<number> = [1, 2, 3]
 
 // Crie um Array que contém X notas
 // Depois, calcule a média destas notas e mostre no terminal
@@ -21,24 +21,24 @@ let nome: string = "valval";
 
 // Dica: para somar o array, use um for.
 
-// let notas: number[] = [2, 6, 3, 5, 4];
+let notas: number[] = [2, 6, 3, 5, 4];
 
-// let media:number = 0;
-// for (let i: number = 0; i < notas.length; i++) {
-//     media += notas[i];
-// }
+let media:number = 0;
+for (let i: number = 0; i < notas.length; i++) {
+    media += notas[i];
+}
 
-// media = media / notas.length;
-// console.log(media); // Retorna 4
+media = media / notas.length;
+console.log(media); // Retorna 4
 
-// // Objetos em TypeScript
-// let person: {nome: string, idade: number, peso?: number} = {
-//     nome: nome,
-//     idade: 31
-// }
+// Objetos em TypeScript
+let person: {nome: string, idade: number, peso?: number} = {
+    nome: nome,
+    idade: 31
+}
 
-// console.log(person.nome);
-// person.peso = 70;
+console.log(person.nome);
+person.peso = 70;
 
 // Crie dois objetos representando pessoas (coloque nomes diferentes para os objetos)
 // Estes objetos devem ter: nome (string), cidade (string), emprego (boolean)
