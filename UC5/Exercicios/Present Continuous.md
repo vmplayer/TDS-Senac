@@ -111,3 +111,23 @@ Is she **sleeping**?
 8. The students are **learning** english.
 9. Anna is **taking** pictures of her friends.
 10. The dog is **sitting** near the door.
+
+### Comparação entre Simple Present e Present Continuous
+
+#### Simple Present
+
+* Eu estudo. | I study.
+* Ela trabalha. | She works.
+* Eles jogam futebol. | They play soccer.
+* Ele usa o computador. | He uses the computer.
+* Nós aprendemos inglês. | We learn English.
+
+---
+
+#### Present Continuous
+
+* Eu estou estudando. | I am studying.
+* Ela está trabalhando. | She is working. 
+* Eles estão jogando futebol. | They are playing soccer.
+* Ele está usando o computador. | He is using the computer.
+* Nós estamos aprendendo Inglês. | We are learning English.
