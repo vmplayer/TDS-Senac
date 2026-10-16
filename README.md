@@ -88,7 +88,7 @@ Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender
 
 * **Professor:** [Leonardo Souza](https://github.com/LeoSouzaSenac)
 * **Repositório de Referência:** [Acessar UC5-26-1M](https://github.com/LeoSouzaSenac/UC5-26-1M)
-* **Projeto de jogos desenvolvido pelo [Professor Leonardo](https://github.com/LeoSouzaSenac):** [English Quest](https://leosouzasenac.github.io/englishGame/)
+* **Projeto de jogos desenvolvido pelo [Professor Leonardo](https://github.com/LeoSouzaSenac):** [EduQuest](https://leosouzasenac.github.io/englishQuest/english/index.html)
 * **Projeto de atividades desenvolvido pela [Professora Dalvana](https://github.com/DalvanaRibeiro):** [UC5ToBe](https://senacrs.my.canva.site/uc5tobe)
 
 #### 📓 [UC6](./UC6) Projeto Integrador 1 (PI 1)
