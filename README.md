@@ -21,7 +21,7 @@ Para facilitar a navegação, as aulas e projetos estão organizados diretamente
 ├── UC1/                  # Planejamento de Softwares (Briefings, Protótipos e Mercado)
 ├── UC2/                  # Algoritmos e Lógica de Programação (JavaScript & Terminal)
 ├── UC3/                  # Manipulação de dados (MySQL, PostgreSQL, Oracle Server, SQL Server)
-├── UC4/                  # Lógica de programação com objetos (POO - TypeScript)
+├── UC4/                  # Lógica de Programação Orientada a Objetos (POO - TypeScript)
 ├── UC5/                  # Analisar Orientações Técnicas (Documentação & Inglês Técnico)
 ├── UC6/                  # Projeto Integrador I - Planejamento
 └── README.md             # Documentação do repositório
@@ -78,8 +78,10 @@ Aulas sobre planejamento de banco de dados, desenvolvimento prático utilizando 
 #### 🧭 [UC4](./UC4) - Programação Orientada a Objetos (POO)
 Conceitos avançados de arquitetura de software (POO) usando **TypeScript**.
 
-* **Professor:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
-* **Repositório de Referência:** [Acessar UC1_TDS26-1M](https://github.com/dhDSouza/UC4_TDS26-1M)
+* **Professor 1:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
+* **Repositório de Referência 1:** [Acessar UC4-26-1M](https://github.com/dhDSouza/UC4_TDS26-1M)
+* **Professor 2:** [Leonardo Souza](https://github.com/LeoSouzaSenac)
+* **Repositório de Referência 2:** [Acessar UC4-26-1M](https://github.com/LeoSouzaSenac/UC4-26-1M/tree/main)
 
 #### 📑 [UC5](./UC5) - Analisar Orientações Técnicas (Inglês I)
 Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender documentações oficiais, tratamento de erros em terminais e fóruns técnicos na língua inglesa.
