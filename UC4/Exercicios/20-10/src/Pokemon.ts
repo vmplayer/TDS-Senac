@@ -1,10 +1,10 @@
 import { Poder } from "./Poder"
 
 export class Pokemon {
-    nome: string;
-    vida: number;
-    ataque: number;
-    poder: Poder;
+    public nome: string;
+    public vida: number;
+    public ataque: number;
+    public poder: Poder;
 
     constructor (nome: string, vida: number, ataque: number, poder: Poder) {
         this.nome = nome;

@@ -36,3 +36,24 @@ pokemon2.atacarComPoder(pokemon);
 pokemon2.falar();
 pokemon.atacarComPoder(pokemon2);
 pokemon.falar()
+
+/* 
+ENCAPSULAMENTO
+
+Encapsulamento é o ato de proteger os dados dos nossos objetos (tanto os atributos quanto os métodos) e controlar como podem ser acessados ou modificados.
+Exemplo: usando encapsulamento, podemos impedir que alguém deixa a vida do pokémon negativa.
+Para utilizar encapsulamento nas nossas classes, precisamos colocar certas palavras antes dos atributos e antes dos métodos. São elas:
+
+    - public (que significa 'público')
+    - private (que significa 'privado')
+    - protected (que significa 'protegido')
+
+Chamamos estes três de modificadores de acesso. O 'public' permite que o atributo ou método seja acessado e modificado em qualquer arquivo do meu programa DIRETAMENTE.
+Exemplo:
+
+    No classe -> public vida: number
+    No index -> pomemon.vida = -999
+
+O 'private' NÃO permite que o atributo ou método seja acessado e modificado de qualquer jeito. Para poder fazer isso, precisamos chamar os métodos da classe.
+
+*/
