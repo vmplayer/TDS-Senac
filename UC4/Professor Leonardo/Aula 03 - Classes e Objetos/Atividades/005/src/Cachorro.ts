@@ -19,4 +19,20 @@ export class Cachorro {
     public setNome(novoNome: string): void {
         this.nome = novoNome;
     }
+
+    public getVida(): number {
+        return this.vida;
+    }
+
+    public setVida(novaVida: number): void {
+        this.vida = novaVida;
+    }
+
+    public getDono(): Personagem | undefined {
+        return this.dono;
+    }
+
+    public setDono(novoDono: Personagem): void {
+        this.dono = novoDono;
+    }
 }
