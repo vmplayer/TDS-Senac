@@ -81,7 +81,9 @@ Conceitos avançados de arquitetura de software (POO) usando **TypeScript**.
 * **Professor 1:** [Daniel Henrique de Souza](https://github.com/dhDSouza)
 * **Repositório de Referência 1:** [Acessar UC4-26-1M](https://github.com/dhDSouza/UC4_TDS26-1M)
 * **Professor 2:** [Leonardo Souza](https://github.com/LeoSouzaSenac)
-* **Repositório de Referência 2:** [Acessar UC4-26-1M](https://github.com/LeoSouzaSenac/UC4-26-1M/tree/main)
+* **Repositório de Referência 2:** [Acessar UC4-26-1M](https://github.com/LeoSouzaSenac/UC4-26-1M)
+* **Professor 3:** [Leonardo Barbosa](https://github.com/leoBarbosaSenac)
+* **Repositório de Referência 3:** [Acessar UC4-26-1M](https://github.com/leoBarbosaSenac/UC4-261M)
 
 #### 📑 [UC5](./UC5) - Analisar Orientações Técnicas (Inglês I)
 Aulas voltadas à autonomia do desenvolvedor para ler, interpretar e compreender documentações oficiais, tratamento de erros em terminais e fóruns técnicos na língua inglesa.
