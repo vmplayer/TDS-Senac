@@ -6,6 +6,6 @@ export class ContaPoupanca extends Conta {
     }
 
     public aplicarJuros(juros: number): void {
-        this.atualizarSaldo(juros);
+        this.atualizarSaldo(this.saldo * (juros / 100));
     }
 }
