@@ -1,5 +1,5 @@
 {
-  "name": "trabalho01",
+  "name": "Mar dos Ladrões",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,5 +9,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Atividade do \"Mar dos Ladrões\" feito pelo professor Leo Barbosa pra entregar para o LADRÃO DE ATIVIDADES: Leonardo Souza!"
 }

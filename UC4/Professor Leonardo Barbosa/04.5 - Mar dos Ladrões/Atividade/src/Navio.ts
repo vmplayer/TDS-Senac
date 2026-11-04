@@ -6,7 +6,7 @@ export class Navio {
     protected canhoes: number;
     private tipoNavio: string;
 
-    // Propriedades adicionais
+    // PROPRIEDADES ADICIONAIS
 
     protected vidaMaxima: number;
 
@@ -18,6 +18,10 @@ export class Navio {
         this.canhoes = canhoes;
         this.vidaMaxima = vida;
         this.tipoNavio = tipoNavio;
+
+        if (!this.regras()) {
+            throw new Error(`Navio inválido: ${this.nome}`)
+        }
     }
 
     // TESTES DE SEGURANÇA
@@ -32,81 +36,8 @@ export class Navio {
         }
     }
 
-    private regras(): boolean | void {
-        switch (this.tipoNavio) {
-            case "bergantim":
-                if (this.capacidadeTripulacao <= 20 && this.capacidadeTripulacao > 0) {
-                    if (this.velocidade >= 50) {
-                        if (this.vida >= 40 && this.vida < 80) {
-                            if (this.canhoes >= 4 && this.canhoes < 6) {
-                                return true;
-                            } else {
-                                console.log("Quantidade insuficiente de canhões ou excessiva.");
-                                return false;
-                            }
-                        } else {
-                            console.log("Vida muito baixa ou excessiva.");
-                            return false;
-                        }
-                    } else {
-                        console.log("Velocidade muito baixa.");
-                        return false;
-                    }
-                } else {
-                    console.log("O navio tem uma capacidade de tripulação insuficiente ou acima de 20 tripulantes.");
-                    return false;
-                }
-
-                break;       
-            case "chalupa":
-                if (this.capacidadeTripulacao <= 10 && this.capacidadeTripulacao > 0) {
-                    if (this.velocidade >= 80) {
-                        if (this.vida <= 40 && this.vida > 0) {
-                            if (this.canhoes <= 4 && this.canhoes < 0) {
-                                return true;
-                            } else {
-                                console.log("Quantidade insuficiente de canhões.");
-                                return false;
-                            }
-                        } else {
-                            console.log("Vida muito alta ou menor/igual a zero.");
-                            return false;
-                        }
-                    } else {
-                        console.log("Velocidade muito baixa.");
-                        return false;
-                    }
-                } else {
-                    console.log("O navio tem uma capacidade de tripulação insuficiente ou acima de 10 tripulantes.");
-                    return false;
-                }
-                
-                break;
-            case "galeao":
-                if (this.capacidadeTripulacao <= 50 && this.capacidadeTripulacao > 0) {
-                    if (this.velocidade <= 40 && this.velocidade > 0) {
-                        if (this.vida >= 60) {
-                            if (this.canhoes >= 6) {
-                                return true;
-                            } else {
-                                console.log("Quantidade insuficiente de canhões.");
-                                return false;
-                            }
-                        } else {
-                            console.log("Vida muito baixa.");
-                            return false;
-                        }
-                    } else {
-                        console.log("Velocidade muito alta ou igual/menor que zero.");
-                        return false;
-                    }
-                } else {
-                    console.log("O navio tem uma capacidade de tripulação insuficiente ou acima de 50 tripulantes.");
-                    return false;
-                }
-                
-                break;
-        }
+    protected regras(): boolean | void {
+        console.log("A única regra é existir!");
     }
 
     // MÉTODOS OBRIGATÓRIOS
@@ -122,7 +53,6 @@ export class Navio {
     public receberDano(dano: number): void {
         if (dano >= 0) {
             this.vida -= dano;
-            this.testeVida();
 
             if (this.testeVida() == false) {
                 console.log("O navio já está destruído e não pode ser atacado.");
@@ -134,7 +64,7 @@ export class Navio {
         } 
     }
 
-    exibirInformacoes(): void {
-        console.log(`     === INFORMAÇÕES DO NAVIO ===\n\nNome do navio: ${this.nome}\nCapacidade máxima: ${this.capacidadeTripulacao}\nDefesa do navio: ${this.vida}\nVelocidade do navio: ${this.velocidade}\nCanhões: ${this.canhoes}`);
+    public exibirInformacoes(): void {
+        console.log(`\n=== INFORMAÇÕES DO NAVIO ===\nNome do navio: ${this.nome}\nCapacidade máxima: ${this.capacidadeTripulacao}\nDefesa do navio: ${this.vida}\nVelocidade do navio: ${this.velocidade}\nCanhões: ${this.canhoes}\n`);
     }
 }
