@@ -25,5 +25,9 @@ const gerente = new Gerente("Eduardo");
 const lider = new LiderTecnico("Mário")
 
 prog.programar();
+prog.trabalhar();
+gerente.trabalhar();
 gerente.gerenciar();
 lider.trabalhar();
+lider.programar();
+lider.gerenciar();
