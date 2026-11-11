@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "module": "nodenext",
+    "target": "esnext",
+    "types": [],
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+  },
+  "include": ["./src/**/*.ts", "src/interfaces/ReceberDano.tar"],
+  "exclude": ["./node_modules", "./dist"]
+}
