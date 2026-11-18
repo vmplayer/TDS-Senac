@@ -13,14 +13,14 @@ export class Personagem implements Ataque, Cura {
     constructor (nome: string, hp: number, atk: number, def: number) {
         this.nome = nome;
         this.hp = hp;
-        this.maxHP = hp;
+        this.maxHP = 100;
         this.atk = atk;
         this.def = def;
     }
 
     protected verificar(tipo: string): boolean | void {
         switch (tipo) {
-            case 'dano':
+            case 'dano': // Usar quando o jogador receber dano.
                 if (this.hp < 0) {
                     this.hp = 0;
                     return false;
@@ -28,7 +28,7 @@ export class Personagem implements Ataque, Cura {
                     return true;
                 }
                 
-            case 'cura':
+            case 'cura': // Verificação para quando o jogador for curado.
                 if (this.hp > this.maxHP) {
                     this.hp = this.maxHP;
                     return true; 
@@ -36,7 +36,7 @@ export class Personagem implements Ataque, Cura {
 
                 break;
 
-            case 'vida':
+            case 'vida': // Verificação de vida.
                 if (this.hp <= 0) {
                     return false;
                 } else {
@@ -70,7 +70,7 @@ export class Personagem implements Ataque, Cura {
     }
 
     public causarDano(valor: number) {
-        if (this.verificar('vida') === true) {
+        if (this.verificar('dano') === true) {
             this.hp -= valor;
         } else {
             console.log("O personagem está morto e não pode atacar.")
@@ -78,6 +78,7 @@ export class Personagem implements Ataque, Cura {
     }
 
     public curar(valor: number) {
-
+        this.hp += valor;
+        this.verificar('cura')
     }
 }
