@@ -1,7 +1,4 @@
-import { Ataque } from "./interfaces/Ataque";
-import { Cura } from "./interfaces/Cura";
-
-export class Personagem implements Ataque, Cura {
+export class Personagem {
     private nome: string;
     private hp: number;
     private maxHP: number;
@@ -46,7 +43,7 @@ export class Personagem implements Ataque, Cura {
     }
 
     public exibirStatus(): string {
-        return `\n=== STATUS DO PERSONAGEM ===\n\nNome: ${this.nome}\n  HP: ${this.hp}/${this.maxHP}\n ATK: ${this.atk}\n DEF: ${this.def}`;
+        return `\n=== STATUS DO PERSONAGEM ===\n\nNOME: ${this.nome.toUpperCase()}\n  HP: ${this.hp}/${this.maxHP}\n ATK: ${this.atk}\n DEF: ${this.def}`;
     }
 
     public getNome(): string {
@@ -69,7 +66,7 @@ export class Personagem implements Ataque, Cura {
         return this.def;
     }
 
-    public causarDano(valor: number) {
+    public causarDano(valor: number): void {
         if (this.verificar('dano') === true) {
             this.hp -= valor;
         } else {
@@ -77,8 +74,26 @@ export class Personagem implements Ataque, Cura {
         }
     }
 
-    public curar(valor: number) {
+    public curar(valor: number): void {
         this.hp += valor;
         this.verificar('cura')
+    }
+
+    public atacar(valor: number, inimigo: Personagem): void {
+        if (this.verificar('vida') === true) {
+            if (inimigo.verificar('vida') === true) {
+                if (this.atk > inimigo.def) {
+                    let dano = this.atk - inimigo.def;
+                    inimigo.hp -= dano;
+                    console.log(`Sucesso! O ataque causou ${dano} de dano!`)
+                } else {
+                    console.log("O seu ataque falhou.")
+                }
+            } else {
+                console.log("Você não pode atacar um inimigo que já está derrotado.");
+            }
+        } else {
+            console.log("Você não pode atacar se já está morto.")
+        }
     }
 }
